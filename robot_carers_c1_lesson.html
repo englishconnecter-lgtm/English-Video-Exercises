@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot Carers — C1 English Lesson</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0f14;
+  --surface: #14171f;
+  --surface2: #1c2030;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+  --text: #e8eaf0;
+  --text-muted: #7a8099;
+  --text-dim: #4a5068;
+  --accent: #5b8dee;
+  --accent-dim: rgba(91,141,238,0.12);
+  --accent-hover: #7aa5f5;
+  --green: #3ecf8e;
+  --green-dim: rgba(62,207,142,0.12);
+  --red: #f06060;
+  --red-dim: rgba(240,96,96,0.12);
+  --amber: #f5a623;
+  --amber-dim: rgba(245,166,35,0.1);
+  --radius: 10px;
+  --radius-lg: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% -20%, rgba(91,141,238,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(91,141,238,0.25);
+  border-radius: 99px;
+  padding: 4px 14px;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem;
+}
+
+/* ── PROGRESS ── */
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.progress-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.progress-track {
+  flex: 1;
+  height: 5px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  border-radius: 99px;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.progress-pct {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ── VIDEO THUMBNAIL ── */
+.video-section { margin-bottom: 2.5rem; }
+.video-thumb-link {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 16/9;
+  background: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.video-thumb-link:hover { border-color: var(--border-hover); transform: scale(1.005); }
+.video-thumb-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.video-thumb-link:hover img { opacity: 1; }
+.video-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(0,0,0,0.35);
+}
+.video-play-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.2s;
+}
+.video-thumb-link:hover .video-play-circle { transform: scale(1.1); background: #fff; }
+.video-play-circle svg { margin-left: 4px; }
+.video-play-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+.video-yt-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.03em;
+}
+
+/* ── SECTION CARD ── */
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.4s ease both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.section-num {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.score-badge.complete { background: var(--green-dim); border-color: rgba(62,207,142,0.25); color: var(--green); }
+.section-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ── MATCH EXERCISE ── */
+.match-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+@media (max-width: 560px) { .match-columns { grid-template-columns: 1fr; } }
+.match-col { display: flex; flex-direction: column; gap: 6px; }
+
+.match-btn {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13.5px;
+  text-align: left;
+  line-height: 1.45;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  font-family: 'DM Sans', sans-serif;
+}
+.match-btn:hover:not(:disabled) { border-color: var(--border-hover); background: rgba(255,255,255,0.04); }
+.match-btn.selected { border-color: var(--accent); background: var(--accent-dim); color: var(--accent-hover); }
+.match-btn.matched { border-color: rgba(62,207,142,0.3); background: var(--green-dim); color: var(--green); pointer-events: none; }
+.match-btn.wrong { border-color: rgba(240,96,96,0.4); background: var(--red-dim); color: var(--red); }
+
+/* ── SELECT (tense) ── */
+.tense-list { display: flex; flex-direction: column; gap: 1rem; }
+.tense-item { }
+.tense-q {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.tense-q span { color: var(--text-muted); font-style: italic; }
+select {
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.15s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a8099' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 32px;
+  min-width: 220px;
+}
+select:hover { border-color: var(--border-hover); }
+select:focus { border-color: var(--accent); }
+select.correct { border-color: rgba(62,207,142,0.5); background-color: var(--green-dim); color: var(--green); }
+select.incorrect { border-color: rgba(240,96,96,0.5); background-color: var(--red-dim); color: var(--red); }
+select option { background: #1c2030; color: var(--text); }
+
+/* ── COMPREHENSION ── */
+.comp-list { display: flex; flex-direction: column; gap: 0; }
+.q-block { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+.q-block:last-child { border-bottom: none; padding-bottom: 0; }
+.q-block:first-child { padding-top: 0; }
+.q-text { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 0.75rem; line-height: 1.5; }
+.opt-list { display: flex; flex-direction: column; gap: 5px; }
+.opt-btn {
+  padding: 9px 13px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.45;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.opt-btn:hover:not(:disabled) { border-color: var(--border-hover); background: rgba(255,255,255,0.04); }
+.opt-btn.correct { border-color: rgba(62,207,142,0.4); background: var(--green-dim); color: var(--green); pointer-events: none; }
+.opt-btn.incorrect { border-color: rgba(240,96,96,0.4); background: var(--red-dim); color: var(--red); pointer-events: none; }
+.opt-btn:disabled { opacity: 0.45; pointer-events: none; }
+
+/* ── DISCUSSION ── */
+.disc-list { display: flex; flex-direction: column; gap: 1.25rem; }
+.disc-item { }
+.disc-q { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 0.6rem; line-height: 1.5; }
+textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 10px 13px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+textarea:focus { border-color: var(--accent); }
+textarea::placeholder { color: var(--text-dim); }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-hover);
+  background: transparent;
+  color: var(--text);
+  font-size: 13.5px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  font-weight: 500;
+}
+.btn:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.25); }
+.btn:active { transform: scale(0.98); }
+.btn-accent {
+  background: var(--accent-dim);
+  border-color: rgba(91,141,238,0.3);
+  color: var(--accent-hover);
+}
+.btn-accent:hover { background: rgba(91,141,238,0.2); }
+
+/* ── FEEDBACK ── */
+.feedback {
+  margin-top: 0.75rem;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  line-height: 1.55;
+  display: none;
+}
+.feedback.show { display: block; }
+.feedback.success { background: var(--green-dim); border: 1px solid rgba(62,207,142,0.25); color: #7de0b5; }
+.feedback.error { background: var(--red-dim); border: 1px solid rgba(240,96,96,0.2); color: #f09090; }
+.feedback.info { background: var(--accent-dim); border: 1px solid rgba(91,141,238,0.2); color: #9dbff5; }
+.feedback.loading { background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.feedback.loading::before {
+  content: '';
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid var(--border-hover);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+/* ── TENSE HINT ── */
+.btn-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 13px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+.btn-reset:hover { background: var(--red-dim); border-color: rgba(240,96,96,0.3); color: var(--red); }
+
+.tense-hint {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-top: 4px;
+  display: none;
+}
+.tense-hint.show { display: block; color: #7de0b5; }
+.tense-hint.wrong { display: block; color: #f09090; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-label">C1 Advanced English</div>
+  <h1>Robot Carers:<br><em>The Future of Care</em></h1>
+  <p>Watch the video, then complete four interactive exercises on vocabulary, grammar, comprehension and critical thinking.</p>
+</header>
+
+<div class="container">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <span class="progress-label">Progress</span>
+    <div class="progress-track"><div class="progress-fill" id="prog"></div></div>
+    <span class="progress-pct" id="prog-pct">0%</span>
+    <button class="btn-reset" onclick="resetAll()" title="Reset all exercises">↺ Reset</button>
+  </div>
+
+  <!-- VIDEO THUMBNAIL -->
+  <div class="video-section">
+    <a class="video-thumb-link" href="https://www.youtube.com/watch?v=WDtb6j1RqkA" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/WDtb6j1RqkA/maxresdefault.jpg" alt="Robot Carers — BBC Ideas video thumbnail" onerror="this.src='https://img.youtube.com/vi/WDtb6j1RqkA/hqdefault.jpg'">
+      <div class="video-play-btn">
+        <div class="video-play-circle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><polygon points="6,3 20,12 6,21" fill="#e00"/></svg>
+        </div>
+        <span class="video-play-label">Watch on YouTube</span>
+      </div>
+      <div class="video-yt-badge">
+        <svg width="16" height="11" viewBox="0 0 16 11" fill="none"><rect width="16" height="11" rx="2.5" fill="#FF0000"/><polygon points="6.5,2.5 6.5,8.5 11.5,5.5" fill="white"/></svg>
+        youtube.com
+      </div>
+    </a>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- EXERCISE 1: VOCABULARY MATCH              -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-card">
+    <div class="section-num">Exercise 1</div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Vocabulary match</div>
+        <p class="section-desc">Click a term, then its matching definition. All eight must be matched correctly.</p>
+      </div>
+      <span class="score-badge" id="s1score">0 / 8</span>
+    </div>
+
+    <div class="match-columns">
+      <div class="match-col" id="terms">
+        <button class="match-btn" data-id="1" onclick="selectTerm(this)">assistive robots</button>
+        <button class="match-btn" data-id="2" onclick="selectTerm(this)">exoskeleton</button>
+        <button class="match-btn" data-id="3" onclick="selectTerm(this)">humanoid</button>
+        <button class="match-btn" data-id="4" onclick="selectTerm(this)">smart wearables</button>
+        <button class="match-btn" data-id="5" onclick="selectTerm(this)">understaffed</button>
+        <button class="match-btn" data-id="6" onclick="selectTerm(this)">mobility hazard</button>
+        <button class="match-btn" data-id="7" onclick="selectTerm(this)">empathy</button>
+        <button class="match-btn" data-id="8" onclick="selectTerm(this)">dignified</button>
+      </div>
+      <div class="match-col" id="defs">
+        <button class="match-btn" data-id="5" onclick="selectDef(this)">not having enough workers for the job</button>
+        <button class="match-btn" data-id="3" onclick="selectDef(this)">a robot that looks and moves like a human</button>
+        <button class="match-btn" data-id="8" onclick="selectDef(this)">showing self-respect and being treated with honour</button>
+        <button class="match-btn" data-id="2" onclick="selectDef(this)">a wearable frame worn outside the body that supports movement</button>
+        <button class="match-btn" data-id="7" onclick="selectDef(this)">the ability to understand and share the feelings of another</button>
+        <button class="match-btn" data-id="1" onclick="selectDef(this)">machines that help people with daily tasks</button>
+        <button class="match-btn" data-id="6" onclick="selectDef(this)">something that makes it dangerous or difficult to move around</button>
+        <button class="match-btn" data-id="4" onclick="selectDef(this)">electronic devices worn on the body that collect and transmit data</button>
+      </div>
+    </div>
+
+    <button class="btn" onclick="checkMatch()">Check answers</button>
+    <div class="feedback" id="match-fb"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- EXERCISE 2: FUTURE TENSES                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-card">
+    <div class="section-num">Exercise 2</div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Future tense focus</div>
+        <p class="section-desc">Choose the most natural future form. Think about whether each situation is a prediction, a plan, a fixed arrangement, or a completed future action.</p>
+      </div>
+      <span class="score-badge" id="s2score">0 / 6</span>
+    </div>
+
+    <div class="tense-list">
+      <div class="tense-item">
+        <p class="tense-q">1. Look at those dark clouds — it <span>___</span> rain later.</p>
+        <select id="t1" onchange="checkTense(1,this,'is going to')">
+          <option value="">choose a form…</option>
+          <option>will</option>
+          <option>is going to</option>
+          <option>is raining</option>
+          <option>will have rained</option>
+        </select>
+        <div class="tense-hint" id="th1"></div>
+      </div>
+      <hr class="divider">
+      <div class="tense-item">
+        <p class="tense-q">2. By 2100, robots <span>___</span> far more capable than they are today.</p>
+        <select id="t2" onchange="checkTense(2,this,'will be')">
+          <option value="">choose a form…</option>
+          <option>will be</option>
+          <option>are going to be</option>
+          <option>will have been</option>
+          <option>are being</option>
+        </select>
+        <div class="tense-hint" id="th2"></div>
+      </div>
+      <hr class="divider">
+      <div class="tense-item">
+        <p class="tense-q">3. The world's population of over-60s <span>___</span> doubled again by 2050.</p>
+        <select id="t3" onchange="checkTense(3,this,'will have')">
+          <option value="">choose a form…</option>
+          <option>will double</option>
+          <option>will have</option>
+          <option>is going to double</option>
+          <option>doubles</option>
+        </select>
+        <div class="tense-hint" id="th3"></div>
+      </div>
+      <hr class="divider">
+      <div class="tense-item">
+        <p class="tense-q">4. I <span>___</span> visit my grandmother at the care home this Sunday — it's already booked.</p>
+        <select id="t4" onchange="checkTense(4,this,'am visiting')">
+          <option value="">choose a form…</option>
+          <option>will visit</option>
+          <option>am visiting</option>
+          <option>am going to visit</option>
+          <option>visit</option>
+        </select>
+        <div class="tense-hint" id="th4"></div>
+      </div>
+      <hr class="divider">
+      <div class="tense-item">
+        <p class="tense-q">5. One in three people born today <span>___</span> until they're 100.</p>
+        <select id="t5" onchange="checkTense(5,this,'will live')">
+          <option value="">choose a form…</option>
+          <option>will live</option>
+          <option>is going to live</option>
+          <option>will have lived</option>
+          <option>lives</option>
+        </select>
+        <div class="tense-hint" id="th5"></div>
+      </div>
+      <hr class="divider">
+      <div class="tense-item">
+        <p class="tense-q">6. By the time you read this, scientists <span>___</span> already solved many of today's care challenges.</p>
+        <select id="t6" onchange="checkTense(6,this,'will have')">
+          <option value="">choose a form…</option>
+          <option>will solve</option>
+          <option>will have</option>
+          <option>are going to have</option>
+          <option>are solving</option>
+        </select>
+        <div class="tense-hint" id="th6"></div>
+      </div>
+    </div>
+
+    <br>
+    <button class="btn" onclick="checkAllTenses()">Check remaining answers</button>
+    <div class="feedback" id="tense-fb"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- EXERCISE 3: COMPREHENSION                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-card">
+    <div class="section-num">Exercise 3</div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Comprehension</div>
+        <p class="section-desc">Select the best answer for each question based on the video. Wrong answers are eliminated one by one.</p>
+      </div>
+      <span class="score-badge" id="s3score">0 / 5</span>
+    </div>
+
+    <div class="comp-list">
+      <div class="q-block">
+        <p class="q-text">1. According to the video, how has the global population of over-60s changed since 1980?</p>
+        <div class="opt-list" id="oq1">
+          <button class="opt-btn" onclick="answerQ('q1',this,false)">It has tripled</button>
+          <button class="opt-btn" onclick="answerQ('q1',this,true)">It has doubled to around one billion</button>
+          <button class="opt-btn" onclick="answerQ('q1',this,false)">It has grown by 25%</button>
+          <button class="opt-btn" onclick="answerQ('q1',this,false)">It has stayed roughly the same</button>
+        </div>
+        <div class="feedback" id="q1fb"></div>
+      </div>
+
+      <div class="q-block">
+        <p class="q-text">2. What is the main benefit of robots handling routine tasks, according to the video?</p>
+        <div class="opt-list" id="oq2">
+          <button class="opt-btn" onclick="answerQ('q2',this,false)">It reduces the cost of running care homes</button>
+          <button class="opt-btn" onclick="answerQ('q2',this,false)">It allows robots to develop emotional intelligence</button>
+          <button class="opt-btn" onclick="answerQ('q2',this,true)">It frees human carers to give residents their full attention</button>
+          <button class="opt-btn" onclick="answerQ('q2',this,false)">It means fewer human staff are needed overall</button>
+        </div>
+        <div class="feedback" id="q2fb"></div>
+      </div>
+
+      <div class="q-block">
+        <p class="q-text">3. The video mentions a robot called Prakash. What is he specifically designed for?</p>
+        <div class="opt-list" id="oq3">
+          <button class="opt-btn" onclick="answerQ('q3',this,false)">Administering medication accurately</button>
+          <button class="opt-btn" onclick="answerQ('q3',this,false)">Maintaining the grounds and gardens</button>
+          <button class="opt-btn" onclick="answerQ('q3',this,true)">Residents' emotional wellbeing</button>
+          <button class="opt-btn" onclick="answerQ('q3',this,false)">Serving customised meals</button>
+        </div>
+        <div class="feedback" id="q3fb"></div>
+      </div>
+
+      <div class="q-block">
+        <p class="q-text">4. Which of these is listed as a genuine logistical challenge for robot carers?</p>
+        <div class="opt-list" id="oq4">
+          <button class="opt-btn" onclick="answerQ('q4',this,false)">Robots refusing to follow instructions</button>
+          <button class="opt-btn" onclick="answerQ('q4',this,true)">How robots would navigate shared spaces without becoming hazards themselves</button>
+          <button class="opt-btn" onclick="answerQ('q4',this,false)">The high emotional cost for robot workers</button>
+          <button class="opt-btn" onclick="answerQ('q4',this,false)">Difficulty programming robots to speak different languages</button>
+        </div>
+        <div class="feedback" id="q4fb"></div>
+      </div>
+
+      <div class="q-block">
+        <p class="q-text">5. What does the narrator call "perhaps the most important question" raised by the video?</p>
+        <div class="opt-list" id="oq5">
+          <button class="opt-btn" onclick="answerQ('q5',this,false)">Whether robots are more cost-effective than humans</button>
+          <button class="opt-btn" onclick="answerQ('q5',this,false)">Whether robots can ever feel genuine empathy</button>
+          <button class="opt-btn" onclick="answerQ('q5',this,true)">Whether people would have the right to refuse robot care</button>
+          <button class="opt-btn" onclick="answerQ('q5',this,false)">Whether robots will eventually replace all human jobs</button>
+        </div>
+        <div class="feedback" id="q5fb"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- EXERCISE 4: DISCUSSION                    -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section-card">
+    <div class="section-num">Exercise 4</div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Critical thinking</div>
+        <p class="section-desc">Write 2–4 sentences responding to each question. Use a range of future structures where appropriate. Click "Get AI feedback" for personalised C1-level comments.</p>
+      </div>
+    </div>
+
+    <div class="disc-list">
+      <div class="disc-item">
+        <p class="disc-q">1. The video asks: "Could robots ever be a true substitute for humans currently doing those jobs?" What is your view? Use evidence from the video.</p>
+        <textarea id="d1" placeholder="Write your response here…"></textarea>
+        <button class="btn btn-accent" onclick="discussFeedback('d1','df1')">Get AI feedback ↗</button>
+        <div class="feedback" id="df1"></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="disc-item">
+        <p class="disc-q">2. If a robot made a serious error — for example, giving the wrong medication — who or what should be held responsible: the robot, the manufacturer, or the care home? Build an argument.</p>
+        <textarea id="d2" placeholder="Develop your argument here…"></textarea>
+        <button class="btn btn-accent" onclick="discussFeedback('d2','df2')">Get AI feedback ↗</button>
+        <div class="feedback" id="df2"></div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="disc-item">
+        <p class="disc-q">3. What are the implications for human care workers if robots take over routine tasks by 2100? Consider both risks and potential opportunities.</p>
+        <textarea id="d3" placeholder="Your thoughts…"></textarea>
+        <button class="btn btn-accent" onclick="discussFeedback('d3','df3')">Get AI feedback ↗</button>
+        <div class="feedback" id="df3"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+let selTerm = null, selDef = null;
+let matchScore = 0, tenseScore = 0, compScore = 0;
+const matchDone = {}, tenseDone = {}, compDone = {};
+
+const tenseCorrect = {1:'is going to',2:'will be',3:'will have',4:'am visiting',5:'will live',6:'will have'};
+const tenseExplain = {
+  1: 'Correct! "Is going to" = prediction based on present evidence (dark clouds).',
+  2: 'Correct! "Will be" = general future prediction/fact.',
+  3: 'Correct! "Will have doubled" = future perfect — a completed action by a specific future point (2050).',
+  4: 'Correct! "Am visiting" = present continuous for a fixed future arrangement.',
+  5: 'Correct! "Will live" = neutral statistical prediction.',
+  6: 'Correct! "Will have solved" = future perfect — completed before a future reference point.'
+};
+const tenseHints = {
+  1: 'Hint: we use this form for predictions based on visible evidence right now.',
+  2: 'Hint: a simple, general future prediction. No evidence needed — it\'s a stated fact.',
+  3: 'Hint: this tense shows an action that will be complete before a specific future time.',
+  4: 'Hint: the arrangement is already confirmed (it\'s booked). Which form expresses a fixed future plan?',
+  5: 'Hint: a statistical prediction with no specific present evidence. Think neutral forecast.',
+  6: 'Hint: "by the time you read this" signals an action completed before a future moment.'
+};
+
+function updateProg() {
+  const total = matchScore + tenseScore + compScore;
+  const max = 19;
+  const pct = Math.round(total / max * 100);
+  document.getElementById('prog').style.width = pct + '%';
+  document.getElementById('prog-pct').textContent = pct + '%';
+}
+
+function showFeedback(id, type, html) {
+  const el = document.getElementById(id);
+  el.className = 'feedback show ' + type;
+  el.innerHTML = html;
+}
+
+/* ─── RESET ─── */
+function resetAll() {
+  if (!confirm('Reset all exercises? Your progress will be lost.')) return;
+  location.reload();
+}
+
+/* ─── MATCH ─── */
+function selectTerm(btn) {
+  document.querySelectorAll('#terms .match-btn:not(.matched)').forEach(b => b.classList.remove('selected'));
+  selTerm = btn;
+  btn.classList.add('selected');
+  tryMatch();
+}
+function selectDef(btn) {
+  document.querySelectorAll('#defs .match-btn:not(.matched)').forEach(b => b.classList.remove('selected'));
+  selDef = btn;
+  btn.classList.add('selected');
+  tryMatch();
+}
+function tryMatch() {
+  if (!selTerm || !selDef) return;
+  const tid = selTerm.dataset.id, did = selDef.dataset.id;
+  if (tid === did) {
+    selTerm.classList.remove('selected'); selTerm.classList.add('matched');
+    selDef.classList.remove('selected'); selDef.classList.add('matched');
+    matchDone[tid] = true;
+    matchScore = Object.keys(matchDone).length;
+    document.getElementById('s1score').textContent = matchScore + ' / 8';
+    if (matchScore === 8) document.getElementById('s1score').className = 'score-badge complete';
+    updateProg();
+  } else {
+    selTerm.classList.add('wrong'); selDef.classList.add('wrong');
+    setTimeout(() => {
+      selTerm.classList.remove('wrong','selected');
+      selDef.classList.remove('wrong','selected');
+    }, 700);
+  }
+  selTerm = null; selDef = null;
+}
+function checkMatch() {
+  if (matchScore === 8) {
+    showFeedback('match-fb','success','All 8 matched correctly. Excellent vocabulary range!');
+  } else {
+    showFeedback('match-fb','info', matchScore + '/8 matched so far. Click a term on the left, then its definition on the right.');
+  }
+}
+
+/* ─── TENSES ─── */
+function checkTense(num, el, correct) {
+  if (tenseDone[num] || !el.value) return;
+  const hint = document.getElementById('th'+num);
+  if (el.value === correct) {
+    el.classList.add('correct');
+    hint.className = 'tense-hint show';
+    hint.textContent = tenseExplain[num];
+    tenseDone[num] = true;
+    tenseScore = Object.keys(tenseDone).length;
+    document.getElementById('s2score').textContent = tenseScore + ' / 6';
+    if (tenseScore === 6) document.getElementById('s2score').className = 'score-badge complete';
+    updateProg();
+  } else {
+    el.classList.add('incorrect');
+    hint.className = 'tense-hint wrong';
+    hint.textContent = tenseHints[num];
+    setTimeout(() => {
+      el.classList.remove('incorrect');
+      el.value = '';
+    }, 900);
+  }
+}
+function checkAllTenses() {
+  const remaining = [];
+  for (let i = 1; i <= 6; i++) {
+    if (!tenseDone[i]) remaining.push('<strong>' + i + ':</strong> ' + tenseHints[i]);
+  }
+  if (remaining.length === 0) {
+    showFeedback('tense-fb','success','All six correct! Strong command of future tenses.');
+  } else {
+    showFeedback('tense-fb','info', 'Hints for remaining items:<br>' + remaining.join('<br>'));
+  }
+}
+
+/* ─── COMPREHENSION ─── */
+function answerQ(qid, btn, correct) {
+  if (compDone[qid]) return;
+  if (correct) {
+    btn.classList.add('correct');
+    btn.closest('.opt-list').querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+    showFeedback(qid+'fb','success','Correct!');
+    compDone[qid] = true;
+    compScore = Object.keys(compDone).length;
+    document.getElementById('s3score').textContent = compScore + ' / 5';
+    if (compScore === 5) document.getElementById('s3score').className = 'score-badge complete';
+    updateProg();
+  } else {
+    btn.classList.add('incorrect');
+    btn.disabled = true;
+    showFeedback(qid+'fb','error','Not quite — that option is eliminated. Try another.');
+  }
+}
+
+/* ─── DISCUSSION ─── */
+const discPrompts = {
+  d1: `You are an expert C1 English teacher. The student responded to: "Could robots ever be a true substitute for humans in care?" Give concise, encouraging feedback (3–5 sentences) covering: (a) argument development and use of evidence, (b) vocabulary range, (c) one specific C1 structure used well or a missed opportunity. Be specific. Student response: `,
+  d2: `You are an expert C1 English teacher. The student wrote about robot liability for errors in care homes. Give concise, encouraging feedback (3–5 sentences) covering: (a) argument clarity and structure, (b) use of complex grammar, (c) register and vocabulary. Be specific. Student response: `,
+  d3: `You are an expert C1 English teacher. The student wrote about implications for human care workers if robots take over routine tasks. Give concise feedback (3–5 sentences) covering: (a) balance of argument, (b) use of future tenses, (c) vocabulary range and any C1-level language. Be specific. Student response: `
+};
+
+async function discussFeedback(tid, fbid) {
+  const text = document.getElementById(tid).value.trim();
+  const fb = document.getElementById(fbid);
+  if (text.length < 20) {
+    showFeedback(fbid,'error','Please write a more developed response (at least a couple of sentences) before checking.');
+    return;
+  }
+  fb.className = 'feedback show loading';
+  fb.textContent = 'Getting personalised feedback…';
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: discPrompts[tid] + '"' + text + '"' }]
+      })
+    });
+    const data = await res.json();
+    const reply = data.content?.find(b => b.type === 'text')?.text || 'Could not load feedback.';
+    showFeedback(fbid,'info', reply);
+  } catch(e) {
+    showFeedback(fbid,'error','Connection error. Please try again.');
+  }
+}
+</script>
+</body>
+</html>
