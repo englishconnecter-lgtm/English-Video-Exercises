@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///Users/benjaminandfamily/Downloads/parmalat_c1_english_lesson_3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C1 English Lesson — The Parmalat Scandal</title>
+<link href="./C1 English Lesson — The Parmalat Scandal_files/css2" rel="stylesheet">
+<style>
+:root {
+  --paper:#f7f4ee; --surface:#fdfbf7; --surface2:#eeead8;
+  --ink:#1a1510; --ink-soft:#3d3528; --ink-muted:#857d6e;
+  --border:#d8d0c0; --border-light:#e8e2d4;
+  --red:#9a1a1a; --red-light:#f9eaea;
+  --gold:#b87c10; --gold-light:#faf0d8;
+  --teal:#1a5a4a; --teal-light:#e0f2ec;
+  --green:#1a4a2a; --green-light:#e4f4e8;
+  --charcoal:#2a2520; --blue:#1a3a8a;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65;}
+
+/* HERO */
+.hero{background:var(--charcoal);position:relative;overflow:hidden;padding:3.5rem 2rem 3rem;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.015) 60px,rgba(255,255,255,.015) 61px);}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;}
+.hero-tag{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,124,16,.4);padding:4px 12px;border-radius:20px;}
+.hero-level{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:600;color:#fff;line-height:1.1;margin-bottom:.65rem;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.5);max-width:520px;line-height:1.7;margin-bottom:1.75rem;}
+.hero-stats{display:flex;gap:22px;flex-wrap:wrap;}
+.hero-stat{display:flex;flex-direction:column;gap:2px;}
+.stat-val{font-family:'DM Mono',monospace;font-size:1.35rem;font-weight:500;color:#fff;}
+.stat-label{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;}
+
+/* NAV */
+.nav{background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:860px;margin:0 auto;padding:0 2rem;display:flex;overflow-x:auto;scrollbar-width:none;align-items:center;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{padding:.85rem 1rem;border:none;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;flex-shrink:0;}
+.nav-btn:hover{color:rgba(255,255,255,.75);}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+.nav-spacer{flex:1;}
+.reset-btn{margin-left:8px;padding:5px 13px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:6px;color:rgba(255,255,255,.45);font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;transition:all .15s;white-space:nowrap;flex-shrink:0;}
+.reset-btn:hover{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:2.25rem 2rem 5rem;}
+.section{display:none;}
+.section.active{display:block;animation:fadeIn .2s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* VIDEO */
+.video-wrap{margin-bottom:1.5rem;border-radius:12px;overflow:hidden;border:1px solid var(--border);display:block;text-decoration:none;}
+.video-thumb{position:relative;width:100%;padding-bottom:56.25%;background:#111;overflow:hidden;}
+.video-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s,opacity .3s;}
+.video-wrap:hover .video-thumb img{transform:scale(1.03);opacity:.82;}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(0,0,0,.4);transition:transform .18s,background .18s;}
+.video-wrap:hover .play-btn{transform:translate(-50%,-50%) scale(1.1);background:#fff;}
+.video-bar{background:var(--charcoal);padding:.75rem 1.25rem;display:flex;align-items:center;gap:10px;}
+.yt-badge{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--red);color:white;padding:3px 8px;border-radius:4px;flex-shrink:0;}
+.yt-title{font-size:13px;color:rgba(255,255,255,.65);}
+.yt-dur{font-size:11px;color:rgba(255,255,255,.3);font-family:'DM Mono',monospace;margin-left:auto;}
+
+/* SECTION INTRO */
+.section-intro{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:1.5rem;padding-bottom:.7rem;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:8px;}
+.section-intro::before{content:'';display:inline-block;width:18px;height:2px;background:var(--gold);border-radius:1px;}
+
+/* TRANSCRIPT */
+.transcript-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.5rem;}
+.transcript-header{background:var(--charcoal);padding:.9rem 1.4rem;display:flex;align-items:center;gap:10px;}
+.transcript-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+.transcript-title{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+.transcript-body{padding:1.6rem 1.7rem;font-family:'Cormorant Garamond',serif;font-size:17px;line-height:2;color:var(--ink-soft);}
+.transcript-body p{margin-bottom:1.2rem;}
+.transcript-body p:last-child{margin-bottom:0;}
+.hw{background:var(--gold-light);border-bottom:2px solid var(--gold);padding:0 2px;border-radius:2px;cursor:help;transition:background .15s;}
+.hw:hover{background:#f0e0a0;}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:1.2rem;overflow:hidden;}
+.card-hdr{background:var(--surface2);padding:.8rem 1.2rem;border-bottom:1px solid var(--border);}
+.card-title{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);}
+.card-sub{font-size:12.5px;color:var(--ink-muted);margin-top:3px;line-height:1.5;}
+.card-body{padding:1rem 1.2rem;}
+
+/* QUESTION ITEM */
+.qi{margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--border-light);}
+.qi:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.qi-num{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px;}
+.qi-text{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink);line-height:1.5;margin-bottom:.7rem;}
+
+/* MCQ */
+.opts{display:flex;flex-direction:column;gap:6px;margin-bottom:.5rem;}
+.opt{display:flex;align-items:flex-start;gap:9px;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);text-align:left;transition:all .15s;line-height:1.5;width:100%;}
+.opt:hover:not(:disabled){background:var(--gold-light);border-color:var(--gold);}
+.opt:disabled{cursor:default;}
+.opt-ltr{font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:50%;background:var(--surface2);color:var(--ink-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.opt.correct{background:var(--green-light);border-color:var(--green);color:#1a4028;}
+.opt.wrong{background:var(--red-light);border-color:var(--red);color:#6a1414;}
+.opt.correct .opt-ltr{background:var(--green);color:white;}
+.opt.wrong .opt-ltr{background:var(--red);color:white;}
+.q-fb{margin-top:6px;padding:7px 10px;border-radius:7px;font-size:12.5px;line-height:1.55;display:none;}
+.q-fb.show{display:block;}
+.q-fb.correct{background:var(--green-light);color:var(--green);}
+.q-fb.wrong{background:var(--red-light);color:var(--red);}
+
+/* SCORE BAR */
+.score-bar{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.85rem 1.2rem;margin-bottom:1.2rem;flex-wrap:wrap;}
+.score-lbl{font-size:12px;color:var(--ink-muted);font-weight:500;}
+.score-track{flex:1;min-width:80px;height:5px;background:var(--border);border-radius:3px;overflow:hidden;}
+.score-fill{height:100%;background:var(--teal);border-radius:3px;transition:width .4s ease;width:0%;}
+.score-num{font-family:'DM Mono',monospace;font-size:13px;color:var(--teal);font-weight:500;}
+
+/* GRAMMAR */
+.grammar-intro{background:var(--charcoal);border-radius:12px;padding:1.4rem 1.6rem;margin-bottom:1.2rem;}
+.grammar-intro h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#fff;margin-bottom:.45rem;}
+.grammar-intro p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:.85rem;}
+.grammar-intro p:last-child{margin-bottom:0;}
+.stbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:.6rem;}
+.stbl th{background:rgba(255,255,255,.08);color:rgba(255,255,255,.65);font-weight:500;padding:7px 11px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1);}
+.stbl td{padding:7px 11px;color:rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.06);}
+.stbl td:first-child{font-family:'DM Mono',monospace;color:var(--gold);font-size:11.5px;}
+.stbl tr:last-child td{border-bottom:none;}
+.gram-sentence{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink);line-height:1.9;margin-bottom:.6rem;}
+.gram-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ink);outline:none;min-width:190px;max-width:290px;padding:1px 4px;transition:border-color .2s;}
+.gram-input:focus{border-bottom-color:var(--gold);}
+.gram-input.correct{border-bottom-color:var(--green);color:var(--green);}
+.gram-input.wrong{border-bottom-color:var(--red);color:var(--red);}
+
+/* ANSWER ROW */
+.ans-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;}
+.check-btn{padding:6px 15px;border:1.5px solid var(--border);border-radius:7px;background:transparent;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--ink-muted);cursor:pointer;transition:all .15s;}
+.check-btn:hover{background:var(--surface2);color:var(--ink);}
+.badge-ok{font-size:11px;font-weight:600;color:var(--green);background:var(--green-light);padding:3px 10px;border-radius:10px;display:none;}
+.badge-no{font-size:11px;color:var(--red);background:var(--red-light);padding:3px 10px;border-radius:10px;display:none;}
+.badge-ans{font-size:12px;font-weight:600;color:var(--teal);background:var(--teal-light);padding:3px 10px;border-radius:10px;display:none;}
+.check-all-btn{width:100%;padding:10px;border:1.5px solid var(--teal);border-radius:9px;background:var(--teal);color:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;margin-top:.75rem;transition:all .15s;}
+.check-all-btn:hover{background:#155040;}
+
+/* MATCHING */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.2rem;}
+@media(max-width:580px){.match-grid{grid-template-columns:1fr;}}
+.match-col-lbl{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--border-light);}
+.word-chip{background:var(--charcoal);color:#e8e0d0;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:600;padding:9px 14px;border-radius:8px;margin-bottom:7px;cursor:pointer;user-select:none;transition:all .15s;border:1.5px solid transparent;display:flex;align-items:center;justify-content:space-between;}
+.word-chip:hover{background:#3d3528;}
+.word-chip.sel{border-color:var(--gold);background:#3a3020;}
+.word-chip.placed{display:none;}
+.word-chip.mok{background:var(--teal);color:white;border-color:var(--teal);cursor:default;display:flex;}
+.word-chip.mno{background:var(--red);color:white;border-color:var(--red);cursor:default;display:flex;}
+.def-slot{background:var(--surface);border:1.5px dashed var(--border);border-radius:8px;padding:9px 13px;margin-bottom:7px;min-height:48px;transition:all .15s;cursor:pointer;}
+.def-slot:hover:not(.locked){border-color:var(--gold);background:var(--gold-light);}
+.def-slot-text{font-size:13px;color:var(--ink-soft);line-height:1.55;}
+.def-slot-ans{font-family:'Cormorant Garamond',serif;font-size:13.5px;font-weight:600;margin-top:5px;padding:3px 9px;border-radius:5px;display:inline-block;}
+.def-slot-ans.ok{background:var(--teal-light);color:var(--teal);}
+.def-slot-ans.no{background:var(--red-light);color:var(--red);}
+.def-slot .correct-hint{font-size:11px;color:var(--teal);margin-top:3px;display:none;}
+.placed-chip{display:inline-flex;align-items:center;gap:5px;background:var(--gold-light);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:13.5px;font-weight:600;padding:3px 9px;border-radius:5px;margin-top:4px;cursor:pointer;border:1px solid var(--border);}
+.placed-chip:hover{background:var(--border-light);}
+.match-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.btn-check{padding:9px 20px;border-radius:8px;border:1.5px solid var(--border);background:var(--charcoal);color:#e8e0d0;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;}
+.btn-check:hover{background:#3d3528;}
+.btn-reset-match{padding:9px 15px;border-radius:8px;border:1.5px solid var(--border-light);background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink-muted);cursor:pointer;transition:all .15s;}
+.btn-reset-match:hover{background:var(--border-light);color:var(--ink);}
+.match-score-badge{font-size:13px;font-weight:500;padding:4px 13px;border-radius:20px;background:var(--teal-light);color:var(--teal);display:none;}
+
+/* DISCUSSION */
+.di{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+.di-trigger{width:100%;display:flex;align-items:flex-start;gap:13px;padding:1rem 1.2rem;background:transparent;border:none;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;}
+.di-type{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--red);background:var(--red-light);padding:3px 9px;border-radius:10px;white-space:nowrap;margin-top:2px;flex-shrink:0;}
+.di-q{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--ink);line-height:1.5;flex:1;}
+.di-arr{width:18px;height:18px;min-width:18px;margin-top:4px;color:var(--ink-muted);transition:transform .25s;}
+.di.open .di-arr{transform:rotate(180deg);}
+.di-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.di.open .di-body{max-height:600px;}
+.di-inner{padding:0 1.2rem 1.2rem;border-top:1px solid var(--border-light);padding-top:.9rem;}
+.di-hint{background:var(--gold-light);border-left:3px solid var(--gold);padding:.7rem .95rem;border-radius:6px;font-size:13px;color:#5a3a08;line-height:1.65;margin-bottom:.8rem;}
+.di-sample{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ink-soft);line-height:1.75;}
+
+footer{text-align:center;padding:2rem;font-size:12px;color:var(--ink-muted);border-top:1px solid var(--border-light);}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="hero-tag">C1 Advanced English</span>
+      <span class="hero-level">Business &amp; Finance · Fraud &amp; Accountability</span>
+    </div>
+    <h1>The <em>Parmalat</em> Scandal</h1>
+    <p class="hero-sub">Europe's largest corporate fraud — fabricated billions, forged documents, and the collapse of trust. Based on an authentic documentary.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-val">€14B</span><span class="stat-label">Financial black hole</span></div>
+      <div class="hero-stat"><span class="stat-val">10+</span><span class="stat-label">Years of deception</span></div>
+      <div class="hero-stat"><span class="stat-val">2003</span><span class="stat-label">Year of collapse</span></div>
+      <div class="hero-stat"><span class="stat-val">C1</span><span class="stat-label">CEFR Level</span></div>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn" onclick="showSection(&#39;reading&#39;,this)">Reading</button>
+    <button class="nav-btn" onclick="showSection(&#39;matching&#39;,this)">Match Exercise</button>
+    <button class="nav-btn" onclick="showSection(&#39;comprehension&#39;,this)">Comprehension</button>
+    <button class="nav-btn" onclick="showSection(&#39;grammar&#39;,this)">Grammar</button>
+    <button class="nav-btn active" onclick="showSection(&#39;discussion&#39;,this)">Discussion</button>
+    <div class="nav-spacer"></div>
+    <button class="reset-btn" onclick="resetAll()">↺ Reset</button>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- ═══ READING ═══ -->
+<section id="reading" class="section">
+  <div class="section-intro">Watch the documentary, then read the transcript</div>
+
+  <a class="video-wrap" href="https://www.youtube.com/watch?v=LMKqHuXLwwU" target="_blank" rel="noopener">
+    <div class="video-thumb">
+      <img src="./C1 English Lesson — The Parmalat Scandal_files/hqdefault.jpg" alt="The $14 Billion Parmalat Fraud — Europe&#39;s Enron" onerror="this.style.display=&#39;none&#39;;document.getElementById(&#39;vfallback&#39;).style.display=&#39;flex&#39;">
+      <div id="vfallback" style="display:none;position:absolute;inset:0;background:#1a1510;flex-direction:column;align-items:center;justify-content:center;gap:10px;">
+        <svg width="52" height="52" viewBox="0 0 52 52"><rect width="52" height="52" rx="10" fill="#9a1a1a"></rect><polygon points="20,14 42,26 20,38" fill="white"></polygon></svg>
+        <span style="font-size:13px;color:rgba(255,255,255,.65);font-family:&#39;DM Sans&#39;,sans-serif;text-align:center;padding:0 1rem;">The $14 Billion Parmalat Fraud<br><span style="font-size:11px;opacity:.45;">Click to watch on YouTube</span></span>
+      </div>
+      <div class="play-btn">
+        <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="6,3 21,12 6,21" fill="#9a1a1a"></polygon></svg>
+      </div>
+    </div>
+    <div class="video-bar">
+      <span class="yt-badge">▶ Watch</span>
+      <span class="yt-title">The $14 Billion Parmalat Fraud | Europe's Enron Documentary</span>
+      <span class="yt-dur">~3:50</span>
+    </div>
+  </a>
+
+  <div class="transcript-card">
+    <div class="transcript-header">
+      <div class="transcript-dot"></div>
+      <div class="transcript-title">Documentary Transcript — Parmalat: Europe's Enron</div>
+    </div>
+    <div class="transcript-body">
+        <p>A company that seems to have it all. A global brand, beloved products in every kitchen, and <span class="highlight-word" title="increasing rapidly">booming</span> profits. Now, imagine discovering that a massive chunk of its money — billions of dollars — simply doesn't exist. This isn't a movie plot. This is the real story of Parmalat, one of Europe's biggest <span class="highlight-word" title="sudden total collapse of a company">corporate implosions</span>.</p>
+
+        <p>Back in the early 2000s, Parmalat was an Italian dairy and food giant. The company led by its founder, Calisto Tanzi, was a symbol of Italian success. It was expanding rapidly, buying up other companies left and right, and everyone from small investors to major banks was eager to be a part of its <span class="highlight-word" title="a narrative about rapid expansion and profit">growth story</span>. The financial reports looked <span class="highlight-word" title="impressively good; outstandingly successful">stellar</span> year after year. But behind this perfect picture, a massive <span class="highlight-word" title="deliberate act of deceiving people">deception</span> was unfolding.</p>
+
+        <p>The first crack appeared in early 2003 when Parmalat had trouble selling 500 million euros worth of new bonds. Investors were starting to get nervous. Why would a company supposedly swimming in cash need to <span class="highlight-word" title="raise money by issuing debt instruments">borrow more</span>? The company's management assured everyone that everything was fine. They pointed to a special <span class="highlight-word" title="a company registered in a low-tax foreign territory">offshore subsidiary</span> in the Cayman Islands called Bonlat Financing Corporation. They claimed Bonlat held a staggering €3.95 billion in cash and <span class="highlight-word" title="assets easily converted to cash">liquid securities</span> in a Bank of America account — the company's safety net, the proof that all was well.</p>
+
+        <p>As the year went on, the pressure mounted. Auditors and investors demanded proof of this massive cash reserve. In December 2003, the moment of truth arrived. Bank of America was contacted to verify the account. Their response sent <span class="highlight-word" title="caused widespread shock and disturbance">shock waves</span> through the financial world. The account did not exist. The document claiming it did was a crude <span class="highlight-word" title="a document that has been illegally copied or altered">forgery</span>. The €3.95 billion was pure fiction.</p>
+
+        <p>The <span class="highlight-word" title="the negative consequences that follow an event">fallout</span> was immediate and catastrophic. Parmalat's stock <span class="highlight-word" title="fell sharply and suddenly">plummeted</span>, and the company was forced to declare <span class="highlight-word" title="a legal process when a company cannot pay its debts">bankruptcy</span>. Investigators soon discovered a <span class="highlight-word" title="a term for a massive, unexplained financial deficit">black hole</span> in the company's finances — not just €4 billion, but closer to €14 billion. For over a decade, the company had been systematically hiding losses and <span class="highlight-word" title="inventing or falsifying">fabricating</span> assets, using a complex web of offshore companies and forged documents.</p>
+
+        <p>Tanzi and other top executives were arrested. The trials revealed a shocking level of <span class="highlight-word" title="excessive desire for wealth and profit">corporate greed</span> and deception. Tanzi was eventually sentenced to years in prison for <span class="highlight-word" title="illegal interference with financial markets">market manipulation</span> and <span class="highlight-word" title="deliberately causing a company to fail while hiding the reasons">fraudulent bankruptcy</span>. The scandal became known as Europe's Enron — a <span class="highlight-word" title="a story that teaches a warning lesson">cautionary tale</span> about what can happen when <span class="highlight-word" title="the systems that control and oversee a company">corporate governance</span> fails and greed goes unchecked.</p>
+
+        <p>Thousands of small investors lost their life savings and major banks suffered huge losses. The Parmalat story forces us to always look beyond the surface. It shows how easily a convincing story can hide a devastating reality, and it forced <span class="highlight-word" title="authorities who make and enforce financial rules">regulators</span> in Italy and across Europe to tighten financial rules and increase oversight.</p>
+      </div>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;font-size:13.5px;color:var(--ink-soft);line-height:1.75;">
+    <strong style="color:var(--ink);">Before moving on:</strong> Hover over the <span class="hw" style="pointer-events:none;">highlighted words</span> to see quick definitions. Use the tabs above to work through each section in order.
+  </div>
+</section>
+
+<!-- ═══ MATCHING ═══ -->
+<section id="matching" class="section">
+  <div class="section-intro">Click a word, then click its correct definition</div>
+  <div class="match-grid">
+    <div>
+      <div class="match-col-lbl">Words &amp; Phrases</div>
+      <div id="word-bank"><div class="word-chip" data-word="liquid securities" id="chip-liquid_securities"><span>liquid securities</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="deception" id="chip-deception"><span>deception</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="cautionary tale" id="chip-cautionary_tale"><span>cautionary tale</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="offshore subsidiary" id="chip-offshore_subsidiary"><span>offshore subsidiary</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="fallout" id="chip-fallout"><span>fallout</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="fabricating assets" id="chip-fabricating_assets"><span>fabricating assets</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="forgery" id="chip-forgery"><span>forgery</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="stellar" id="chip-stellar"><span>stellar</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="corporate governance" id="chip-corporate_governance"><span>corporate governance</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div><div class="word-chip" data-word="market manipulation" id="chip-market_manipulation"><span>market manipulation</span><span style="font-size:10px;opacity:.4;font-family:&#39;DM Mono&#39;,monospace">click</span></div></div>
+    </div>
+    <div>
+      <div class="match-col-lbl">Definitions</div>
+      <div id="def-slots"><div class="def-slot" data-correct="fallout"><div class="def-slot-text">Adverse consequences following a negative event.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: fallout</div></div><div class="def-slot" data-correct="offshore subsidiary"><div class="def-slot-text">A company registered in a foreign, low-tax jurisdiction.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: offshore subsidiary</div></div><div class="def-slot" data-correct="corporate governance"><div class="def-slot-text">Systems controlling how a company is directed and overseen.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: corporate governance</div></div><div class="def-slot" data-correct="forgery"><div class="def-slot-text">A fraudulently produced document intended to deceive.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: forgery</div></div><div class="def-slot" data-correct="stellar"><div class="def-slot-text">Exceptionally impressive; outstandingly good.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: stellar</div></div><div class="def-slot" data-correct="cautionary tale"><div class="def-slot-text">A story that warns against a dangerous course of action.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: cautionary tale</div></div><div class="def-slot" data-correct="market manipulation"><div class="def-slot-text">Illegally distorting financial markets for personal gain.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: market manipulation</div></div><div class="def-slot" data-correct="deception"><div class="def-slot-text">Deliberately causing someone to believe a falsehood.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: deception</div></div><div class="def-slot" data-correct="liquid securities"><div class="def-slot-text">Financial assets easily and quickly converted to cash.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: liquid securities</div></div><div class="def-slot" data-correct="fabricating assets"><div class="def-slot-text">Inventing financial resources that do not actually exist.</div><div class="placed-area"></div><div class="correct-hint">✓ correct: fabricating assets</div></div></div>
+    </div>
+  </div>
+  <div class="match-controls">
+    <button class="btn-check" onclick="checkMatch()">Check answers</button>
+    <button class="btn-reset-match" onclick="resetMatch()">Reset matching</button>
+    <span class="match-score-badge" id="match-score" style="display: none;"></span>
+  </div>
+</section>
+
+<!-- ═══ COMPREHENSION ═══ -->
+<section id="comprehension" class="section">
+  <div class="score-bar">
+    <span class="score-lbl">Score</span>
+    <div class="score-track"><div class="score-fill" id="comp-fill"></div></div>
+    <span class="score-num" id="comp-num">0 / 8</span>
+  </div>
+  <div class="section-intro">Choose the best answer — click to reveal feedback</div>
+  <div id="comp-questions"><div class="card"><div class="card-hdr"><div class="qi-num">Question 1 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">What was the first sign that something might be wrong with Parmalat?</div>
+        <div class="opts"><button class="opt" data-qi="1" onclick="answerQ(1,0,1)"><span class="opt-ltr">A</span>Auditors refused to sign off on the financial reports</button><button class="opt" data-qi="1" onclick="answerQ(1,1,1)"><span class="opt-ltr">B</span>The company had difficulty selling €500 million worth of bonds</button><button class="opt" data-qi="1" onclick="answerQ(1,2,1)"><span class="opt-ltr">C</span>A Bank of America employee exposed the fraud</button><button class="opt" data-qi="1" onclick="answerQ(1,3,1)"><span class="opt-ltr">D</span>Italian regulators launched an investigation</button></div>
+        <div class="q-fb" id="qfb-1"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 2 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">What was the purpose of the Bonlat Financing Corporation?</div>
+        <div class="opts"><button class="opt" data-qi="2" onclick="answerQ(2,0,2)"><span class="opt-ltr">A</span>To manage the company's international dairy operations</button><button class="opt" data-qi="2" onclick="answerQ(2,1,2)"><span class="opt-ltr">B</span>To provide a genuine cash reserve for emergencies</button><button class="opt" data-qi="2" onclick="answerQ(2,2,2)"><span class="opt-ltr">C</span>To act as a supposedly legitimate holder of billions in assets</button><button class="opt" data-qi="2" onclick="answerQ(2,3,2)"><span class="opt-ltr">D</span>To issue bonds on behalf of Parmalat</button></div>
+        <div class="q-fb" id="qfb-2"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 3 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">How was the fraud ultimately discovered?</div>
+        <div class="opts"><button class="opt" data-qi="3" onclick="answerQ(3,0,2)"><span class="opt-ltr">A</span>An internal whistleblower came forward with documents</button><button class="opt" data-qi="3" onclick="answerQ(3,1,2)"><span class="opt-ltr">B</span>Italian tax authorities discovered irregularities</button><button class="opt" data-qi="3" onclick="answerQ(3,2,2)"><span class="opt-ltr">C</span>Bank of America confirmed that the account claimed to hold billions did not exist</button><button class="opt" data-qi="3" onclick="answerQ(3,3,2)"><span class="opt-ltr">D</span>A journalist published leaked financial documents</button></div>
+        <div class="q-fb" id="qfb-3"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 4 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">What does the term "black hole" refer to in the context of this story?</div>
+        <div class="opts"><button class="opt" data-qi="4" onclick="answerQ(4,0,1)"><span class="opt-ltr">A</span>A secret offshore account holding illicit funds</button><button class="opt" data-qi="4" onclick="answerQ(4,1,1)"><span class="opt-ltr">B</span>A massive, unexplained gap in the company's finances</button><button class="opt" data-qi="4" onclick="answerQ(4,2,1)"><span class="opt-ltr">C</span>The Cayman Islands subsidiary used to conceal money</button><button class="opt" data-qi="4" onclick="answerQ(4,3,1)"><span class="opt-ltr">D</span>The period of deception before the fraud was discovered</button></div>
+        <div class="q-fb" id="qfb-4"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 5 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">How long had the fraud been ongoing when it was discovered?</div>
+        <div class="opts"><button class="opt" data-qi="5" onclick="answerQ(5,0,2)"><span class="opt-ltr">A</span>A few months</button><button class="opt" data-qi="5" onclick="answerQ(5,1,2)"><span class="opt-ltr">B</span>Approximately three years</button><button class="opt" data-qi="5" onclick="answerQ(5,2,2)"><span class="opt-ltr">C</span>Over a decade</button><button class="opt" data-qi="5" onclick="answerQ(5,3,2)"><span class="opt-ltr">D</span>Since the company's founding</button></div>
+        <div class="q-fb" id="qfb-5"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 6 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">What was Calisto Tanzi ultimately convicted of?</div>
+        <div class="opts"><button class="opt" data-qi="6" onclick="answerQ(6,0,1)"><span class="opt-ltr">A</span>Tax evasion and money laundering</button><button class="opt" data-qi="6" onclick="answerQ(6,1,1)"><span class="opt-ltr">B</span>Market manipulation and fraudulent bankruptcy</button><button class="opt" data-qi="6" onclick="answerQ(6,2,1)"><span class="opt-ltr">C</span>Insider trading and bribery</button><button class="opt" data-qi="6" onclick="answerQ(6,3,1)"><span class="opt-ltr">D</span>Forgery and embezzlement only</button></div>
+        <div class="q-fb" id="qfb-6"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 7 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">What broader consequence did the Parmalat scandal have for European finance?</div>
+        <div class="opts"><button class="opt" data-qi="7" onclick="answerQ(7,0,2)"><span class="opt-ltr">A</span>It led to the collapse of the euro</button><button class="opt" data-qi="7" onclick="answerQ(7,1,2)"><span class="opt-ltr">B</span>It caused a permanent ban on offshore subsidiaries</button><button class="opt" data-qi="7" onclick="answerQ(7,2,2)"><span class="opt-ltr">C</span>It prompted regulators to tighten financial rules and oversight</button><button class="opt" data-qi="7" onclick="answerQ(7,3,2)"><span class="opt-ltr">D</span>It led directly to the 2008 financial crisis</button></div>
+        <div class="q-fb" id="qfb-7"></div>
+      </div></div><div class="card"><div class="card-hdr"><div class="qi-num">Question 8 of 8</div></div>
+      <div class="card-body">
+        <div class="qi-text">Why is the expression "Europe's Enron" used to describe the Parmalat scandal?</div>
+        <div class="opts"><button class="opt" data-qi="8" onclick="answerQ(8,0,2)"><span class="opt-ltr">A</span>Because both companies were in the energy sector</button><button class="opt" data-qi="8" onclick="answerQ(8,1,2)"><span class="opt-ltr">B</span>Because Enron was founded by an Italian executive</button><button class="opt" data-qi="8" onclick="answerQ(8,2,2)"><span class="opt-ltr">C</span>Because both scandals involved fabricated financial statements concealing massive fraud at major corporations</button><button class="opt" data-qi="8" onclick="answerQ(8,3,2)"><span class="opt-ltr">D</span>Because the same auditing firm was responsible for both companies</button></div>
+        <div class="q-fb" id="qfb-8"></div>
+      </div></div></div>
+</section>
+
+<!-- ═══ GRAMMAR ═══ -->
+<section id="grammar" class="section">
+  <div class="section-intro">Modal perfect structures — C1 grammar focus</div>
+
+  <div class="grammar-intro">
+    <h3>The Modal Perfect</h3>
+    <p>Modal perfect structures combine a modal verb with <strong style="color:var(--gold)">have + past participle</strong> to discuss hypothetical, deduced, or regretted past situations. All examples below are drawn from the Parmalat case.</p>
+    <table class="stbl">
+      <tbody><tr><th>Structure</th><th>Meaning</th><th>Example from the case</th></tr>
+      <tr><td>could have + pp</td><td>unrealised past possibility</td><td>The fraud could have been detected earlier.</td></tr>
+      <tr><td>should have + pp</td><td>past obligation not fulfilled</td><td>Auditors should have verified the account.</td></tr>
+      <tr><td>shouldn't have + pp</td><td>past action that was wrong</td><td>Tanzi shouldn't have forged the documents.</td></tr>
+      <tr><td>must have + pp</td><td>certain logical deduction</td><td>He must have known the accounts were false.</td></tr>
+      <tr><td>can't have + pp</td><td>impossible past deduction</td><td>The auditors can't have checked carefully.</td></tr>
+      <tr><td>might have + pp</td><td>weak past possibility</td><td>Stricter rules might have prevented this.</td></tr>
+      <tr><td>would have + pp</td><td>hypothetical past result</td><td>Investors would have sold if they had known.</td></tr>
+      <tr><td>needn't have + pp</td><td>unnecessary past action</td><td>The banks needn't have trusted the documents.</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title">Exercise 1 — Choose the Correct Modal</div>
+      <div class="card-sub">Select the modal perfect that best fits the meaning shown in brackets.</div>
+    </div>
+    <div class="card-body" id="gram-ex1"><div class="score-bar" style="margin-bottom: 1rem;"><span class="score-lbl">Score</span><div class="score-track"><div class="score-fill" id="g1-fill"></div></div><span class="score-num" id="g1-num">0 / 6</span></div><div class="qi"><div class="qi-num">Question 1</div>
+      <div class="qi-text">The auditors <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> the Bank of America account much sooner. [past obligation not fulfilled]</div>
+      <div class="opts" data-g1g="1"><button class="opt" onclick="answerG1(1,0,1,this)" data-g1="1"><span class="opt-ltr">A</span>must have verified</button><button class="opt" onclick="answerG1(1,1,1,this)" data-g1="1"><span class="opt-ltr">B</span>should have verified</button><button class="opt" onclick="answerG1(1,2,1,this)" data-g1="1"><span class="opt-ltr">C</span>could have verifying</button><button class="opt" onclick="answerG1(1,3,1,this)" data-g1="1"><span class="opt-ltr">D</span>needn't have verified</button></div>
+      <div class="q-fb" id="g1fb-1"></div></div><div class="qi"><div class="qi-num">Question 2</div>
+      <div class="qi-text">Given that Tanzi signed off on the accounts every year, he <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> about the missing billions. [certain logical deduction]</div>
+      <div class="opts" data-g1g="2"><button class="opt" onclick="answerG1(2,0,2,this)" data-g1="2"><span class="opt-ltr">A</span>might have known</button><button class="opt" onclick="answerG1(2,1,2,this)" data-g1="2"><span class="opt-ltr">B</span>needn't have known</button><button class="opt" onclick="answerG1(2,2,2,this)" data-g1="2"><span class="opt-ltr">C</span>must have known</button><button class="opt" onclick="answerG1(2,3,2,this)" data-g1="2"><span class="opt-ltr">D</span>would have known</button></div>
+      <div class="q-fb" id="g1fb-2"></div></div><div class="qi"><div class="qi-num">Question 3</div>
+      <div class="qi-text">Stricter European regulations <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> the collapse. [weak/uncertain past possibility]</div>
+      <div class="opts" data-g1g="3"><button class="opt" onclick="answerG1(3,0,2,this)" data-g1="3"><span class="opt-ltr">A</span>must have prevented</button><button class="opt" onclick="answerG1(3,1,2,this)" data-g1="3"><span class="opt-ltr">B</span>should have prevented</button><button class="opt" onclick="answerG1(3,2,2,this)" data-g1="3"><span class="opt-ltr">C</span>might have prevented</button><button class="opt" onclick="answerG1(3,3,2,this)" data-g1="3"><span class="opt-ltr">D</span>can't have prevented</button></div>
+      <div class="q-fb" id="g1fb-3"></div></div><div class="qi"><div class="qi-num">Question 4</div>
+      <div class="qi-text">The document was an obvious forgery. The officials <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> it properly. [impossible past deduction]</div>
+      <div class="opts" data-g1g="4"><button class="opt" onclick="answerG1(4,0,1,this)" data-g1="4"><span class="opt-ltr">A</span>shouldn't have checked</button><button class="opt" onclick="answerG1(4,1,1,this)" data-g1="4"><span class="opt-ltr">B</span>can't have checked</button><button class="opt" onclick="answerG1(4,2,1,this)" data-g1="4"><span class="opt-ltr">C</span>needn't have checked</button><button class="opt" onclick="answerG1(4,3,1,this)" data-g1="4"><span class="opt-ltr">D</span>must have checked</button></div>
+      <div class="q-fb" id="g1fb-4"></div></div><div class="qi"><div class="qi-num">Question 5</div>
+      <div class="qi-text">Small investors <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> their entire savings in one company. It was extremely risky. [past action criticised]</div>
+      <div class="opts" data-g1g="5"><button class="opt" onclick="answerG1(5,0,2,this)" data-g1="5"><span class="opt-ltr">A</span>couldn't have put</button><button class="opt" onclick="answerG1(5,1,2,this)" data-g1="5"><span class="opt-ltr">B</span>would have put</button><button class="opt" onclick="answerG1(5,2,2,this)" data-g1="5"><span class="opt-ltr">C</span>shouldn't have put</button><button class="opt" onclick="answerG1(5,3,2,this)" data-g1="5"><span class="opt-ltr">D</span>might have put</button></div>
+      <div class="q-fb" id="g1fb-5"></div></div><div class="qi"><div class="qi-num">Question 6</div>
+      <div class="qi-text">The company <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span> using offshore accounts legitimately, but investigators found no evidence. [past possibility — unconfirmed]</div>
+      <div class="opts" data-g1g="6"><button class="opt" onclick="answerG1(6,0,3,this)" data-g1="6"><span class="opt-ltr">A</span>should have been</button><button class="opt" onclick="answerG1(6,1,3,this)" data-g1="6"><span class="opt-ltr">B</span>can't have been</button><button class="opt" onclick="answerG1(6,2,3,this)" data-g1="6"><span class="opt-ltr">C</span>must have been</button><button class="opt" onclick="answerG1(6,3,3,this)" data-g1="6"><span class="opt-ltr">D</span>could have been</button></div>
+      <div class="q-fb" id="g1fb-6"></div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title">Exercise 2 — Complete the Sentence</div>
+      <div class="card-sub">Write the correct modal perfect form using the verb in brackets. Click Check or Check All.</div>
+    </div>
+    <div class="card-body" id="gram-ex2"><div class="qi"><div class="qi-num">Question 1</div>
+      <div class="gram-sentence">Regulators <input class="gram-input" id="g2-1" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (SHOULD / intervene) years before the collapse, but they failed to act.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(1)">Check</button>
+        <span class="badge-ok" id="g2ok-1">✓ Correct</span>
+        <span class="badge-no" id="g2no-1"></span>
+        <span class="badge-ans" id="g2ans-1">Answer: should have intervened</span>
+      </div>
+      <div class="q-fb" id="g2fb-1" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 2</div>
+      <div class="gram-sentence">The forged document was so crude that any experienced banker <input class="gram-input" id="g2-2" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (CAN'T / accept) it as genuine.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(2)">Check</button>
+        <span class="badge-ok" id="g2ok-2">✓ Correct</span>
+        <span class="badge-no" id="g2no-2"></span>
+        <span class="badge-ans" id="g2ans-2">Answer: can't have accepted</span>
+      </div>
+      <div class="q-fb" id="g2fb-2" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 3</div>
+      <div class="gram-sentence">If the board had acted responsibly, they <input class="gram-input" id="g2-3" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (WOULD / demand) independent verification of the account.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(3)">Check</button>
+        <span class="badge-ok" id="g2ok-3">✓ Correct</span>
+        <span class="badge-no" id="g2no-3"></span>
+        <span class="badge-ans" id="g2ans-3">Answer: would have demanded</span>
+      </div>
+      <div class="q-fb" id="g2fb-3" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 4</div>
+      <div class="gram-sentence">Tanzi <input class="gram-input" id="g2-4" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (NEEDN'T / create) such an elaborate fraud — the company was already profitable in some areas.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(4)">Check</button>
+        <span class="badge-ok" id="g2ok-4">✓ Correct</span>
+        <span class="badge-no" id="g2no-4"></span>
+        <span class="badge-ans" id="g2ans-4">Answer: needn't have created</span>
+      </div>
+      <div class="q-fb" id="g2fb-4" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 5</div>
+      <div class="gram-sentence">Investigators believe the deception <input class="gram-input" id="g2-5" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (MUST / begin) long before the early 2000s.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(5)">Check</button>
+        <span class="badge-ok" id="g2ok-5">✓ Correct</span>
+        <span class="badge-no" id="g2no-5"></span>
+        <span class="badge-ans" id="g2ans-5">Answer: must have begun</span>
+      </div>
+      <div class="q-fb" id="g2fb-5" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 6</div>
+      <div class="gram-sentence">With better legal protections, thousands of small investors <input class="gram-input" id="g2-6" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> (MIGHT / lose) far less of their savings.</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(6)">Check</button>
+        <span class="badge-ok" id="g2ok-6">✓ Correct</span>
+        <span class="badge-no" id="g2no-6"></span>
+        <span class="badge-ans" id="g2ans-6">Answer: might have lost</span>
+      </div>
+      <div class="q-fb" id="g2fb-6" style="margin-top:5px;"></div></div><button class="check-all-btn">✓ Check All Answers</button></div>
+  </div>
+
+  <div class="card">
+    <div class="card-hdr">
+      <div class="card-title">Exercise 3 — Error Correction</div>
+      <div class="card-sub">Each sentence contains one modal perfect error. Rewrite the underlined section correctly.</div>
+    </div>
+    <div class="card-body" id="gram-ex3"><div class="qi"><div class="qi-num">Question 1</div>
+      <div class="gram-sentence">The auditors <u>must verified</u> the account balance before approving the financial statements.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">must verified</span> →</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-1" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(1)">Check</button>
+        <span class="badge-ok" id="g3ok-1">✓ Correct</span>
+        <span class="badge-no" id="g3no-1"></span>
+        <span class="badge-ans" id="g3ans-1">Answer: must have verified</span>
+      </div>
+      <div class="q-fb" id="g3fb-1" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 2</div>
+      <div class="gram-sentence">Tanzi <u>shouldn't forged</u> the Bank of America documents — it was this that ultimately destroyed him.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">shouldn't forged</span> →</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-2" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(2)">Check</button>
+        <span class="badge-ok" id="g3ok-2">✓ Correct</span>
+        <span class="badge-no" id="g3no-2"></span>
+        <span class="badge-ans" id="g3ans-2">Answer: shouldn't have forged</span>
+      </div>
+      <div class="q-fb" id="g3fb-2" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 3</div>
+      <div class="gram-sentence">The collapse <u>could been</u> avoided if the board had demanded transparent accounting.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">could been</span> →</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-3" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(3)">Check</button>
+        <span class="badge-ok" id="g3ok-3">✓ Correct</span>
+        <span class="badge-no" id="g3no-3"></span>
+        <span class="badge-ans" id="g3ans-3">Answer: could have been</span>
+      </div>
+      <div class="q-fb" id="g3fb-3" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 4</div>
+      <div class="gram-sentence">Investors <u>should have been realising</u> that a profitable company would not need to issue so many bonds.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">should have been realising</span> →</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-4" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(4)">Check</button>
+        <span class="badge-ok" id="g3ok-4">✓ Correct</span>
+        <span class="badge-no" id="g3no-4"></span>
+        <span class="badge-ans" id="g3ans-4">Answer: should have realised</span>
+      </div>
+      <div class="q-fb" id="g3fb-4" style="margin-top:5px;"></div></div><div class="qi"><div class="qi-num">Question 5</div>
+      <div class="gram-sentence">The banks <u>might have been suspecting</u> something was wrong when the bond sale failed, but they continued to lend.</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:&#39;DM Mono&#39;,monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">might have been suspecting</span> →</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-5" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(5)">Check</button>
+        <span class="badge-ok" id="g3ok-5">✓ Correct</span>
+        <span class="badge-no" id="g3no-5"></span>
+        <span class="badge-ans" id="g3ans-5">Answer: might have suspected</span>
+      </div>
+      <div class="q-fb" id="g3fb-5" style="margin-top:5px;"></div></div><button class="check-all-btn">✓ Check All Answers</button></div>
+  </div>
+</section>
+
+<!-- ═══ DISCUSSION ═══ -->
+<section id="discussion" class="section active">
+  <div class="section-intro">Click to reveal language support and a model answer opening</div>
+  <div id="discuss-list"><div class="di"><button class="di-trigger" onclick="this.closest(&#39;.di&#39;).classList.toggle(&#39;open&#39;)">
+      <span class="di-type">Analysis</span>
+      <span class="di-q">The fraud lasted "over a decade" without detection. What does this suggest about the effectiveness of financial oversight and corporate governance at the time?</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"></polyline></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">Useful language: <em>This raises serious questions about… / One could argue that… / The fact that this went undetected for so long suggests… / What is particularly striking is…</em></div>
+      <div class="di-sample"><strong>Model opening:</strong> "What is particularly striking about the Parmalat case is not merely the scale of the fraud, but its duration. That such a deception could continue for over a decade points to serious systemic failures — not just within the company itself, but in the external bodies charged with holding it to account. One could argue that the auditors, banks, and regulators were either complicit through negligence, or that the mechanisms for oversight were simply inadequate for detecting sophisticated, long-term fraud of this kind."</div>
+    </div></div></div><div class="di"><button class="di-trigger" onclick="this.closest(&#39;.di&#39;).classList.toggle(&#39;open&#39;)">
+      <span class="di-type">Ethical</span>
+      <span class="di-q">"Corporate greed" is cited as a root cause. To what extent do you think individuals are responsible for large-scale corporate fraud versus the structures and incentives that organisations create?</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"></polyline></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">Useful language: <em>While personal culpability is undeniable… / It would be overly simplistic to… / The broader systemic context cannot be ignored… / There is a compelling argument that…</em></div>
+      <div class="di-sample"><strong>Model opening:</strong> "While personal culpability is undeniable — Tanzi and his executives made deliberate choices to deceive — it would be overly simplistic to attribute corporate fraud solely to individual greed. There is a compelling argument that the structures of large corporations, combined with short-term market pressures and the enormous personal rewards tied to apparent success, create environments in which fraudulent behaviour becomes, if not inevitable, at least far more likely."</div>
+    </div></div></div><div class="di"><button class="di-trigger" onclick="this.closest(&#39;.di&#39;).classList.toggle(&#39;open&#39;)">
+      <span class="di-type">Critical Thinking</span>
+      <span class="di-q">The documentary compares Parmalat to Enron. What are the advantages and limitations of using such comparisons to understand major financial scandals?</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"></polyline></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">Useful language: <em>Such comparisons are useful insofar as… / However, the risk of drawing direct parallels is… / Each case has its own specific context, which… / The comparison risks oversimplifying…</em></div>
+      <div class="di-sample"><strong>Model opening:</strong> "Such comparisons are useful insofar as they provide an accessible framework for understanding complex events — labelling Parmalat 'Europe's Enron' immediately conveys the scale and nature of the fraud. However, the risk of drawing such direct parallels is that it can obscure the specific circumstances of each case. The regulatory environment, corporate culture, and economic conditions in early 2000s Italy were quite different from those in the United States, and conflating the two may lead to oversimplified lessons."</div>
+    </div></div></div><div class="di"><button class="di-trigger" onclick="this.closest(&#39;.di&#39;).classList.toggle(&#39;open&#39;)">
+      <span class="di-type">Application</span>
+      <span class="di-q">The story refers to the importance of "looking beyond the surface" in business. In what practical ways can investors, journalists, and regulators better detect warning signs of corporate fraud?</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"></polyline></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">Useful language: <em>One practical measure would be… / A more sceptical approach to… / The lesson here is that… / Had there been greater scrutiny of…</em></div>
+      <div class="di-sample"><strong>Model opening:</strong> "One practical measure would be requiring independent third-party verification of any large cash reserves, rather than accepting company-provided documents at face value. Had there been greater scrutiny of Parmalat's claimed Cayman Islands account — or a legal requirement to verify such claims directly with the named institution — the fraud might have been detected far sooner. More broadly, the lesson here is that conspicuously high returns or unexplained cash reserves should trigger heightened, not reduced, scrutiny."</div>
+    </div></div></div><div class="di"><button class="di-trigger" onclick="this.closest(&#39;.di&#39;).classList.toggle(&#39;open&#39;)">
+      <span class="di-type">Broader Implications</span>
+      <span class="di-q">The scandal "forced regulators to tighten financial rules." How do you think financial regulation should be balanced with the freedom businesses need to operate and innovate?</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"></polyline></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">Useful language: <em>There is an inherent tension between… / Those who favour lighter regulation argue… / On the other hand, the evidence suggests… / A proportionate approach might involve…</em></div>
+      <div class="di-sample"><strong>Model opening:</strong> "There is an inherent tension between robust regulatory oversight and the freedom businesses need to operate efficiently and take entrepreneurial risks. Those who favour lighter regulation argue that excessive compliance burdens stifle innovation and divert resources from productive activities. On the other hand, the evidence from cases like Parmalat and Enron suggests that without strong, proactive enforcement mechanisms, market forces alone are insufficient to prevent large-scale fraud — particularly when deceptive companies are actively working to circumvent scrutiny."</div>
+    </div></div></div></div>
+</section>
+
+</div>
+<footer>C1 English Lesson · The Parmalat Scandal · Based on authentic documentary material</footer>
+
+<script>
+// ═══ NAVIGATION ═══
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══ RESET ALL ═══
+function resetAll() {
+  if (!confirm('Reset all exercises? Your answers will be cleared.')) return;
+  // Reset comprehension
+  compScore = 0; compAnswered = 0;
+  document.getElementById('comp-fill').style.width = '0%';
+  document.getElementById('comp-num').textContent = '0 / 8';
+  buildComprehension();
+  // Reset match
+  resetMatch();
+  // Reset grammar
+  buildGramEx1(); buildGramEx2(); buildGramEx3();
+  // Return to reading tab
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById('reading').classList.add('active');
+  document.querySelector('.nav-btn').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══ MATCHING ═══
+const matchData = [
+  { word: 'stellar', def: 'Exceptionally impressive; outstandingly good.' },
+  { word: 'forgery', def: 'A fraudulently produced document intended to deceive.' },
+  { word: 'fallout', def: 'Adverse consequences following a negative event.' },
+  { word: 'deception', def: 'Deliberately causing someone to believe a falsehood.' },
+  { word: 'offshore subsidiary', def: 'A company registered in a foreign, low-tax jurisdiction.' },
+  { word: 'corporate governance', def: 'Systems controlling how a company is directed and overseen.' },
+  { word: 'liquid securities', def: 'Financial assets easily and quickly converted to cash.' },
+  { word: 'cautionary tale', def: 'A story that warns against a dangerous course of action.' },
+  { word: 'market manipulation', def: 'Illegally distorting financial markets for personal gain.' },
+  { word: 'fabricating assets', def: 'Inventing financial resources that do not actually exist.' },
+];
+
+let selChip = null;
+
+function buildMatch() {
+  const words = [...matchData].sort(() => Math.random() - 0.5);
+  const defs  = [...matchData].sort(() => Math.random() - 0.5);
+  selChip = null;
+  document.getElementById('word-bank').innerHTML = '';
+  document.getElementById('def-slots').innerHTML = '';
+  document.getElementById('match-score').style.display = 'none';
+
+  words.forEach(item => {
+    const chip = document.createElement('div');
+    chip.className = 'word-chip';
+    chip.dataset.word = item.word;
+    chip.id = 'chip-' + item.word.replace(/\s+/g, '_');
+    chip.innerHTML = `<span>${item.word}</span><span style="font-size:10px;opacity:.4;font-family:'DM Mono',monospace">click</span>`;
+    chip.addEventListener('click', () => {
+      if (chip.classList.contains('mok') || chip.classList.contains('mno')) return;
+      document.querySelectorAll('.word-chip.sel').forEach(c => c.classList.remove('sel'));
+      if (selChip === chip) { selChip = null; return; }
+      chip.classList.add('sel'); selChip = chip;
+    });
+    document.getElementById('word-bank').appendChild(chip);
+  });
+
+  defs.forEach(item => {
+    const slot = document.createElement('div');
+    slot.className = 'def-slot';
+    slot.dataset.correct = item.word;
+    slot.innerHTML = `<div class="def-slot-text">${item.def}</div><div class="placed-area"></div><div class="correct-hint">&#10003; correct: ${item.word}</div>`;
+    slot.addEventListener('click', () => {
+      if (!selChip || slot.classList.contains('locked')) return;
+      // remove from previous slot
+      document.querySelectorAll('.def-slot').forEach(s => {
+        if (s.dataset.placed === selChip.dataset.word) {
+          s.dataset.placed = ''; s.querySelector('.placed-area').innerHTML = ''; s.classList.remove('placed');
+        }
+      });
+      // clear prev word on this slot
+      if (slot.dataset.placed) {
+        const prev = document.getElementById('chip-' + slot.dataset.placed.replace(/\s+/g, '_'));
+        if (prev) prev.classList.remove('placed');
+      }
+      slot.dataset.placed = selChip.dataset.word;
+      slot.classList.add('placed');
+      const pa = slot.querySelector('.placed-area');
+      const pc = document.createElement('span'); pc.className = 'placed-chip';
+      pc.innerHTML = selChip.dataset.word + ' <span style="opacity:.4">&#10005;</span>';
+      pc.addEventListener('click', e => {
+        e.stopPropagation();
+        const wc = document.getElementById('chip-' + slot.dataset.placed.replace(/\s+/g, '_'));
+        if (wc) wc.classList.remove('placed');
+        slot.dataset.placed = ''; slot.classList.remove('placed'); pa.innerHTML = '';
+      });
+      pa.innerHTML = ''; pa.appendChild(pc);
+      selChip.classList.add('placed'); selChip.classList.remove('sel'); selChip = null;
+    });
+    document.getElementById('def-slots').appendChild(slot);
+  });
+}
+
+function checkMatch() {
+  let score = 0;
+  document.querySelectorAll('.def-slot').forEach(slot => {
+    slot.classList.add('locked');
+    const placed = slot.dataset.placed, correct = slot.dataset.correct;
+    const hint = slot.querySelector('.correct-hint');
+    const pa = slot.querySelector('.placed-area');
+    if (placed === correct) {
+      score++;
+      const chip = document.getElementById('chip-' + placed.replace(/\s+/g, '_'));
+      if (chip) { chip.classList.add('mok'); chip.classList.remove('placed'); }
+      pa.innerHTML = `<span class="def-slot-ans ok">&#10003; ${placed}</span>`;
+    } else {
+      if (placed) {
+        const chip = document.getElementById('chip-' + placed.replace(/\s+/g, '_'));
+        if (chip) chip.classList.add('mno');
+        pa.innerHTML = `<span class="def-slot-ans no">&#10007; ${placed}</span>`;
+      }
+      hint.style.display = 'block';
+    }
+  });
+  const badge = document.getElementById('match-score');
+  badge.textContent = score + ' / ' + matchData.length + ' correct';
+  badge.style.display = 'inline-block';
+}
+
+function resetMatch() {
+  buildMatch();
+}
+
+// ═══ COMPREHENSION ═══
+const compData = [
+  {
+    n: 1, text: 'What was the first sign that something might be wrong with Parmalat?',
+    opts: [
+      "Auditors refused to sign off on the financial reports",
+      "The company had difficulty selling €500 million worth of bonds",
+      "A Bank of America employee exposed the fraud",
+      "Italian regulators launched an investigation"
+    ],
+    correct: 1,
+    ok: 'Correct. The first crack appeared when investors became nervous because a supposedly cash-rich company struggled to sell new bonds.',
+    no: 'The text states: "The first crack appeared in early 2003 when Parmalat had trouble selling 500 million euros worth of new bonds."'
+  },
+  {
+    n: 2, text: 'What was the purpose of the Bonlat Financing Corporation?',
+    opts: [
+      "To manage the company's international dairy operations",
+      "To provide a genuine cash reserve for emergencies",
+      "To act as a supposedly legitimate holder of billions in assets",
+      "To issue bonds on behalf of Parmalat"
+    ],
+    correct: 2,
+    ok: 'Correct. Bonlat was used to falsely reassure investors and auditors that the company held €3.95 billion — a claim that turned out to be completely fabricated.',
+    no: 'Bonlat was the offshore subsidiary used to create the illusion of a massive cash reserve. It was not a genuine financial entity.'
+  },
+  {
+    n: 3, text: 'How was the fraud ultimately discovered?',
+    opts: [
+      "An internal whistleblower came forward with documents",
+      "Italian tax authorities discovered irregularities",
+      "Bank of America confirmed that the account claimed to hold billions did not exist",
+      "A journalist published leaked financial documents"
+    ],
+    correct: 2,
+    ok: 'Correct. When Bank of America was contacted to verify the account, they confirmed it did not exist — the document had been a crude forgery.',
+    no: 'The discovery came when Bank of America was directly contacted. Their response confirmed the account — and the billions it supposedly held — were entirely fictitious.'
+  },
+  {
+    n: 4, text: 'What does the term "black hole" refer to in the context of this story?',
+    opts: [
+      "A secret offshore account holding illicit funds",
+      "A massive, unexplained gap in the company's finances",
+      "The Cayman Islands subsidiary used to conceal money",
+      "The period of deception before the fraud was discovered"
+    ],
+    correct: 1,
+    ok: 'Correct. The "black hole" is a metaphor for the enormous unexplained deficit in the company\'s finances — ultimately discovered to be close to €14 billion.',
+    no: '"Black hole" is used metaphorically to describe an enormous, unexplained financial deficit — money that should have existed but was entirely absent.'
+  },
+  {
+    n: 5, text: 'How long had the fraud been ongoing when it was discovered?',
+    opts: [
+      'A few months',
+      'Approximately three years',
+      'Over a decade',
+      'Since the company\'s founding'
+    ],
+    correct: 2,
+    ok: 'Correct. The text states that "for over a decade, the company had been systematically hiding losses and fabricating assets."',
+    no: 'The passage explicitly states the fraud had been going on for "over a decade" — making it a sustained, long-term deception rather than a recent development.'
+  },
+  {
+    n: 6, text: 'What was Calisto Tanzi ultimately convicted of?',
+    opts: [
+      'Tax evasion and money laundering',
+      'Market manipulation and fraudulent bankruptcy',
+      'Insider trading and bribery',
+      'Forgery and embezzlement only'
+    ],
+    correct: 1,
+    ok: 'Correct. The transcript states Tanzi "was eventually sentenced to years in prison for market manipulation and fraudulent bankruptcy."',
+    no: 'According to the text, Tanzi was sentenced specifically for "market manipulation and fraudulent bankruptcy."'
+  },
+  {
+    n: 7, text: 'What broader consequence did the Parmalat scandal have for European finance?',
+    opts: [
+      'It led to the collapse of the euro',
+      'It caused a permanent ban on offshore subsidiaries',
+      'It prompted regulators to tighten financial rules and oversight',
+      'It led directly to the 2008 financial crisis'
+    ],
+    correct: 2,
+    ok: 'Correct. The text notes the scandal "forced regulators in Italy and across Europe to tighten financial rules and increase oversight."',
+    no: 'The passage says the scandal forced regulators "to tighten financial rules and increase oversight" — a significant regulatory legacy.'
+  },
+  {
+    n: 8, text: 'Why is the expression "Europe\'s Enron" used to describe the Parmalat scandal?',
+    opts: [
+      'Because both companies were in the energy sector',
+      'Because Enron was founded by an Italian executive',
+      'Because both scandals involved fabricated financial statements concealing massive fraud at major corporations',
+      'Because the same auditing firm was responsible for both companies'
+    ],
+    correct: 2,
+    ok: 'Correct. Both Enron and Parmalat involved large, respected companies that used deception to conceal catastrophic financial failures — making the comparison apt as a shorthand for large-scale corporate fraud.',
+    no: 'The comparison draws on the shared pattern: respected companies using elaborate deception to hide massive financial fraud, resulting in catastrophic collapse and huge losses for investors.'
+  },
+];
+
+
+let compScore = 0, compAnswered = 0;
+
+function buildComprehension() {
+  const container = document.getElementById('comp-questions');
+  container.innerHTML = '';
+  compData.forEach(q => {
+    const div = document.createElement('div'); div.className = 'card';
+    const opts = q.opts.map((o, i) =>
+      `<button class="opt" data-qi="${q.n}" onclick="answerQ(${q.n},${i},${q.correct})"><span class="opt-ltr">${String.fromCharCode(65+i)}</span>${o}</button>`
+    ).join('');
+    div.innerHTML = `<div class="card-hdr"><div class="qi-num">Question ${q.n} of ${compData.length}</div></div>
+      <div class="card-body">
+        <div class="qi-text">${q.text}</div>
+        <div class="opts">${opts}</div>
+        <div class="q-fb" id="qfb-${q.n}"></div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function answerQ(qn, oi, correct) {
+  const btns = document.querySelectorAll(`[data-qi="${qn}"]`);
+  if (btns[0].disabled) return;
+  btns.forEach(b => b.disabled = true);
+  const isRight = oi === correct;
+  btns[oi].classList.add(isRight ? 'correct' : 'wrong');
+  btns[correct].classList.add('correct');
+  const q = compData.find(d => d.n === qn);
+  const fb = document.getElementById('qfb-' + qn);
+  fb.className = 'q-fb show ' + (isRight ? 'correct' : 'wrong');
+  fb.textContent = isRight ? q.ok : q.no;
+  if (!btns[0].dataset.counted) {
+    btns[0].dataset.counted = '1';
+    compAnswered++;
+    if (isRight) compScore++;
+    document.getElementById('comp-fill').style.width = Math.round(compScore / compData.length * 100) + '%';
+    document.getElementById('comp-num').textContent = compScore + ' / ' + compData.length;
+  }
+}
+
+// ═══ GRAMMAR ═══
+const gramEx1 = [
+  { n:1, text:'The auditors ________ the Bank of America account much sooner. [past obligation not fulfilled]',
+    opts:['must have verified','should have verified','could have verifying',"needn't have verified"],
+    correct:1, exp:"should have verified — expresses a past obligation not fulfilled; auditors had a duty to check but failed." },
+  { n:2, text:'Given that Tanzi signed off on the accounts every year, he ________ about the missing billions. [certain logical deduction]',
+    opts:['might have known',"needn't have known",'must have known','would have known'],
+    correct:2, exp:"must have known — strong logical deduction; given the evidence, it is virtually certain he was aware." },
+  { n:3, text:'Stricter European regulations ________ the collapse. [weak/uncertain past possibility]',
+    opts:['must have prevented','should have prevented','might have prevented',"can't have prevented"],
+    correct:2, exp:"might have prevented — weak possibility; stricter rules could have made a difference, but we cannot be certain." },
+  { n:4, text:'The document was an obvious forgery. The officials ________ it properly. [impossible past deduction]',
+    opts:["shouldn't have checked","can't have checked","needn't have checked",'must have checked'],
+    correct:1, exp:"can't have checked — logical impossibility; if they had checked properly, they would have noticed the forgery." },
+  { n:5, text:'Small investors ________ their entire savings in one company. It was extremely risky. [past action criticised]',
+    opts:["couldn't have put",'would have put',"shouldn't have put",'might have put'],
+    correct:2, exp:"shouldn't have put — criticism of a past action; concentrating all savings in one company was unwise and is now regretted." },
+  { n:6, text:'The company ________ using offshore accounts legitimately, but investigators found no evidence. [past possibility — unconfirmed]',
+    opts:['should have been',"can't have been",'must have been','could have been'],
+    correct:3, exp:"could have been — unrealised past possibility; it was theoretically possible but no evidence was found." },
+];
+
+const gramEx2 = [
+  { n:1, before:'Regulators', after:'(SHOULD / intervene) years before the collapse, but they failed to act.', answer:'should have intervened', hint:'Past obligation not fulfilled: should have + past participle' },
+  { n:2, before:'The forged document was so crude that any experienced banker', after:"(CAN'T / accept) it as genuine.", answer:"can't have accepted", hint:"Impossible past deduction: can't have + past participle" },
+  { n:3, before:'If the board had acted responsibly, they', after:'(WOULD / demand) independent verification of the account.', answer:'would have demanded', hint:'Hypothetical past result: would have + past participle' },
+  { n:4, before:'Tanzi', after:"(NEEDN'T / create) such an elaborate fraud — the company was already profitable in some areas.", answer:"needn't have created", hint:"Unnecessary past action: needn't have + past participle" },
+  { n:5, before:'Investigators believe the deception', after:'(MUST / begin) long before the early 2000s.', answer:'must have begun', hint:'Certain logical deduction: must have + past participle' },
+  { n:6, before:'With better legal protections, thousands of small investors', after:'(MIGHT / lose) far less of their savings.', answer:'might have lost', hint:'Weak past possibility: might have + past participle' },
+];
+
+const gramEx3 = [
+  { n:1, sentence:'The auditors <u>must verified</u> the account balance before approving the financial statements.', error:'must verified', correct:'must have verified', exp:'Modal perfect needs have + past participle: must have verified.' },
+  { n:2, sentence:"Tanzi <u>shouldn't forged</u> the Bank of America documents — it was this that ultimately destroyed him.", error:"shouldn't forged", correct:"shouldn't have forged", exp:"Modal perfect: shouldn't have + past participle." },
+  { n:3, sentence:'The collapse <u>could been</u> avoided if the board had demanded transparent accounting.', error:'could been', correct:'could have been', exp:'Modal perfect requires have: could have been (avoided).' },
+  { n:4, sentence:'Investors <u>should have been realising</u> that a profitable company would not need to issue so many bonds.', error:'should have been realising', correct:'should have realised', exp:'Modal perfect uses the simple infinitive, not continuous: should have realised.' },
+  { n:5, sentence:'The banks <u>might have been suspecting</u> something was wrong when the bond sale failed, but they continued to lend.', error:'might have been suspecting', correct:'might have suspected', exp:"Simple form only: might have suspected (stative verbs like 'suspect' don't take continuous)." },
+];
+
+let g1score = 0, g1ans = new Set();
+
+function buildGramEx1() {
+  g1score = 0; g1ans = new Set();
+  const c = document.getElementById('gram-ex1');
+  const sb = document.createElement('div');
+  sb.className = 'score-bar'; sb.style.marginBottom = '1rem';
+  sb.innerHTML = '<span class="score-lbl">Score</span><div class="score-track"><div class="score-fill" id="g1-fill"></div></div><span class="score-num" id="g1-num">0 / 6</span>';
+  c.innerHTML = ''; c.appendChild(sb);
+  gramEx1.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    const tag = `<span style="font-family:'DM Mono',monospace;font-size:13px;color:var(--gold);background:var(--gold-light);padding:1px 6px;border-radius:4px;">?</span>`;
+    const opts = q.opts.map((o, i) =>
+      `<button class="opt" onclick="answerG1(${q.n},${i},${q.correct},this)" data-g1="${q.n}"><span class="opt-ltr">${String.fromCharCode(65+i)}</span>${o}</button>`
+    ).join('');
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="qi-text">${q.text.replace('________', tag)}</div>
+      <div class="opts" data-g1g="${q.n}">${opts}</div>
+      <div class="q-fb" id="g1fb-${q.n}"></div>`;
+    c.appendChild(div);
+  });
+}
+
+function answerG1(qn, oi, correct, btn) {
+  const grp = document.querySelector(`[data-g1g="${qn}"]`);
+  if (grp.querySelector('.correct,.wrong')) return;
+  grp.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const isRight = oi === correct;
+  btn.classList.add(isRight ? 'correct' : 'wrong');
+  grp.querySelectorAll('.opt')[correct].classList.add('correct');
+  const q = gramEx1.find(d => d.n === qn);
+  const fb = document.getElementById('g1fb-' + qn);
+  fb.className = 'q-fb show ' + (isRight ? 'correct' : 'wrong');
+  fb.textContent = (isRight ? '✓ Correct. ' : '✗ Incorrect. ') + q.exp;
+  if (!g1ans.has(qn)) { g1ans.add(qn); if (isRight) g1score++; }
+  document.getElementById('g1-fill').style.width = Math.round(g1score / 6 * 100) + '%';
+  document.getElementById('g1-num').textContent = g1score + ' / 6';
+}
+
+function buildGramEx2() {
+  const c = document.getElementById('gram-ex2'); c.innerHTML = '';
+  gramEx2.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="gram-sentence">${q.before} <input class="gram-input" id="g2-${q.n}" placeholder="modal perfect…" autocomplete="off" spellcheck="false"> ${q.after}</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(${q.n})">Check</button>
+        <span class="badge-ok" id="g2ok-${q.n}">✓ Correct</span>
+        <span class="badge-no" id="g2no-${q.n}"></span>
+        <span class="badge-ans" id="g2ans-${q.n}">Answer: ${q.answer}</span>
+      </div>
+      <div class="q-fb" id="g2fb-${q.n}" style="margin-top:5px;"></div>`;
+    c.appendChild(div);
+  });
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn'; btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => gramEx2.forEach(q => checkG2(q.n));
+  c.appendChild(btn);
+}
+
+function checkG2(n) {
+  const q = gramEx2.find(d => d.n === n);
+  const input = document.getElementById('g2-' + n);
+  if (input.disabled) return;
+  const val = input.value.trim().toLowerCase().replace(/\s+/g, ' ');
+  const ok = [q.answer.toLowerCase(), q.answer.toLowerCase().replace(/'/g,"'")];
+  if (n === 2) ok.push('cannot have accepted', 'could not have accepted');
+  if (n === 4) ok.push("need not have created", "didn't need to create");
+  const isRight = ok.includes(val);
+  input.classList.add(isRight ? 'correct' : 'wrong');
+  input.disabled = true;
+  if (isRight) {
+    document.getElementById('g2ok-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g2fb-' + n);
+    fb.className = 'q-fb show correct'; fb.textContent = '✓ Correct! ' + q.hint;
+  } else {
+    const wb = document.getElementById('g2no-' + n);
+    wb.style.display = 'inline-block';
+    wb.textContent = '✗ ' + (input.value.trim() ? '"' + input.value.trim() + '"' : 'No answer');
+    document.getElementById('g2ans-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g2fb-' + n);
+    fb.className = 'q-fb show wrong'; fb.textContent = q.hint;
+  }
+}
+
+function buildGramEx3() {
+  const c = document.getElementById('gram-ex3'); c.innerHTML = '';
+  gramEx3.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="gram-sentence">${q.sentence}</div>
+      <div style="font-size:12px;color:var(--ink-muted);margin-bottom:.5rem;">Rewrite: <span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--red);background:var(--red-light);padding:1px 6px;border-radius:4px;">${q.error}</span> &#8594;</div>
+      <div class="ans-row">
+        <input class="gram-input" id="g3-${q.n}" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:210px;">
+        <button class="check-btn" onclick="checkG3(${q.n})">Check</button>
+        <span class="badge-ok" id="g3ok-${q.n}">✓ Correct</span>
+        <span class="badge-no" id="g3no-${q.n}"></span>
+        <span class="badge-ans" id="g3ans-${q.n}">Answer: ${q.correct}</span>
+      </div>
+      <div class="q-fb" id="g3fb-${q.n}" style="margin-top:5px;"></div>`;
+    c.appendChild(div);
+  });
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn'; btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => gramEx3.forEach(q => checkG3(q.n));
+  c.appendChild(btn);
+}
+
+function checkG3(n) {
+  const q = gramEx3.find(d => d.n === n);
+  const input = document.getElementById('g3-' + n);
+  if (input.disabled) return;
+  const val = input.value.trim().toLowerCase().replace(/\s+/g, ' ');
+  const isRight = val === q.correct.toLowerCase();
+  input.classList.add(isRight ? 'correct' : 'wrong');
+  input.disabled = true;
+  if (isRight) {
+    document.getElementById('g3ok-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g3fb-' + n);
+    fb.className = 'q-fb show correct'; fb.textContent = '✓ ' + q.exp;
+  } else {
+    const wb = document.getElementById('g3no-' + n);
+    wb.style.display = 'inline-block';
+    wb.textContent = '✗ ' + (input.value.trim() ? '"' + input.value.trim() + '"' : 'No answer');
+    document.getElementById('g3ans-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g3fb-' + n);
+    fb.className = 'q-fb show wrong'; fb.textContent = q.exp;
+  }
+}
+
+// ═══ DISCUSSION ═══
+const discussData = [
+  {
+    type: 'Analysis',
+    q: 'The fraud lasted "over a decade" without detection. What does this suggest about the effectiveness of financial oversight and corporate governance at the time?',
+    hint: 'Useful language: <em>This raises serious questions about… / One could argue that… / The fact that this went undetected for so long suggests… / What is particularly striking is…</em>',
+    sample: '"What is particularly striking about the Parmalat case is not merely the scale of the fraud, but its duration. That such a deception could continue for over a decade points to serious systemic failures — not just within the company itself, but in the external bodies charged with holding it to account. One could argue that the auditors, banks, and regulators were either complicit through negligence, or that the mechanisms for oversight were simply inadequate for detecting sophisticated, long-term fraud of this kind."'
+  },
+  {
+    type: 'Ethical',
+    q: '"Corporate greed" is cited as a root cause. To what extent do you think individuals are responsible for large-scale corporate fraud versus the structures and incentives that organisations create?',
+    hint: 'Useful language: <em>While personal culpability is undeniable… / It would be overly simplistic to… / The broader systemic context cannot be ignored… / There is a compelling argument that…</em>',
+    sample: '"While personal culpability is undeniable — Tanzi and his executives made deliberate choices to deceive — it would be overly simplistic to attribute corporate fraud solely to individual greed. There is a compelling argument that the structures of large corporations, combined with short-term market pressures and the enormous personal rewards tied to apparent success, create environments in which fraudulent behaviour becomes, if not inevitable, at least far more likely."'
+  },
+  {
+    type: 'Critical Thinking',
+    q: 'The documentary compares Parmalat to Enron. What are the advantages and limitations of using such comparisons to understand major financial scandals?',
+    hint: 'Useful language: <em>Such comparisons are useful insofar as… / However, the risk of drawing direct parallels is… / Each case has its own specific context, which… / The comparison risks oversimplifying…</em>',
+    sample: '"Such comparisons are useful insofar as they provide an accessible framework for understanding complex events — labelling Parmalat \'Europe\'s Enron\' immediately conveys the scale and nature of the fraud. However, the risk of drawing such direct parallels is that it can obscure the specific circumstances of each case. The regulatory environment, corporate culture, and economic conditions in early 2000s Italy were quite different from those in the United States, and conflating the two may lead to oversimplified lessons."'
+  },
+  {
+    type: 'Application',
+    q: 'The story refers to the importance of "looking beyond the surface" in business. In what practical ways can investors, journalists, and regulators better detect warning signs of corporate fraud?',
+    hint: 'Useful language: <em>One practical measure would be… / A more sceptical approach to… / The lesson here is that… / Had there been greater scrutiny of…</em>',
+    sample: '"One practical measure would be requiring independent third-party verification of any large cash reserves, rather than accepting company-provided documents at face value. Had there been greater scrutiny of Parmalat\'s claimed Cayman Islands account — or a legal requirement to verify such claims directly with the named institution — the fraud might have been detected far sooner. More broadly, the lesson here is that conspicuously high returns or unexplained cash reserves should trigger heightened, not reduced, scrutiny."'
+  },
+  {
+    type: 'Broader Implications',
+    q: 'The scandal "forced regulators to tighten financial rules." How do you think financial regulation should be balanced with the freedom businesses need to operate and innovate?',
+    hint: 'Useful language: <em>There is an inherent tension between… / Those who favour lighter regulation argue… / On the other hand, the evidence suggests… / A proportionate approach might involve…</em>',
+    sample: '"There is an inherent tension between robust regulatory oversight and the freedom businesses need to operate efficiently and take entrepreneurial risks. Those who favour lighter regulation argue that excessive compliance burdens stifle innovation and divert resources from productive activities. On the other hand, the evidence from cases like Parmalat and Enron suggests that without strong, proactive enforcement mechanisms, market forces alone are insufficient to prevent large-scale fraud — particularly when deceptive companies are actively working to circumvent scrutiny."'
+  },
+];
+
+function buildDiscussion() {
+  const list = document.getElementById('discuss-list');
+  list.innerHTML = '';
+  discussData.forEach(d => {
+    const div = document.createElement('div'); div.className = 'di';
+    div.innerHTML = `<button class="di-trigger" onclick="this.closest('.di').classList.toggle('open')">
+      <span class="di-type">${d.type}</span>
+      <span class="di-q">${d.q}</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"/></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">${d.hint}</div>
+      <div class="di-sample"><strong>Model opening:</strong> ${d.sample}</div>
+    </div></div>`;
+    list.appendChild(div);
+  });
+}
+
+// ═══ INIT ═══
+buildMatch();
+buildComprehension();
+buildGramEx1();
+buildGramEx2();
+buildGramEx3();
+buildDiscussion();
+</script>
+
+</body></html>
