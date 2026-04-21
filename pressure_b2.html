@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2 English Lesson — Choking Under Pressure</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f3;
+  --surface: #ffffff;
+  --surface-alt: #f0ede4;
+  --ink: #1c1917;
+  --ink-med: #44403c;
+  --ink-light: #78716c;
+  --border: #e7e5e4;
+  --border-strong: #d6d3d1;
+  --accent: #dc2626;
+  --accent-light: #fef2f2;
+  --accent-dark: #991b1b;
+  --blue: #1e40af;
+  --blue-light: #eff6ff;
+  --green: #15803d;
+  --green-light: #f0fdf4;
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+  --shadow: rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
+  padding: 3.5rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  color: #fca5a5;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.hero h1 {
+  font-family: 'Bitter', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: #fca5a5;
+}
+
+.hero-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* NAV */
+.nav {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-btn {
+  padding: 1rem 1.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.nav-btn:hover {
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.nav-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.nav-spacer { flex: 1; }
+
+.reset-btn {
+  margin-left: 1rem;
+  padding: 6px 16px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-med);
+  cursor: pointer;
+  transition: all 0.15s;
+  align-self: center;
+}
+
+.reset-btn:hover {
+  background: var(--border);
+  color: var(--ink);
+}
+
+/* MAIN */
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 6rem;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid var(--accent-light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::before {
+  content: '';
+  width: 24px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* VIDEO */
+.video-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background: #000;
+  overflow: hidden;
+}
+
+.video-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.video-card:hover .video-thumb img {
+  transform: scale(1.05);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(220, 38, 38, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(220, 38, 38, 0.4);
+  transition: all 0.3s;
+}
+
+.video-card:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: var(--accent);
+}
+
+.video-info {
+  padding: 1.2rem 1.5rem;
+  background: var(--ink);
+}
+
+.video-platform {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.video-title {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.video-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* TRANSCRIPT */
+.transcript {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.transcript-header {
+  background: linear-gradient(135deg, var(--ink) 0%, #292524 100%);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transcript-icon {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.transcript-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.transcript-body {
+  padding: 2rem 1.8rem;
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--ink-med);
+}
+
+.transcript-body p {
+  margin-bottom: 1.3rem;
+}
+
+.transcript-body p:last-child {
+  margin-bottom: 0;
+}
+
+.hw {
+  background: linear-gradient(120deg, var(--amber-light) 0%, #fef3c7 100%);
+  border-bottom: 2px solid var(--amber);
+  padding: 0 3px;
+  border-radius: 2px;
+  cursor: help;
+  transition: background 0.15s;
+  position: relative;
+}
+
+.hw:hover {
+  background: #fde68a;
+}
+
+/* CARD */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+  background: var(--surface-alt);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 13px;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* QUESTION */
+.question {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.question:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.q-num {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.q-text {
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* MCQ OPTIONS */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  text-align: left;
+  line-height: 1.6;
+}
+
+.option:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.option-letter {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--surface-alt);
+  color: var(--ink-med);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.option.correct {
+  background: var(--green-light);
+  border-color: var(--green);
+  color: #14532d;
+}
+
+.option.wrong {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: #7f1d1d;
+}
+
+.option.correct .option-letter {
+  background: var(--green);
+  color: white;
+}
+
+.option.wrong .option-letter {
+  background: var(--accent);
+  color: white;
+}
+
+.feedback {
+  margin-top: 0.8rem;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+  display: none;
+}
+
+.feedback.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback.correct {
+  background: var(--green-light);
+  color: var(--green);
+  border-left: 4px solid var(--green);
+}
+
+.feedback.wrong {
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  border-left: 4px solid var(--accent);
+}
+
+/* MATCHING */
+.match-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 640px) {
+  .match-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.match-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.word-item {
+  background: var(--ink);
+  color: #e7e5e4;
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.word-item:hover {
+  background: #292524;
+  transform: translateX(4px);
+}
+
+.word-item.selected {
+  border-color: var(--accent);
+  background: #292524;
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+.word-item.placed {
+  display: none;
+}
+
+.word-item.match-correct {
+  background: var(--green);
+  border-color: var(--green);
+  cursor: default;
+  display: flex;
+}
+
+.word-item.match-wrong {
+  background: var(--accent);
+  border-color: var(--accent);
+  cursor: default;
+  display: flex;
+}
+
+.word-hint {
+  font-size: 10px;
+  opacity: 0.4;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.def-slot {
+  background: var(--surface-alt);
+  border: 2px dashed var(--border-strong);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  min-height: 60px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.def-slot:hover:not(.locked) {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.def-text {
+  font-size: 14px;
+  color: var(--ink-med);
+  line-height: 1.6;
+}
+
+.def-answer {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-family: 'Bitter', serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.def-answer.correct {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.def-answer.wrong {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.placed-word {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--amber-light);
+  color: var(--ink);
+  font-family: 'Bitter', serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  border: 1px solid var(--amber);
+  transition: all 0.15s;
+}
+
+.placed-word:hover {
+  background: #fde68a;
+}
+
+.match-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-check, .btn-reset {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-check {
+  background: var(--ink);
+  color: white;
+}
+
+.btn-check:hover {
+  background: #292524;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-reset {
+  background: var(--surface-alt);
+  color: var(--ink-med);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-reset:hover {
+  background: var(--border);
+  color: var(--ink);
+}
+
+.match-score {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: var(--green-light);
+  color: var(--green);
+  display: none;
+}
+
+/* GRAMMAR INPUT */
+.grammar-sentence {
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.grammar-input {
+  border: none;
+  border-bottom: 2px solid var(--border-strong);
+  background: transparent;
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  color: var(--ink);
+  padding: 2px 6px;
+  min-width: 160px;
+  max-width: 280px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.grammar-input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.grammar-input.correct {
+  border-bottom-color: var(--green);
+  color: var(--green);
+}
+
+.grammar-input.wrong {
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.check-btn {
+  padding: 8px 18px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-med);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.check-btn:hover {
+  background: var(--border);
+  color: var(--ink);
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: none;
+}
+
+.badge-correct {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+.badge-wrong {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.badge-answer {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+
+.check-all-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s;
+}
+
+.check-all-btn:hover {
+  background: #292524;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* DISCUSSION */
+.discussion-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.discussion-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.discussion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 1.2rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.discussion-type {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 2px;
+}
+
+.discussion-q {
+  flex: 1;
+  font-family: 'Bitter', serif;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.discussion-arrow {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--ink-light);
+  transition: transform 0.3s;
+  margin-top: 4px;
+}
+
+.discussion-item.open .discussion-arrow {
+  transform: rotate(180deg);
+}
+
+.discussion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.discussion-item.open .discussion-content {
+  max-height: 800px;
+}
+
+.discussion-inner {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.2rem;
+}
+
+.discussion-hint {
+  background: var(--amber-light);
+  border-left: 4px solid var(--amber);
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #78350f;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.discussion-sample {
+  font-family: 'Bitter', serif;
+  font-size: 15px;
+  color: var(--ink-med);
+  line-height: 1.8;
+}
+
+.discussion-sample strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* GRAMMAR INFO */
+.grammar-info {
+  background: linear-gradient(135deg, var(--ink) 0%, #292524 100%);
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.grammar-info h3 {
+  font-family: 'Bitter', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.grammar-info p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.grammar-info p:last-child {
+  margin-bottom: 0;
+}
+
+.grammar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 13px;
+}
+
+.grammar-table th {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.grammar-table td {
+  padding: 10px 14px;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.grammar-table td:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  color: #fca5a5;
+  font-size: 12px;
+}
+
+.grammar-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 13px;
+  color: var(--ink-light);
+  border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .hero {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  
+  .main {
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .grammar-input {
+    min-width: 120px;
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-tag">B2 Upper-Intermediate English</span>
+    <h1>Choking Under <em>Pressure</em></h1>
+    <p class="hero-subtitle">Understanding performance anxiety, the science of focus, and practical strategies to succeed when it matters most.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">4:00</span>
+        <span class="stat-label">Video duration</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">B2</span>
+        <span class="stat-label">CEFR Level</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Activities</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('reading', this)">Reading</button>
+    <button class="nav-btn" onclick="showSection('vocabulary', this)">Vocabulary Match</button>
+    <button class="nav-btn" onclick="showSection('comprehension', this)">Comprehension</button>
+    <button class="nav-btn" onclick="showSection('grammar', this)">Grammar</button>
+    <button class="nav-btn" onclick="showSection('discussion', this)">Discussion</button>
+    <div class="nav-spacer"></div>
+    <button class="reset-btn" onclick="resetAll()">↺ Reset All</button>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- READING SECTION -->
+<section id="reading" class="section active">
+  <div class="section-title">Watch & Read</div>
+  
+  <a href="https://www.youtube.com/watch?v=CqgmozFr_GM" target="_blank" class="video-card" style="display: block; text-decoration: none;">
+    <div class="video-thumb">
+      <img src="https://img.youtube.com/vi/CqgmozFr_GM/maxresdefault.jpg" alt="How to stay calm under pressure" referrerpolicy="no-referrer">
+      <div class="play-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="video-info">
+      <span class="video-platform">TED-Ed</span>
+      <div class="video-title">How to stay calm under pressure — Noa Kageyama and Pen-Pen Chen</div>
+      <div class="video-meta">Duration: 4:00 • Psychology & Performance</div>
+    </div>
+  </a>
+
+  <div class="transcript">
+    <div class="transcript-header">
+      <div class="transcript-icon"></div>
+      <div class="transcript-label">Video Transcript</div>
+    </div>
+    <div class="transcript-body">
+      <p>Your favorite athlete closes in for a victorious win. The crowd holds its breath, and, at the crucial moment, she misses the shot. That competitor just experienced the phenomenon known as "<span class="hw" title="failing to perform under pressure">choking</span>," where despite months, even years, of practice, a person fails right when it matters most.</p>
+
+      <p>Choking is common in sports, where performance often occurs under intense pressure and depends on key moments. And yet, <span class="hw" title="worry or nervousness about performing">performance anxiety</span> also haunts public speakers, contestants in spelling bees, and even world-famous musicians. Most people <span class="hw" title="based on feeling rather than facts">intuitively</span> blame it on their nerves, but why does being nervous <span class="hw" title="weaken or damage">undermine</span> expert performance?</p>
+
+      <p>There are two sets of theories, which both say that primarily, choking under pressure boils down to focus. First, there are the <span class="hw" title="explanations focusing on interruption of attention">distraction theories</span>. These suggest that performance suffers when the mind is <span class="hw" title="constantly thinking about something">preoccupied</span> with worries, doubts, or fears, instead of focusing its attention on performing the task at hand.</p>
+
+      <p>When relevant and irrelevant thoughts compete for the same attention, something has to give. The brain can only process so much information at once. Tasks that challenge <span class="hw" title="short-term memory system">working memory</span>, the mental "scratch pad" we use to temporarily store phone numbers and grocery lists, are especially <span class="hw" title="easily affected or harmed">vulnerable</span> to pressure.</p>
+
+      <p>In a 2004 study, a group of university students were asked to perform math problems, some easy, others more complex and memory-intensive. Half the students completed both problem types with nothing at stake, while the others completed them when calm and under pressure. While everyone did well on the easy problems, those who were stressed performed worse on the more difficult, memory-intensive tasks.</p>
+
+      <p><span class="hw" title="theories about conscious monitoring">Explicit monitoring theories</span> make up the second group of explanations for choking under pressure. They're concerned with how pressure can cause people to <span class="hw" title="analyze too much">overanalyze</span> the task at hand. Here, the logic goes that once a skill becomes automatic, thinking about its <span class="hw" title="exact technical details">precise mechanics</span> interferes with your ability to do it.</p>
+
+      <p>Tasks we do unconsciously seem to be most vulnerable to this kind of choking. A study on competitive golfers compared their performance when instructed to simply focus on putting as accurately as possible, versus when they were <span class="hw" title="prepared or made ready">primed</span> to be acutely aware of the mechanics of their putting stroke. Golfers usually perform this action <span class="hw" title="without conscious thought">subconsciously</span>, so those who suddenly tuned in to the precise details of their own moves also became worse at making accurate shots.</p>
+
+      <p>Choking may not be inevitable for everyone though. Research suggests that some are more <span class="hw" title="likely to be affected">susceptible</span> than others, especially those who are self-conscious, anxious, and afraid of being judged negatively by others.</p>
+
+      <p>So, how can we avoid choking when it really counts? First, it helps to practice under stressful conditions. In a study on expert dart players, researchers found that those who hadn't practiced under stress performed worse when anxious, compared to those who had become <span class="hw" title="familiar with through repeated experience">accustomed to</span> pressure.</p>
+
+      <p>Secondly, many performers <span class="hw" title="praise highly">extol</span> the virtues of a pre-performance routine, whether it's taking a few deep breaths, repeating a cue word, or doing a rhythmic sequence of movements. Studies on golfing, bowling, and water polo find that short rituals can lead to more consistent and accurate performance under pressure.</p>
+
+      <p>And thirdly, researchers have shown that having an external focus on the ultimate goal works better than an internal focus, where someone is tuned into the mechanics of what they're doing. A study of experienced golfers revealed that those who hit chip shots while focused on the flight of the ball performed significantly better than those who focused on the motion of their arms.</p>
+
+      <p>So, perhaps we can modify that age-old saying: practice, under pressure, with focus, and with that glorious end goal in sight, makes perfect.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <strong style="color: var(--ink);">Before continuing:</strong> Hover over the <span class="hw" style="pointer-events: none;">highlighted words</span> to see definitions. Complete each section using the navigation above.
+    </div>
+  </div>
+</section>
+
+<!-- VOCABULARY SECTION -->
+<section id="vocabulary" class="section">
+  <div class="section-title">Vocabulary Matching</div>
+  
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Match Words to Definitions</div>
+      <div class="card-subtitle">Click a word, then click its correct definition</div>
+    </div>
+    <div class="card-body">
+      <div class="match-grid">
+        <div>
+          <div class="match-col-title">Words & Phrases</div>
+          <div id="word-bank"></div>
+        </div>
+        <div>
+          <div class="match-col-title">Definitions</div>
+          <div id="def-slots"></div>
+        </div>
+      </div>
+      <div class="match-controls">
+        <button class="btn-check" onclick="checkMatching()">Check Answers</button>
+        <button class="btn-reset" onclick="resetMatching()">Reset</button>
+        <span class="match-score" id="match-score"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPREHENSION SECTION -->
+<section id="comprehension" class="section">
+  <div class="section-title">Comprehension Questions</div>
+  
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Multiple Choice</div>
+      <div class="card-subtitle">Choose the best answer based on the video transcript</div>
+    </div>
+    <div class="card-body" id="comprehension-container"></div>
+  </div>
+</section>
+
+<!-- GRAMMAR SECTION -->
+<section id="grammar" class="section">
+  <div class="section-title">Grammar Practice</div>
+  
+  <div class="grammar-info">
+    <h3>Mixed Grammar Focus</h3>
+    <p>This section covers various grammar points including relative clauses, passive voice, conditionals, and modal verbs as they appear in the context of performance and psychology.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Exercise 1: Relative Clauses</div>
+      <div class="card-subtitle">Complete the sentences with the correct relative pronoun</div>
+    </div>
+    <div class="card-body" id="grammar1-container"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Exercise 2: Passive Voice</div>
+      <div class="card-subtitle">Rewrite the sentences in passive voice</div>
+    </div>
+    <div class="card-body" id="grammar2-container"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Exercise 3: Conditionals & Modals</div>
+      <div class="card-subtitle">Complete with the correct form</div>
+    </div>
+    <div class="card-body" id="grammar3-container"></div>
+  </div>
+</section>
+
+<!-- DISCUSSION SECTION -->
+<section id="discussion" class="section">
+  <div class="section-title">Critical Thinking & Discussion</div>
+  
+  <div id="discussion-container"></div>
+</section>
+
+</div>
+
+<footer>
+  <p>B2 Interactive English Lesson • Choking Under Pressure</p>
+  <p style="margin-top: 0.5rem; font-size: 12px; opacity: 0.7;">TED-Ed Video © TED Conferences</p>
+</footer>
+
+<script>
+// NAVIGATION
+function showSection(sectionId, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(sectionId).classList.add('active');
+  btn.classList.add('active');
+}
+
+function resetAll() {
+  if (confirm('Reset all progress? This cannot be undone.')) {
+    location.reload();
+  }
+}
+
+// ===== VOCABULARY MATCHING =====
+const vocabData = [
+  { word: 'choking', def: 'Failing to perform well under pressure despite being skilled' },
+  { word: 'undermine', def: 'To weaken or damage something gradually' },
+  { word: 'preoccupied', def: 'Having one\'s mind completely filled with something' },
+  { word: 'vulnerable', def: 'Easily affected, harmed, or attacked' },
+  { word: 'overanalyze', def: 'To think about something too much in too much detail' },
+  { word: 'subconsciously', def: 'Without conscious awareness or thought' },
+  { word: 'susceptible', def: 'Likely to be influenced or harmed by something' },
+  { word: 'accustomed to', def: 'Familiar with something through repeated experience' },
+  { word: 'extol', def: 'To praise something or someone enthusiastically' },
+  { word: 'precise mechanics', def: 'The exact technical details of how something works' }
+];
+
+let selectedWord = null;
+let matchedPairs = {};
+
+function buildVocabulary() {
+  const wordBank = document.getElementById('word-bank');
+  const defSlots = document.getElementById('def-slots');
+  
+  const shuffledWords = [...vocabData].sort(() => Math.random() - 0.5);
+  const shuffledDefs = [...vocabData].sort(() => Math.random() - 0.5);
+  
+  shuffledWords.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'word-item';
+    div.dataset.word = item.word;
+    div.innerHTML = `<span>${item.word}</span><span class="word-hint">select</span>`;
+    div.onclick = () => selectWord(item.word);
+    wordBank.appendChild(div);
+  });
+  
+  shuffledDefs.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'def-slot';
+    div.dataset.correct = item.word;
+    div.innerHTML = `<div class="def-text">${item.def}</div><div class="placed-area"></div>`;
+    div.onclick = () => placeWord(item.word);
+    defSlots.appendChild(div);
+  });
+}
+
+function selectWord(word) {
+  if (document.querySelector(`.word-item[data-word="${word}"]`).classList.contains('placed')) return;
+  
+  document.querySelectorAll('.word-item').forEach(w => w.classList.remove('selected'));
+  selectedWord = word;
+  document.querySelector(`.word-item[data-word="${word}"]`).classList.add('selected');
+}
+
+function placeWord(correctWord) {
+  if (!selectedWord) return;
+  
+  const slot = document.querySelector(`.def-slot[data-correct="${correctWord}"]`);
+  if (slot.classList.contains('locked')) return;
+  
+  // Remove previous placement
+  if (matchedPairs[correctWord]) {
+    const oldWord = matchedPairs[correctWord];
+    document.querySelector(`.word-item[data-word="${oldWord}"]`).classList.remove('placed');
+  }
+  
+  matchedPairs[correctWord] = selectedWord;
+  
+  const wordItem = document.querySelector(`.word-item[data-word="${selectedWord}"]`);
+  wordItem.classList.add('placed');
+  wordItem.classList.remove('selected');
+  
+  const placedArea = slot.querySelector('.placed-area');
+  placedArea.innerHTML = `<div class="placed-word" onclick="removePlacement('${correctWord}')">${selectedWord} ×</div>`;
+  
+  selectedWord = null;
+}
+
+function removePlacement(correctWord) {
+  const word = matchedPairs[correctWord];
+  if (!word) return;
+  
+  const slot = document.querySelector(`.def-slot[data-correct="${correctWord}"]`);
+  if (slot.classList.contains('locked')) return;
+  
+  document.querySelector(`.word-item[data-word="${word}"]`).classList.remove('placed');
+  slot.querySelector('.placed-area').innerHTML = '';
+  delete matchedPairs[correctWord];
+}
+
+function checkMatching() {
+  let correct = 0;
+  
+  Object.entries(matchedPairs).forEach(([correctWord, chosenWord]) => {
+    const wordItem = document.querySelector(`.word-item[data-word="${chosenWord}"]`);
+    const slot = document.querySelector(`.def-slot[data-correct="${correctWord}"]`);
+    
+    if (correctWord === chosenWord) {
+      wordItem.classList.add('match-correct');
+      slot.classList.add('locked');
+      const ansDiv = document.createElement('div');
+      ansDiv.className = 'def-answer correct';
+      ansDiv.textContent = '✓ Correct!';
+      slot.querySelector('.placed-area').appendChild(ansDiv);
+      correct++;
+    } else {
+      wordItem.classList.add('match-wrong');
+      slot.classList.add('locked');
+      const ansDiv = document.createElement('div');
+      ansDiv.className = 'def-answer wrong';
+      ansDiv.textContent = `✗ Wrong (Answer: ${correctWord})`;
+      slot.querySelector('.placed-area').appendChild(ansDiv);
+    }
+  });
+  
+  const scoreEl = document.getElementById('match-score');
+  scoreEl.textContent = `Score: ${correct}/${vocabData.length}`;
+  scoreEl.style.display = 'inline-block';
+}
+
+function resetMatching() {
+  document.querySelectorAll('.word-item').forEach(w => {
+    w.classList.remove('placed', 'match-correct', 'match-wrong', 'selected');
+  });
+  
+  document.querySelectorAll('.def-slot').forEach(s => {
+    s.classList.remove('locked');
+    s.querySelector('.placed-area').innerHTML = '';
+  });
+  
+  matchedPairs = {};
+  selectedWord = null;
+  document.getElementById('match-score').style.display = 'none';
+}
+
+// ===== COMPREHENSION =====
+const comprehensionData = [
+  {
+    n: 1,
+    q: 'According to the video, what is "choking"?',
+    opts: [
+      'A physical reaction to extreme stress',
+      'Failing to perform well under pressure despite having the skills',
+      'A breathing problem that occurs during sports',
+      'Losing confidence before an important event'
+    ],
+    correct: 1,
+    exp: 'Choking is when someone fails right when it matters most, despite having practiced for months or years.'
+  },
+  {
+    n: 2,
+    q: 'What do distraction theories suggest causes choking?',
+    opts: [
+      'The mind is preoccupied with worries instead of the task',
+      'People practice too much before performing',
+      'Athletes are too confident in their abilities',
+      'External noise interferes with concentration'
+    ],
+    correct: 0,
+    exp: 'Distraction theories suggest performance suffers when the mind is preoccupied with worries, doubts, or fears instead of focusing on the task.'
+  },
+  {
+    n: 3,
+    q: 'Which type of tasks are especially vulnerable to pressure according to the 2004 study?',
+    opts: [
+      'Simple, repetitive tasks',
+      'Tasks that challenge working memory',
+      'Physical coordination tasks',
+      'Creative problem-solving tasks'
+    ],
+    correct: 1,
+    exp: 'The study showed that memory-intensive tasks that challenge working memory are especially vulnerable to pressure.'
+  },
+  {
+    n: 4,
+    q: 'What do explicit monitoring theories focus on?',
+    opts: [
+      'How people react to being watched',
+      'The role of coaches in performance',
+      'How overanalyzing interferes with automatic skills',
+      'The importance of mental preparation'
+    ],
+    correct: 2,
+    exp: 'Explicit monitoring theories concern how pressure causes people to overanalyze, which interferes with automatic skills.'
+  },
+  {
+    n: 5,
+    q: 'According to the video, what is one effective strategy to avoid choking?',
+    opts: [
+      'Avoid practicing under any pressure',
+      'Focus internally on the mechanics of your movements',
+      'Practice under stressful conditions',
+      'Try to relax completely before performing'
+    ],
+    correct: 2,
+    exp: 'The video states that practicing under stressful conditions helps people become accustomed to pressure and perform better.'
+  },
+  {
+    n: 6,
+    q: 'What type of focus performs better according to research on golfers?',
+    opts: [
+      'Internal focus on arm mechanics',
+      'External focus on the ultimate goal (e.g., flight of the ball)',
+      'No focus at all',
+      'Alternating between internal and external focus'
+    ],
+    correct: 1,
+    exp: 'Golfers who focused on the flight of the ball (external focus) performed significantly better than those who focused on their arm motion.'
+  }
+];
+
+function buildComprehension() {
+  const container = document.getElementById('comprehension-container');
+  
+  comprehensionData.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    
+    let html = `
+      <div class="q-num">Question ${q.n}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">
+    `;
+    
+    q.opts.forEach((opt, i) => {
+      const letter = String.fromCharCode(65 + i);
+      html += `
+        <button class="option" onclick="checkAnswer(${q.n}, ${i})">
+          <span class="option-letter">${letter}</span>
+          <span>${opt}</span>
+        </button>
+      `;
+    });
+    
+    html += `
+      </div>
+      <div class="feedback" id="fb-${q.n}"></div>
+    `;
+    
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function checkAnswer(qNum, chosen) {
+  const q = comprehensionData.find(item => item.n === qNum);
+  const options = document.querySelectorAll(`.question:nth-child(${qNum}) .option`);
+  const feedback = document.getElementById(`fb-${qNum}`);
+  
+  options.forEach(opt => opt.disabled = true);
+  
+  const isCorrect = chosen === q.correct;
+  
+  options[chosen].classList.add(isCorrect ? 'correct' : 'wrong');
+  
+  if (!isCorrect) {
+    options[q.correct].classList.add('correct');
+  }
+  
+  feedback.className = `feedback show ${isCorrect ? 'correct' : 'wrong'}`;
+  feedback.textContent = (isCorrect ? '✓ Correct! ' : '✗ Incorrect. ') + q.exp;
+}
+
+// ===== GRAMMAR =====
+
+// Grammar 1: Relative Clauses
+const grammar1Data = [
+  {
+    n: 1,
+    sentence: 'Athletes _____ practice under pressure often perform better.',
+    correct: 'who',
+    exp: 'Use "who" for people in defining relative clauses.'
+  },
+  {
+    n: 2,
+    sentence: 'The study _____ was conducted in 2004 examined memory-intensive tasks.',
+    correct: 'which',
+    exp: 'Use "which" for things in non-defining relative clauses (with commas) or defining clauses.'
+  },
+  {
+    n: 3,
+    sentence: 'The moment _____ you choke is when pressure exceeds your coping ability.',
+    correct: 'when',
+    exp: 'Use "when" to refer to a time or moment.'
+  },
+  {
+    n: 4,
+    sentence: 'Performers _____ routines include breathing exercises tend to be more consistent.',
+    correct: 'whose',
+    exp: 'Use "whose" to show possession.'
+  }
+];
+
+// Grammar 2: Passive Voice
+const grammar2Data = [
+  {
+    n: 1,
+    active: 'Researchers studied expert dart players.',
+    hint: 'passive form',
+    correct: 'Expert dart players were studied by researchers',
+    exp: 'Passive: subject receives the action. Structure: be + past participle.'
+  },
+  {
+    n: 2,
+    active: 'Pressure can cause people to overanalyze.',
+    hint: 'passive form',
+    correct: 'People can be caused to overanalyze by pressure',
+    exp: 'Modal passive: modal + be + past participle.'
+  },
+  {
+    n: 3,
+    active: 'The brain processes information constantly.',
+    hint: 'passive form',
+    correct: 'Information is processed constantly by the brain',
+    exp: 'Present simple passive: is/are + past participle.'
+  }
+];
+
+// Grammar 3: Conditionals & Modals
+const grammar3Data = [
+  {
+    n: 1,
+    sentence: 'If you _____ (practice) under stress, you will perform better under pressure.',
+    correct: 'practice',
+    exp: 'First conditional: If + present simple, will + infinitive.'
+  },
+  {
+    n: 2,
+    sentence: 'Golfers _____ (should/must) focus on external goals rather than internal mechanics.',
+    correct: 'should',
+    exp: '"Should" gives advice/recommendation. "Must" is too strong here.'
+  },
+  {
+    n: 3,
+    sentence: 'If athletes _____ (not/become) accustomed to pressure, they would choke more often.',
+    correct: 'did not become',
+    exp: 'Second conditional: If + past simple, would + infinitive.'
+  },
+  {
+    n: 4,
+    sentence: 'You _____ (might/can) improve your performance by using pre-performance routines.',
+    correct: 'might',
+    exp: 'Both work, but "might" (possibility) fits better than "can" (ability).'
+  }
+];
+
+function buildGrammar1() {
+  const container = document.getElementById('grammar1-container');
+  
+  grammar1Data.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `
+      <div class="q-num">Question ${q.n}</div>
+      <div class="grammar-sentence">${q.sentence}</div>
+      <div class="input-row">
+        <input class="grammar-input" id="g1-${q.n}" placeholder="type answer..." autocomplete="off" spellcheck="false">
+        <button class="check-btn" onclick="checkGrammar1(${q.n})">Check</button>
+        <span class="badge badge-correct" id="g1ok-${q.n}">✓ Correct</span>
+        <span class="badge badge-wrong" id="g1no-${q.n}"></span>
+        <span class="badge badge-answer" id="g1ans-${q.n}">Answer: ${q.correct}</span>
+      </div>
+      <div class="feedback" id="g1fb-${q.n}"></div>
+    `;
+    container.appendChild(div);
+  });
+  
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn';
+  btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => grammar1Data.forEach(q => checkGrammar1(q.n));
+  container.appendChild(btn);
+}
+
+function checkGrammar1(n) {
+  const q = grammar1Data.find(item => item.n === n);
+  const input = document.getElementById(`g1-${n}`);
+  if (input.disabled) return;
+  
+  const val = input.value.trim().toLowerCase();
+  const isCorrect = val === q.correct.toLowerCase();
+  
+  input.classList.add(isCorrect ? 'correct' : 'wrong');
+  input.disabled = true;
+  
+  const okBadge = document.getElementById(`g1ok-${n}`);
+  const noBadge = document.getElementById(`g1no-${n}`);
+  const ansBadge = document.getElementById(`g1ans-${n}`);
+  const fb = document.getElementById(`g1fb-${n}`);
+  
+  if (isCorrect) {
+    okBadge.style.display = 'inline-block';
+    fb.className = 'feedback show correct';
+    fb.textContent = '✓ ' + q.exp;
+  } else {
+    noBadge.textContent = val ? `✗ "${val}"` : '✗ No answer';
+    noBadge.style.display = 'inline-block';
+    ansBadge.style.display = 'inline-block';
+    fb.className = 'feedback show wrong';
+    fb.textContent = q.exp;
+  }
+}
+
+function buildGrammar2() {
+  const container = document.getElementById('grammar2-container');
+  
+  grammar2Data.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `
+      <div class="q-num">Question ${q.n}</div>
+      <div class="grammar-sentence">Active: ${q.active}</div>
+      <div style="font-size: 13px; color: var(--ink-light); margin-bottom: 0.8rem;">Rewrite in passive voice:</div>
+      <div class="input-row">
+        <input class="grammar-input" id="g2-${q.n}" placeholder="${q.hint}..." autocomplete="off" spellcheck="false" style="min-width: 250px; max-width: 100%;">
+        <button class="check-btn" onclick="checkGrammar2(${q.n})">Check</button>
+        <span class="badge badge-correct" id="g2ok-${q.n}">✓ Correct</span>
+        <span class="badge badge-wrong" id="g2no-${q.n}"></span>
+        <span class="badge badge-answer" id="g2ans-${q.n}">Answer: ${q.correct}</span>
+      </div>
+      <div class="feedback" id="g2fb-${q.n}"></div>
+    `;
+    container.appendChild(div);
+  });
+  
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn';
+  btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => grammar2Data.forEach(q => checkGrammar2(q.n));
+  container.appendChild(btn);
+}
+
+function checkGrammar2(n) {
+  const q = grammar2Data.find(item => item.n === n);
+  const input = document.getElementById(`g2-${n}`);
+  if (input.disabled) return;
+  
+  const val = input.value.trim().toLowerCase().replace(/\s+/g, ' ').replace(/[.,;:!?]$/g, '');
+  const correctNorm = q.correct.toLowerCase().replace(/\s+/g, ' ').replace(/[.,;:!?]$/g, '');
+  const isCorrect = val === correctNorm;
+  
+  input.classList.add(isCorrect ? 'correct' : 'wrong');
+  input.disabled = true;
+  
+  const okBadge = document.getElementById(`g2ok-${n}`);
+  const noBadge = document.getElementById(`g2no-${n}`);
+  const ansBadge = document.getElementById(`g2ans-${n}`);
+  const fb = document.getElementById(`g2fb-${n}`);
+  
+  if (isCorrect) {
+    okBadge.style.display = 'inline-block';
+    fb.className = 'feedback show correct';
+    fb.textContent = '✓ ' + q.exp;
+  } else {
+    noBadge.textContent = val ? `✗ "${val}"` : '✗ No answer';
+    noBadge.style.display = 'inline-block';
+    ansBadge.style.display = 'inline-block';
+    fb.className = 'feedback show wrong';
+    fb.textContent = q.exp;
+  }
+}
+
+function buildGrammar3() {
+  const container = document.getElementById('grammar3-container');
+  
+  grammar3Data.forEach(q => {
+    const div = document.createElement('div');
+    div.className = 'question';
+    div.innerHTML = `
+      <div class="q-num">Question ${q.n}</div>
+      <div class="grammar-sentence">${q.sentence}</div>
+      <div class="input-row">
+        <input class="grammar-input" id="g3-${q.n}" placeholder="type answer..." autocomplete="off" spellcheck="false">
+        <button class="check-btn" onclick="checkGrammar3(${q.n})">Check</button>
+        <span class="badge badge-correct" id="g3ok-${q.n}">✓ Correct</span>
+        <span class="badge badge-wrong" id="g3no-${q.n}"></span>
+        <span class="badge badge-answer" id="g3ans-${q.n}">Answer: ${q.correct}</span>
+      </div>
+      <div class="feedback" id="g3fb-${q.n}"></div>
+    `;
+    container.appendChild(div);
+  });
+  
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn';
+  btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => grammar3Data.forEach(q => checkGrammar3(q.n));
+  container.appendChild(btn);
+}
+
+function checkGrammar3(n) {
+  const q = grammar3Data.find(item => item.n === n);
+  const input = document.getElementById(`g3-${n}`);
+  if (input.disabled) return;
+  
+  const val = input.value.trim().toLowerCase().replace(/\s+/g, ' ');
+  const isCorrect = val === q.correct.toLowerCase();
+  
+  input.classList.add(isCorrect ? 'correct' : 'wrong');
+  input.disabled = true;
+  
+  const okBadge = document.getElementById(`g3ok-${n}`);
+  const noBadge = document.getElementById(`g3no-${n}`);
+  const ansBadge = document.getElementById(`g3ans-${n}`);
+  const fb = document.getElementById(`g3fb-${n}`);
+  
+  if (isCorrect) {
+    okBadge.style.display = 'inline-block';
+    fb.className = 'feedback show correct';
+    fb.textContent = '✓ ' + q.exp;
+  } else {
+    noBadge.textContent = val ? `✗ "${val}"` : '✗ No answer';
+    noBadge.style.display = 'inline-block';
+    ansBadge.style.display = 'inline-block';
+    fb.className = 'feedback show wrong';
+    fb.textContent = q.exp;
+  }
+}
+
+// ===== DISCUSSION =====
+const discussionData = [
+  {
+    type: 'Personal Reflection',
+    q: 'Can you recall a time when you experienced "choking" under pressure? What happened, and how did you feel?',
+    hint: 'Try using phrases like: <em>I distinctly remember when... / At that moment, I felt... / Looking back, I realize that... / What made it particularly stressful was...</em>',
+    sample: '<strong>Sample response:</strong> "I distinctly remember my driving test last year. I had practiced for months and felt completely confident, but when the examiner sat next to me with his clipboard, my mind went blank. At that crucial moment, I forgot to check my mirrors when changing lanes—something I had done correctly hundreds of times before. Looking back, I realize I was overthinking every single movement instead of letting my trained instincts take over."'
+  },
+  {
+    type: 'Critical Analysis',
+    q: 'The video suggests two different theories about why we choke: distraction and overanalysis. Which do you think is more common in everyday situations, and why?',
+    hint: 'Consider using: <em>From my perspective... / I would argue that... / While both theories have merit... / The key distinction is... / In most cases...</em>',
+    sample: '<strong>Sample response:</strong> "From my perspective, distraction is probably more common in everyday situations because our modern world constantly bombards us with stimuli. While overanalysis might affect highly skilled performers who have automated their abilities, I would argue that most people struggle more with keeping their minds focused on the present task. For instance, during an important presentation, people are often distracted by thoughts about what others are thinking rather than overanalyzing the mechanics of speaking."'
+  },
+  {
+    type: 'Application',
+    q: 'Based on the strategies mentioned in the video, how could you apply these techniques to improve your own performance in a specific area of your life?',
+    hint: 'Useful language: <em>I could apply this by... / One practical step would be... / This would be particularly useful for... / By implementing...</em>',
+    sample: '<strong>Sample response:</strong> "I could apply the technique of practicing under pressure to my job interviews. One practical step would be to conduct mock interviews with friends while they deliberately create stressful conditions—asking unexpected questions or interrupting me. This would be particularly useful because I tend to freeze when faced with challenging questions. By implementing a pre-performance routine, such as taking three deep breaths and repeating a positive affirmation, I might be able to manage my anxiety more effectively."'
+  },
+  {
+    type: 'Debate',
+    q: 'Some argue that pressure brings out the best in people, while others believe it causes more harm than good. What is your position on this?',
+    hint: 'Consider: <em>Those who argue... have a point when... / However, I would counter that... / There is evidence to suggest... / A more nuanced view might be...</em>',
+    sample: '<strong>Sample response:</strong> "Those who argue that pressure brings out the best in people have a point when referring to eustress—positive stress that motivates and energizes. However, I would counter that excessive pressure more often leads to performance decline rather than improvement. There is evidence to suggest that moderate pressure can enhance focus, but beyond a certain threshold, it becomes counterproductive. A more nuanced view might be that the optimal amount of pressure varies from person to person, depending on their experience, personality, and the specific task at hand."'
+  },
+  {
+    type: 'Broader Implications',
+    q: 'How might understanding the psychology of choking change the way educational systems or workplaces evaluate performance?',
+    hint: 'Try: <em>This understanding could lead to... / Educational institutions should consider... / Rather than relying solely on... / A more effective approach might involve...</em>',
+    sample: '<strong>Sample response:</strong> "This understanding could lead to significant reforms in how we assess students and employees. Educational institutions should consider reducing the weight of high-stakes final exams, which create exactly the kind of pressure that causes choking. Rather than relying solely on single decisive moments, a more effective approach might involve continuous assessment that allows people to demonstrate their abilities across multiple low-pressure situations. This would not only reduce anxiety but would also provide a more accurate picture of someone\'s true capabilities."'
+  }
+];
+
+function buildDiscussion() {
+  const container = document.getElementById('discussion-container');
+  
+  discussionData.forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'discussion-item';
+    div.innerHTML = `
+      <button class="discussion-trigger" onclick="this.closest('.discussion-item').classList.toggle('open')">
+        <span class="discussion-type">${item.type}</span>
+        <span class="discussion-q">${item.q}</span>
+        <svg class="discussion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="5 8 10 13 15 8"/>
+        </svg>
+      </button>
+      <div class="discussion-content">
+        <div class="discussion-inner">
+          <div class="discussion-hint">${item.hint}</div>
+          <div class="discussion-sample">${item.sample}</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+// Initialize
+buildVocabulary();
+buildComprehension();
+buildGrammar1();
+buildGrammar2();
+buildGrammar3();
+buildDiscussion();
+</script>
+
+</body>
+</html>
