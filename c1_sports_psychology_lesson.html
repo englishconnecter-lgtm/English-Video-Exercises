@@ -1,0 +1,300 @@
+
+<h2 class="sr-only">C1 English lesson: sports psychology strategies for everyday life</h2>
+<style>
+  :root {
+    --c-accent: #185FA5;
+    --c-accent-light: #E6F1FB;
+    --c-accent-mid: #B5D4F4;
+    --c-teal: #0F6E56;
+    --c-teal-light: #E1F5EE;
+    --c-amber-light: #FAEEDA;
+    --c-amber: #854F0B;
+    --c-coral-light: #FAECE7;
+    --c-coral: #993C1D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .lesson { max-width: 680px; padding: 1.5rem 0; }
+
+  .lesson-header { margin-bottom: 2rem; }
+  .lesson-tag { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; background: var(--c-accent-light); color: var(--c-accent); padding: 4px 10px; border-radius: var(--border-radius-md); margin-bottom: 0.75rem; }
+  .lesson-title { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 0.4rem; }
+  .lesson-meta { font-size: 13px; color: var(--color-text-secondary); }
+
+  .section { margin-bottom: 2rem; }
+  .section-heading { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-secondary); margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
+
+  .video-stub { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); border: 0.5px solid var(--color-border-tertiary); padding: 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 14px; }
+  .play-icon { width: 40px; height: 40px; background: var(--c-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .play-icon svg { margin-left: 2px; }
+  .video-info p:first-child { font-weight: 500; font-size: 14px; color: var(--color-text-primary); }
+  .video-info p:last-child { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+  .vocab-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 0.9rem 1.1rem; cursor: pointer; transition: border-color 0.15s; }
+  .vocab-card:hover { border-color: var(--color-border-secondary); }
+  .vocab-card .word { font-size: 15px; font-weight: 500; color: var(--color-text-primary); }
+  .vocab-card .pos { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; margin-bottom: 6px; }
+  .vocab-card .definition { font-size: 13px; color: var(--color-text-secondary); display: none; line-height: 1.5; }
+  .vocab-card .example { font-size: 13px; color: var(--color-text-secondary); font-style: italic; display: none; margin-top: 4px; }
+  .vocab-card.open .definition, .vocab-card.open .example { display: block; }
+  .vocab-card .toggle-hint { font-size: 11px; color: var(--c-accent); margin-top: 6px; }
+
+  .comprehension { display: flex; flex-direction: column; gap: 12px; }
+  .q-block { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.1rem; }
+  .q-text { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 10px; }
+  .options { display: flex; flex-direction: column; gap: 6px; }
+  .option { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-tertiary); cursor: pointer; font-size: 14px; color: var(--color-text-primary); transition: background 0.12s; }
+  .option:hover:not(.locked) { background: var(--color-background-secondary); }
+  .option.correct { background: var(--c-teal-light); border-color: var(--c-teal); color: var(--c-teal); }
+  .option.wrong { background: var(--c-coral-light); border-color: var(--c-coral); color: var(--c-coral); }
+  .option .dot { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--color-border-secondary); flex-shrink: 0; }
+  .option.correct .dot { background: var(--c-teal); border-color: var(--c-teal); }
+  .option.wrong .dot { background: var(--c-coral); border-color: var(--c-coral); }
+  .feedback { font-size: 13px; margin-top: 8px; padding: 8px 12px; border-radius: var(--border-radius-md); display: none; }
+  .feedback.show { display: block; }
+  .feedback.correct { background: var(--c-teal-light); color: var(--c-teal); }
+  .feedback.wrong { background: var(--c-coral-light); color: var(--c-coral); }
+
+  .discussion { display: flex; flex-direction: column; gap: 10px; }
+  .prompt-card { background: var(--color-background-primary); border-radius: var(--border-radius-lg); border-left: 3px solid var(--c-accent); padding: 0.9rem 1.1rem; border-top: 0.5px solid var(--color-border-tertiary); border-bottom: 0.5px solid var(--color-border-tertiary); border-right: 0.5px solid var(--color-border-tertiary); }
+  .prompt-card .prompt-q { font-size: 14px; color: var(--color-text-primary); line-height: 1.6; }
+  .prompt-card .prompt-hint { font-size: 12px; color: var(--color-text-secondary); margin-top: 5px; }
+
+  .lang-focus { background: var(--c-amber-light); border-radius: var(--border-radius-lg); padding: 1.1rem 1.25rem; }
+  .lang-focus-title { font-size: 13px; font-weight: 500; color: var(--c-amber); margin-bottom: 0.6rem; }
+  .lang-item { font-size: 14px; color: var(--color-text-primary); padding: 6px 0; border-bottom: 0.5px solid rgba(0,0,0,0.07); line-height: 1.5; }
+  .lang-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .lang-item strong { font-weight: 500; }
+
+  .score-bar { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 14px; border: 0.5px solid var(--color-border-tertiary); }
+  .score-num { font-size: 24px; font-weight: 500; color: var(--color-text-primary); min-width: 60px; }
+  .score-label { font-size: 13px; color: var(--color-text-secondary); }
+  .score-track { flex: 1; height: 6px; background: var(--color-border-tertiary); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 6px; background: var(--c-accent); border-radius: 3px; width: 0%; transition: width 0.4s ease; }
+
+  .send-btn { display: inline-block; font-size: 13px; padding: 7px 14px; border-radius: var(--border-radius-md); border: 0.5px solid var(--color-border-secondary); background: transparent; cursor: pointer; color: var(--color-text-primary); margin-top: 8px; }
+  .send-btn:hover { background: var(--color-background-secondary); }
+</style>
+
+<div class="lesson">
+
+  <div class="lesson-header">
+    <div class="lesson-tag">C1 · Advanced English</div>
+    <p class="lesson-title">The psychology of peak performance</p>
+    <p class="lesson-meta">Listening & language focus · ~30 min · Sports psychology talk</p>
+  </div>
+
+  <div class="section">
+    <p class="section-heading">Before you watch</p>
+    <div class="lang-focus">
+      <p class="lang-focus-title">Activate your knowledge</p>
+      <div class="lang-item">What do you think separates elite athletes from everyone else — talent, mindset, or training?</div>
+      <div class="lang-item">Have you ever used a psychological technique to prepare for something important?</div>
+    </div>
+    <button class="send-btn" onclick="sendPrompt('I want to discuss the psychology of peak performance and what separates elite athletes from others')">Discuss with Claude ↗</button>
+  </div>
+
+  <div class="section">
+    <p class="section-heading">Watch the talk</p>
+    <div class="video-stub">
+      <div class="play-icon">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><polygon points="3,1 13,7 3,13" fill="white"/></svg>
+      </div>
+      <div class="video-info">
+        <p>Sports psychology: secrets from the pros</p>
+        <p>4 strategies · 4 min 16 sec</p>
+      </div>
+    </div>
+
+    <p class="section-heading">Key vocabulary — click each card to reveal</p>
+    <div class="vocab-grid" id="vocab">
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">reframe</div>
+        <div class="pos">verb</div>
+        <div class="definition">To present or think about a situation in a new or different way that changes its perceived meaning.</div>
+        <div class="example">"She reframed her anxiety as excitement before the speech."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">arousal</div>
+        <div class="pos">noun (psychology)</div>
+        <div class="definition">A state of heightened physiological and psychological activity; alertness or readiness for action.</div>
+        <div class="example">"Both nervousness and excitement are high-arousal states."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">pacemaker</div>
+        <div class="pos">noun</div>
+        <div class="definition">A runner who sets a fast pace in a race to help another competitor achieve a record time.</div>
+        <div class="example">"Kipchoge relied on 41 pacemakers to break the two-hour barrier."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">visualisation</div>
+        <div class="pos">noun (BrE)</div>
+        <div class="definition">The practice of forming a detailed mental image of a future event to improve performance and confidence.</div>
+        <div class="example">"Athletes use visualisation to mentally rehearse their race."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">hamper</div>
+        <div class="pos">verb</div>
+        <div class="definition">To hinder or obstruct; to make it difficult for something to develop or succeed.</div>
+        <div class="example">"Anxiety can hamper your performance under pressure."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+      <div class="vocab-card" onclick="toggleVocab(this)">
+        <div class="word">self-talk</div>
+        <div class="pos">noun</div>
+        <div class="definition">The internal or spoken dialogue a person has with themselves, especially to regulate emotions or motivation.</div>
+        <div class="example">"Positive self-talk helped Ali believe in himself long before he was famous."</div>
+        <div class="toggle-hint">Tap to reveal →</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-heading">Comprehension check — choose the best answer</p>
+    <div class="score-bar" style="margin-bottom: 1rem;">
+      <div>
+        <div class="score-num" id="score-display">0 / 5</div>
+        <div class="score-label">correct so far</div>
+      </div>
+      <div class="score-track"><div class="score-fill" id="score-fill"></div></div>
+    </div>
+    <div class="comprehension" id="quiz"></div>
+  </div>
+
+  <div class="section">
+    <p class="section-heading">Language focus — advanced structures from the talk</p>
+    <div class="lang-focus">
+      <p class="lang-focus-title">Notice how these C1 patterns are used</p>
+      <div class="lang-item"><strong>Cleft sentence:</strong> "It is not nervous energy itself that harms performance — it is how you interpret it."</div>
+      <div class="lang-item"><strong>Fronted adverbial:</strong> "On the day of the event, he had help from 41 pacemakers."</div>
+      <div class="lang-item"><strong>Nominalization:</strong> "Reframing anxiety as excitement works because both are high-arousal states." (verb → noun phrase as subject)</div>
+      <div class="lang-item"><strong>Concessive clause:</strong> "Even the greatest athletes experience negative thoughts — but they have learned to overcome them."</div>
+    </div>
+    <button class="send-btn" onclick="sendPrompt('Can you give me more examples of nominalization and cleft sentences at C1 level, and explain how to use them in writing?')">Explore these structures ↗</button>
+  </div>
+
+  <div class="section">
+    <p class="section-heading">Discussion & extension</p>
+    <div class="discussion">
+      <div class="prompt-card">
+        <p class="prompt-q">The speaker claims "asking for support is a sign of strength." Do you agree? Is this view culturally universal, or does it vary?</p>
+        <p class="prompt-hint">Use concessive structures: "While it may be true that…, it is worth considering…"</p>
+      </div>
+      <div class="prompt-card">
+        <p class="prompt-q">How transferable are sports psychology techniques to the workplace or academic life? Give a specific example.</p>
+        <p class="prompt-hint">Try a cleft sentence: "It is the reframing technique that I find most applicable to…"</p>
+      </div>
+      <div class="prompt-card">
+        <p class="prompt-q">Muhammad Ali said his famous phrase to himself long before he was successful. What does this suggest about the relationship between belief and achievement?</p>
+        <p class="prompt-hint">Consider using a nominalized structure in your answer.</p>
+      </div>
+    </div>
+    <button class="send-btn" onclick="sendPrompt('Let\'s discuss one of the extension questions from the sports psychology lesson. Can you play the role of a conversation partner at C1 level?')">Have a C1 discussion ↗</button>
+  </div>
+
+</div>
+
+<script>
+  const questions = [
+    {
+      q: "Why does the speaker say 'telling yourself to calm down' is ineffective when nervous?",
+      options: [
+        "Because calm is too difficult a state to sustain",
+        "Because calmness and anxiety are too far apart on the arousal spectrum",
+        "Because athletes are trained to stay in a high-arousal state",
+        "Because the body cannot distinguish between calm and fear"
+      ],
+      correct: 1,
+      feedback: "Correct. The speaker explains that calm is a low-arousal state, while anxiety is high-arousal — the gap is too large for the body to 'buy' the shift. Reframing as excitement works because both share high arousal."
+    },
+    {
+      q: "What is the primary reason Eliud Kipchoge invited the general public to witness his record attempt?",
+      options: [
+        "To generate media coverage for the event",
+        "To fulfil a contractual obligation with sponsors",
+        "Because he knew their support would improve his performance",
+        "To motivate his team of pacemakers"
+      ],
+      correct: 2,
+      feedback: "Correct. The speaker states explicitly that Kipchoge 'knew he could run better with their support' — it was a deliberate psychological strategy."
+    },
+    {
+      q: "Which of the following best describes what makes visualisation most effective, according to the talk?",
+      options: [
+        "Repeating it every day for several weeks",
+        "Focusing only on the desired outcome",
+        "Making it as multi-sensory and realistic as possible",
+        "Visualising only the easiest parts of the challenge"
+      ],
+      correct: 2,
+      feedback: "Correct. The speaker emphasises that visualisation should engage multiple senses — sound, smell, sight, and feeling — to be maximally effective."
+    },
+    {
+      q: "The word 'hamper' as used in the talk (line: 'anxiety is negative and will hamper your performance') is closest in meaning to:",
+      options: [
+        "transform",
+        "obstruct",
+        "accelerate",
+        "intensify"
+      ],
+      correct: 1,
+      feedback: "Correct. 'Hamper' means to hinder or impede. In context it explains that anxiety gets in the way of performing well."
+    },
+    {
+      q: "What is the implied message of the detail that Ali repeated his famous phrase 'long before he became successful'?",
+      options: [
+        "That self-talk is only effective once you have already achieved something",
+        "That self-belief, practised consistently, can precede and contribute to success",
+        "That public declarations of confidence are more powerful than private ones",
+        "That Ali's success was due mainly to physical training"
+      ],
+      correct: 1,
+      feedback: "Correct. The detail implies self-talk is not a reflection of existing success but a tool to build belief — and that belief can influence future outcomes."
+    }
+  ];
+
+  let correct = 0;
+  const quiz = document.getElementById('quiz');
+
+  questions.forEach((q, i) => {
+    const block = document.createElement('div');
+    block.className = 'q-block';
+    block.innerHTML = `<p class="q-text">${i+1}. ${q.q}</p>
+      <div class="options">
+        ${q.options.map((o, j) => `<div class="option" data-q="${i}" data-idx="${j}" onclick="answer(this,${i},${j})"><div class="dot"></div><span>${o}</span></div>`).join('')}
+      </div>
+      <div class="feedback" id="fb-${i}"></div>`;
+    quiz.appendChild(block);
+  });
+
+  function answer(el, qi, idx) {
+    if (el.classList.contains('locked')) return;
+    const block = el.closest('.q-block');
+    block.querySelectorAll('.option').forEach(o => o.classList.add('locked'));
+    const fb = document.getElementById('fb-'+qi);
+    if (idx === questions[qi].correct) {
+      el.classList.add('correct');
+      fb.textContent = '✓ ' + questions[qi].feedback;
+      fb.className = 'feedback correct show';
+      correct++;
+    } else {
+      el.classList.add('wrong');
+      block.querySelectorAll('.option')[questions[qi].correct].classList.add('correct');
+      fb.textContent = '✗ ' + questions[qi].feedback;
+      fb.className = 'feedback wrong show';
+    }
+    document.getElementById('score-display').textContent = correct + ' / ' + questions.length;
+    document.getElementById('score-fill').style.width = (correct / questions.length * 100) + '%';
+  }
+
+  function toggleVocab(card) {
+    card.classList.toggle('open');
+    const hint = card.querySelector('.toggle-hint');
+    hint.textContent = card.classList.contains('open') ? 'Tap to close ↑' : 'Tap to reveal →';
+  }
+</script>
