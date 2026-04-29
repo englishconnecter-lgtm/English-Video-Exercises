@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C1 English · Sports Psychology — The Winning Mindset</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #07080b;
+  --dark: #0c1017;
+  --dark2: #141a24;
+  --dark3: #1d2634;
+  --mid: #2e333d;
+  --steel: #3d4452;
+  --muted: #6b7385;
+  --pale: #a8b0c0;
+  --light: #d4dae6;
+  --white: #f0f4fa;
+  --accent: #e8c840;
+  --accent2: #f08030;
+  --accent3: #40b8e0;
+  --green: #50c878;
+  --green-d: #1a4a28;
+  --green-l: #d4f4e0;
+  --red: #e04040;
+  --red-d: #4a1818;
+  --red-l: #fce8e8;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'IBM Plex Sans',sans-serif;background:
+  radial-gradient(circle at top left, rgba(232,200,64,.12), transparent 32rem),
+  radial-gradient(circle at top right, rgba(64,184,224,.10), transparent 28rem),
+  linear-gradient(180deg,#080a0f 0%,var(--dark) 42%,#0b0e14 100%);
+  color:var(--white);min-height:100vh;font-size:15px;line-height:1.65;overflow-x:hidden;}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:390px;overflow:hidden;display:flex;align-items:flex-end;padding:0 0 3.4rem;border-bottom:1px solid rgba(255,255,255,.08);} 
+.hero-bg{position:absolute;inset:0;background:
+  linear-gradient(100deg,rgba(8,10,14,.96) 0%,rgba(12,18,28,.86) 44%,rgba(8,10,14,.58) 100%),
+  url('https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=1800&q=85') center/cover no-repeat;}
+.hero-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.035) 79px,rgba(255,255,255,.035) 80px),linear-gradient(180deg,transparent 0%,rgba(0,0,0,.28) 100%);pointer-events:none;}
+.hero-accent-bar{position:absolute;top:0;left:0;width:6px;height:100%;background:var(--accent);}
+.hero-number{position:absolute;right:-20px;top:-30px;font-family:'Bebas Neue',sans-serif;font-size:clamp(200px,25vw,340px);color:rgba(255,255,255,.025);line-height:1;user-select:none;pointer-events:none;}
+.hero-inner{position:relative;max-width:1080px;margin:0 auto;padding:4.5rem 2rem 0;width:100%;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;}
+.eyebrow-pill{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(232,200,64,.35);padding:4px 12px;border-radius:2px;}
+.eyebrow-divider{width:40px;height:1px;background:rgba(255,255,255,.15);}
+.eyebrow-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.4rem,8.5vw,7rem);color:var(--white);line-height:.9;letter-spacing:.025em;margin-bottom:.9rem;text-shadow:0 18px 44px rgba(0,0,0,.55);} 
+.hero h1 span{color:var(--accent);}
+.hero-sub{font-size:14px;color:var(--pale);max-width:520px;line-height:1.7;margin-bottom:2rem;}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+.hstat{display:flex;flex-direction:column;gap:2px;}
+.hstat-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--accent);letter-spacing:.04em;}
+.hstat-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;}
+
+
+/* ── BRAND BADGE ── */
+.ec-brand{position:absolute;left:24px;top:22px;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 13px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(7,8,11,.62);backdrop-filter:blur(12px);box-shadow:0 18px 40px rgba(0,0,0,.28);}
+.ec-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#fff0a5);color:#0b0e14;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.35rem;letter-spacing:.03em;box-shadow:0 8px 24px rgba(232,200,64,.25);}
+.ec-copy{display:flex;flex-direction:column;line-height:1.05;}
+.ec-copy strong{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--white);}
+.ec-copy span{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-family:'IBM Plex Mono',monospace;margin-top:3px;}
+@media(max-width:640px){.ec-brand{left:14px;top:14px;padding:8px 10px}.ec-copy{display:none}.ec-mark{width:34px;height:34px}}
+
+/* ── NAV ── */
+.nav{background:rgba(10,10,10,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:980px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-btn{padding:.85rem 1rem;border:none;background:transparent;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;letter-spacing:.04em;text-transform:uppercase;}
+.nav-btn:hover{color:var(--light);}
+.nav-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.nav-spacer{flex:1;}
+.reset-nav-btn{padding:6px 14px;background:rgba(255,255,255,.06);border:1px solid var(--border2);border-radius:3px;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;cursor:pointer;letter-spacing:.08em;text-transform:uppercase;transition:all .15s;flex-shrink:0;white-space:nowrap;}
+.reset-nav-btn:hover{background:rgba(255,255,255,.12);color:var(--light);}
+
+/* ── MAIN ── */
+.main{max-width:1080px;margin:0 auto;padding:3rem 2rem 5.5rem;}
+.section{display:none;}
+.section.active{display:block;animation:fadeUp .25s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── VIDEO ── */
+.video-wrap{display:block;text-decoration:none;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.14);margin-bottom:2rem;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;box-shadow:0 24px 70px rgba(0,0,0,.36);background:var(--dark2);} 
+.video-wrap:hover{border-color:rgba(232,200,64,.58);transform:translateY(-3px);box-shadow:0 30px 85px rgba(0,0,0,.46),0 0 0 1px rgba(232,200,64,.08);} 
+.video-thumb{position:relative;width:100%;padding-bottom:56.25%;background:#000;overflow:hidden;}
+.video-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s ease,opacity .3s;filter:saturate(1.08) contrast(1.08);} 
+.video-wrap:hover .video-thumb img{transform:scale(1.03);opacity:.8;}
+.play-circle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;background:rgba(0,0,0,.62);border:2px solid rgba(232,200,64,.9);display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(6px);box-shadow:0 16px 40px rgba(0,0,0,.38),0 0 38px rgba(232,200,64,.18);} 
+.video-wrap:hover .play-circle{background:rgba(232,200,64,.15);border-color:var(--accent);transform:translate(-50%,-50%) scale(1.08);}
+.video-bar{background:linear-gradient(90deg,rgba(20,26,36,.98),rgba(29,38,52,.98));padding:1rem 1.35rem;display:flex;align-items:center;gap:10px;border-top:1px solid var(--border);} 
+.yt-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;}
+.yt-title{font-size:13px;color:var(--pale);}
+.yt-dur{font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-left:auto;}
+.video-fallback{position:absolute;inset:0;background:var(--dark3);display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+.video-fallback svg{opacity:.6;}
+.video-fallback p{font-size:13px;color:var(--muted);text-align:center;}
+.video-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.35) 48%,rgba(0,0,0,.78) 100%),linear-gradient(90deg,rgba(0,0,0,.65) 0%,transparent 58%);pointer-events:none;}
+.video-copy{position:absolute;left:28px;right:28px;bottom:26px;z-index:2;display:flex;flex-direction:column;gap:8px;max-width:680px;}
+.video-kicker{display:inline-flex;width:max-content;align-items:center;gap:8px;padding:5px 10px;border-radius:999px;background:rgba(224,64,64,.88);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;}
+.video-title-overlay{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,4.2rem);line-height:.92;color:#fff;letter-spacing:.035em;text-shadow:0 14px 40px rgba(0,0,0,.58);}
+.video-sub-overlay{font-size:13px;color:rgba(255,255,255,.78);max-width:520px;line-height:1.55;}
+.video-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
+.video-chip{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(232,200,64,.34);background:rgba(0,0,0,.32);padding:4px 9px;border-radius:999px;}
+@media(max-width:640px){.video-copy{left:18px;right:18px;bottom:18px}.video-title-overlay{font-size:2.1rem}.video-sub-overlay{display:none}.play-circle{width:68px;height:68px}}
+
+
+/* ── SECTION LABEL ── */
+.sec-label{display:flex;align-items:center;gap:12px;margin-bottom:1.6rem;}
+.sec-label-bar{width:3px;height:22px;background:var(--accent);border-radius:1px;flex-shrink:0;}
+.sec-label-text{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+/* ── TRANSCRIPT ── */
+.transcript-card{background:rgba(20,26,36,.92);border:1px solid rgba(255,255,255,.10);border-radius:18px;overflow:hidden;margin-bottom:1.5rem;box-shadow:0 18px 56px rgba(0,0,0,.22);}
+.transcript-header{background:var(--dark3);padding:.85rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.transcript-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.transcript-hdr-txt{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.transcript-body{padding:1.6rem 1.75rem;}
+.t-section-head{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--accent);letter-spacing:.1em;margin:1.5rem 0 .5rem;padding-top:1rem;border-top:1px solid var(--border);}
+.t-section-head:first-child{margin-top:0;padding-top:0;border-top:none;}
+.t-para{font-family:'Playfair Display',serif;font-size:15px;line-height:1.9;color:var(--pale);margin-bottom:.85rem;}
+.t-para:last-child{margin-bottom:0;}
+.hw{border-bottom:1.5px solid var(--accent);color:var(--white);cursor:help;transition:color .15s;position:relative;}
+.hw:hover{color:var(--accent);}
+.quote-block{border-left:3px solid var(--accent);margin:1rem 0;padding:.75rem 1.1rem;background:rgba(232,200,64,.06);border-radius:0 4px 4px 0;}
+.quote-block p{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--light);line-height:1.75;}
+.quote-attr{font-size:12px;color:var(--muted);margin-top:.4rem;font-style:normal;}
+
+/* ── EXERCISE BLOCK ── */
+.ex-block{background:rgba(20,26,36,.94);border:1px solid rgba(255,255,255,.10);border-radius:18px;margin-bottom:1.35rem;overflow:hidden;box-shadow:0 14px 42px rgba(0,0,0,.20);}
+.ex-hdr{background:var(--dark3);padding:.8rem 1.25rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:12px;}
+.ex-hdr-num{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--accent);line-height:1;flex-shrink:0;margin-top:1px;}
+.ex-hdr-right{}
+.ex-title{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent3);}
+.ex-sub{font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.5;}
+.ex-body{padding:1.1rem 1.25rem;}
+
+/* ── QUESTION ITEM ── */
+.qi{margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);}
+.qi:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.qi-num{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-bottom:5px;}
+.qi-text{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);line-height:1.55;margin-bottom:.8rem;}
+.qi-text-small{font-size:14px;color:var(--light);line-height:1.7;margin-bottom:.75rem;}
+
+/* ── MCQ ── */
+.opts{display:flex;flex-direction:column;gap:7px;margin-bottom:.5rem;}
+.opt{display:flex;align-items:flex-start;gap:10px;padding:9px 13px;border:1px solid var(--border2);border-radius:4px;background:transparent;cursor:pointer;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:var(--pale);text-align:left;transition:all .15s;line-height:1.5;width:100%;}
+.opt:hover:not(:disabled){background:rgba(232,200,64,.08);border-color:rgba(232,200,64,.3);color:var(--white);}
+.opt:disabled{cursor:default;}
+.opt-ltr{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;min-width:20px;height:20px;border-radius:2px;background:var(--dark3);color:var(--muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .15s;}
+.opt.correct{background:rgba(80,200,120,.1);border-color:rgba(80,200,120,.5);color:#b8f0cc;}
+.opt.wrong{background:rgba(224,64,64,.08);border-color:rgba(224,64,64,.4);color:#f0b0b0;}
+.opt.correct .opt-ltr{background:var(--green);color:#0a2010;}
+.opt.wrong .opt-ltr{background:var(--red);color:white;}
+.q-fb{margin-top:7px;padding:8px 12px;border-radius:4px;font-size:12.5px;line-height:1.55;display:none;border-left:3px solid;}
+.q-fb.show{display:block;}
+.q-fb.correct{background:rgba(80,200,120,.08);border-left-color:var(--green);color:#90e0a8;}
+.q-fb.wrong{background:rgba(224,64,64,.07);border-left-color:var(--red);color:#e8a0a0;}
+
+/* ── SCORE BAR ── */
+.score-bar{display:flex;align-items:center;gap:12px;background:var(--dark3);border:1px solid var(--border);border-radius:5px;padding:.85rem 1.2rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.score-lbl{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;}
+.score-track{flex:1;min-width:80px;height:4px;background:var(--mid);border-radius:2px;overflow:hidden;}
+.score-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .5s ease;width:0%;}
+.score-num{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);font-weight:500;}
+
+/* ── GAP / TEXT INPUT ── */
+.gram-sentence{font-family:'Playfair Display',serif;font-size:16px;color:var(--light);line-height:1.95;margin-bottom:.65rem;}
+.gap-input{border:none;border-bottom:2px solid var(--steel);background:transparent;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:var(--white);outline:none;min-width:180px;max-width:260px;padding:2px 5px;transition:border-color .2s;}
+.gap-input:focus{border-bottom-color:var(--accent);}
+.gap-input.correct{border-bottom-color:var(--green);color:var(--green);}
+.gap-input.wrong{border-bottom-color:var(--red);color:var(--red);}
+
+/* ── ANSWER ROW ── */
+.ans-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:7px;}
+.check-btn{padding:5px 15px;border:1px solid var(--border2);border-radius:3px;background:transparent;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);cursor:pointer;text-transform:uppercase;letter-spacing:.06em;transition:all .15s;}
+.check-btn:hover{background:rgba(255,255,255,.08);color:var(--light);}
+.badge-ok{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--green);background:rgba(80,200,120,.1);padding:3px 10px;border-radius:3px;display:none;letter-spacing:.04em;}
+.badge-no{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--red);background:rgba(224,64,64,.1);padding:3px 10px;border-radius:3px;display:none;}
+.badge-ans{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent3);background:rgba(64,184,224,.08);padding:3px 10px;border-radius:3px;display:none;}
+.check-all-btn{width:100%;padding:10px;border:1px solid rgba(232,200,64,.4);border-radius:4px;background:rgba(232,200,64,.08);color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;cursor:pointer;margin-top:.85rem;transition:all .15s;letter-spacing:.08em;text-transform:uppercase;}
+.check-all-btn:hover{background:rgba(232,200,64,.14);border-color:rgba(232,200,64,.6);}
+
+/* ── MATCHING ── */
+.match-2col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.25rem;}
+@media(max-width:580px){.match-2col{grid-template-columns:1fr;}}
+.match-col-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:9px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.word-chip{background:var(--dark3);color:var(--light);font-family:'IBM Plex Sans',sans-serif;font-size:13px;font-weight:500;padding:9px 13px;border-radius:4px;margin-bottom:7px;cursor:pointer;user-select:none;transition:all .15s;border:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:8px;}
+.word-chip:hover{background:var(--mid);border-color:var(--border2);}
+.word-chip.sel{border-color:var(--accent);background:rgba(232,200,64,.1);color:var(--accent);}
+.word-chip.placed{display:none;}
+.word-chip.mok{background:rgba(80,200,120,.12);color:var(--green);border-color:rgba(80,200,120,.4);cursor:default;display:flex;}
+.word-chip.mno{background:rgba(224,64,64,.1);color:var(--red);border-color:rgba(224,64,64,.4);cursor:default;display:flex;}
+.def-slot{background:var(--dark3);border:1px dashed var(--steel);border-radius:4px;padding:9px 13px;margin-bottom:7px;min-height:46px;transition:all .15s;cursor:pointer;}
+.def-slot:hover:not(.locked){border-color:var(--accent);background:rgba(232,200,64,.05);}
+.def-slot-text{font-size:12.5px;color:var(--muted);line-height:1.55;}
+.def-ans{font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600;margin-top:5px;padding:3px 9px;border-radius:3px;display:inline-block;}
+.def-ans.ok{background:rgba(80,200,120,.12);color:var(--green);}
+.def-ans.no{background:rgba(224,64,64,.1);color:var(--red);}
+.def-hint{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--accent3);margin-top:4px;display:none;letter-spacing:.04em;}
+.placed-chip{display:inline-flex;align-items:center;gap:5px;background:rgba(232,200,64,.1);color:var(--accent);font-size:12px;font-weight:500;padding:3px 8px;border-radius:3px;margin-top:4px;cursor:pointer;border:1px solid rgba(232,200,64,.2);}
+.placed-chip:hover{background:rgba(232,200,64,.18);}
+.match-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.btn-check-match{padding:8px 20px;border-radius:4px;border:1px solid rgba(232,200,64,.4);background:rgba(232,200,64,.08);color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.06em;}
+.btn-check-match:hover{background:rgba(232,200,64,.16);}
+.btn-reset-match{padding:8px 14px;border-radius:4px;border:1px solid var(--border);background:transparent;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.06em;}
+.btn-reset-match:hover{background:var(--dark3);color:var(--light);}
+.match-score{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;padding:4px 12px;border-radius:3px;background:rgba(80,200,120,.1);color:var(--green);display:none;}
+
+/* ── GRAMMAR REFERENCE ── */
+.gram-ref{background:linear-gradient(135deg,rgba(7,8,11,.96),rgba(20,26,36,.96));border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:1.6rem 1.75rem;margin-bottom:1.5rem;box-shadow:0 18px 56px rgba(0,0,0,.20);}
+.gram-ref h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;color:var(--accent);letter-spacing:.06em;margin-bottom:.4rem;}
+.gram-ref p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:.9rem;}
+.stbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+.stbl th{text-align:left;padding:7px 11px;background:rgba(255,255,255,.04);color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;}
+.stbl td{padding:7px 11px;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.04);}
+.stbl td:first-child{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:11.5px;}
+.stbl td:last-child{font-style:italic;color:var(--pale);}
+.stbl tr:last-child td{border-bottom:none;}
+
+/* ── DISCUSSION ── */
+.di{background:rgba(20,26,36,.94);border:1px solid rgba(255,255,255,.10);border-radius:16px;margin-bottom:12px;overflow:hidden;box-shadow:0 10px 34px rgba(0,0,0,.16);}
+.di-trigger{width:100%;display:flex;align-items:flex-start;gap:14px;padding:1.1rem 1.25rem;background:transparent;border:none;cursor:pointer;text-align:left;font-family:'IBM Plex Sans',sans-serif;transition:background .15s;}
+.di-trigger:hover{background:rgba(255,255,255,.03);}
+.di-type{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);background:rgba(240,128,48,.1);border:1px solid rgba(240,128,48,.25);padding:3px 9px;border-radius:3px;white-space:nowrap;margin-top:3px;flex-shrink:0;}
+.di-q{font-family:'Playfair Display',serif;font-size:16px;color:var(--white);line-height:1.5;flex:1;}
+.di-arr{width:18px;height:18px;min-width:18px;margin-top:4px;color:var(--steel);transition:transform .25s;}
+.di.open .di-arr{transform:rotate(180deg);}
+.di-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.di.open .di-body{max-height:700px;}
+.di-inner{padding:0 1.25rem 1.25rem;border-top:1px solid var(--border);}
+.di-hint{background:rgba(232,200,64,.07);border-left:3px solid var(--accent);padding:.75rem 1rem;border-radius:0 4px 4px 0;font-size:13px;color:rgba(232,200,64,.75);line-height:1.65;margin-bottom:.85rem;margin-top:.9rem;}
+.di-hint em{font-style:italic;color:var(--accent);}
+.di-sample{font-family:'Playfair Display',serif;font-size:15px;color:var(--pale);line-height:1.8;}
+.di-sample strong{font-family:'IBM Plex Sans',sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-style:normal;display:block;margin-bottom:.3rem;}
+
+footer{text-align:center;padding:2rem;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--steel);letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="ec-brand" aria-label="English Connect">
+    <div class="ec-mark">EC</div>
+    <div class="ec-copy"><strong>English Connect</strong><span>C1 Video Lesson</span></div>
+  </div>
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-accent-bar"></div>
+  <div class="hero-number">04</div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-pill">C1 Advanced</span>
+      <div class="eyebrow-divider"></div>
+      <span class="eyebrow-sub">BBC Ideas · Sports Psychology</span>
+    </div>
+    <h1>The <span>Winning</span><br>Mindset</h1>
+    <p class="hero-sub">What do elite athletes know that the rest of us don't? Explore the psychological techniques that separate good from extraordinary — and discover how they apply to everyday life.</p>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-val">4</span><span class="hstat-lbl">Key techniques</span></div>
+      <div class="hstat"><span class="hstat-val">5</span><span class="hstat-lbl">Exercises</span></div>
+      <div class="hstat"><span class="hstat-lbl" style="margin-top:8px;">Ali · Kipchoge</span></div>
+      <div class="hstat"><span class="hstat-lbl" style="margin-top:8px;">Asher-Smith · Hoy</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('reading',this)">Reading</button>
+    <button class="nav-btn" onclick="showSection('matching',this)">Vocabulary</button>
+    <button class="nav-btn" onclick="showSection('comprehension',this)">Comprehension</button>
+    <button class="nav-btn" onclick="showSection('grammar',this)">Grammar</button>
+    <button class="nav-btn" onclick="showSection('discussion',this)">Discussion</button>
+    <div class="nav-spacer"></div>
+    <button class="reset-nav-btn" onclick="resetAll()">↺ Reset</button>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- ═══ READING ═══ -->
+<section id="reading" class="section active">
+  <div class="sec-label"><div class="sec-label-bar"></div><span class="sec-label-text">Watch first, then read</span></div>
+
+  <a class="video-wrap" href="https://www.youtube.com/watch?v=K0kJL-2d8mI" target="_blank" rel="noopener">
+    <div class="video-thumb">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=85"
+           alt="Athlete preparing mentally before competition"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="video-copy">
+        <span class="video-kicker">▶ Watch on YouTube</span>
+        <div class="video-title-overlay">Sports Psychology:<br>The Winning Mindset</div>
+        <p class="video-sub-overlay">Elite techniques for confidence, visualisation, support and self-talk — adapted for everyday performance.</p>
+        <div class="video-chips"><span class="video-chip">BBC Ideas</span><span class="video-chip">4:16</span><span class="video-chip">C1 Listening</span></div>
+      </div>
+      <div class="video-fallback">
+        <svg width="52" height="52" viewBox="0 0 52 52"><rect width="52" height="52" rx="8" fill="#e04040" opacity=".7"/><polygon points="20,14 42,26 20,38" fill="white"/></svg>
+        <p>Sports Psychology: Secrets from the World of Elite Athletes<br><span style="font-size:11px;opacity:.5;">Click to watch on YouTube · BBC Ideas</span></p>
+      </div>
+      <div class="play-circle">
+        <svg width="26" height="26" viewBox="0 0 24 24"><polygon points="6,3 21,12 6,21" fill="white"/></svg>
+      </div>
+    </div>
+    <div class="video-bar">
+      <div class="yt-dot"></div>
+      <span class="yt-title">Sports Psychology: Secrets from Elite Athletes · BBC Ideas</span>
+      <span class="yt-dur">4:16</span>
+    </div>
+  </a>
+
+  <div class="transcript-card">
+    <div class="transcript-header">
+      <div class="transcript-dot"></div>
+      <div class="transcript-hdr-txt">Video Transcript — hover highlighted words for definitions</div>
+    </div>
+    <div class="transcript-body">
+
+      <div class="t-section-head">Being Nervous Is Good</div>
+      <p class="t-para">So next time you feel really nervous, try this. Tell yourself: <em>"I am not nervous, I am excited!"</em></p>
+      <p class="t-para">Why does this work? Well, we all get anxious and nervous at times — totally normal. The tendency, of course, is to tell yourself to calm down. Sounds like a good idea, but having <span class="hw" title="nervous feelings in the stomach; anxiety before an event">butterflies in your stomach</span>, and that sense of anxiety, is just so far removed from a state of calm — your body just won't buy it.</p>
+      <p class="t-para"><span class="hw" title="mentally recategorising an experience to change its emotional impact">Reframing</span> anxiety as excitement works because both are states of high <span class="hw" title="a state of heightened physiological and psychological activity">arousal</span>. But while anxiety is negative and will <span class="hw" title="restrict or slow down; obstruct">hamper</span> your performance — you literally feel under threat — excitement is an emotion that will help you feel positive and look forward to the challenge.</p>
+
+      <div class="t-section-head">Don't Do All the Work Yourself</div>
+      <p class="t-para">All athletes learn how to take care of themselves. But as important as taking care of yourself is learning to let others support you along the way.</p>
+      <p class="t-para">In 2019, Kenyan long-distance runner Eliud Kipchoge broke the two-hour marathon record. But he didn't do it on his own. On the day of the event, he had help from 41 <span class="hw" title="athletes who run alongside a competitor to set a consistent speed">pacemakers</span>, and of course the support of thousands of people who came to cheer.</p>
+      <p class="t-para">Kipchoge asked for the general public to be there because he knew he could run better with their support. Who can you ask to support you in your everyday life? There is no shame in getting help when you're trying to achieve something difficult. Asking for support is a <span class="hw" title="a demonstration of courage and resilience, not weakness">sign of strength</span>, and positive support is <span class="hw" title="so valuable it cannot be measured in money">priceless</span>.</p>
+
+      <div class="t-section-head">Mentally Rehearse</div>
+      <p class="t-para">Many of the world's top athletes use <span class="hw" title="mentally picturing yourself performing successfully before an event">visualisation techniques</span> before a big event — they're mentally rehearsing it in their minds. This can increase motivation, build confidence and improve your performance. The more realistic this visualisation and preparation is, the more successful it will be.</p>
+      <p class="t-para">Athletes will think about the sounds they might hear — like the crowd. What they might smell — like freshly cut grass. And imagine what they are going to see and how they might feel. Runners might visualise difficult parts of their race.</p>
+      <p class="t-para">Before becoming the fastest British woman in recorded history, Dina Asher-Smith had already raced — and won — multiple times in her mind.</p>
+      <div class="quote-block">
+        <p>"I always imagine the race in my head beforehand — the sights, the sounds, the feeling. So when I'm actually on the track, it feels familiar."</p>
+        <div class="quote-attr">— Dina Asher-Smith, British sprint champion</div>
+      </div>
+
+      <div class="t-section-head">Talk to Yourself</div>
+      <p class="t-para">Negative thoughts reduce confidence. This happens to everyone — even the greatest athletes. But they have learned techniques to overcome them. One technique is called <span class="hw" title="a mental technique of directing positive or instructional phrases at oneself">self-talk</span> — literally talking to yourself. This can have a surprising effect on your performance.</p>
+      <p class="t-para">Top athletes will often be heard saying, <em>"You got this."</em> <em>"I can do this."</em> It helps them control anxiety, build their confidence and provide focus.</p>
+      <p class="t-para">Muhammad Ali, often considered the greatest boxer of all time, was famous for saying: <em>"I am the greatest."</em> But interestingly, he admitted <span class="hw" title="again and again; many times over">repeatedly</span> saying this phrase to himself long before he became successful. You don't need to say much. Use small phrases like: <em>"You are ready."</em> <em>"You are good at this."</em></p>
+      <p class="t-para">So next time your brain tells you you can't do something — just think of Muhammad Ali and tell yourself the opposite.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--dark3);border:1px solid var(--border);border-radius:5px;padding:1.1rem 1.3rem;font-size:13.5px;color:var(--muted);line-height:1.75;">
+    <strong style="color:var(--light);">Before moving on:</strong> Hover the <span class="hw" style="pointer-events:none">underlined words</span> to see definitions. Use the tabs above to work through Vocabulary, Comprehension, Grammar and Discussion in order.
+  </div>
+</section>
+
+<!-- ═══ VOCABULARY MATCHING ═══ -->
+<section id="matching" class="section">
+  <div class="sec-label"><div class="sec-label-bar"></div><span class="sec-label-text">Vocabulary from the video</span></div>
+
+  <div class="ex-block" style="margin-bottom:1.5rem;">
+    <div class="ex-hdr"><div class="ex-hdr-num">01</div><div class="ex-hdr-right"><div class="ex-title">Match Word to Definition</div><div class="ex-sub">Click a word on the left, then click its correct definition on the right.</div></div></div>
+    <div class="ex-body">
+      <div class="match-2col">
+        <div><div class="match-col-lbl">Words &amp; Phrases</div><div id="word-bank"></div></div>
+        <div><div class="match-col-lbl">Definitions</div><div id="def-slots"></div></div>
+      </div>
+      <div class="match-controls">
+        <button class="btn-check-match" onclick="checkMatch()">Check Answers</button>
+        <button class="btn-reset-match" onclick="resetMatch()">Reset</button>
+        <span class="match-score" id="match-score"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-hdr"><div class="ex-hdr-num">02</div><div class="ex-hdr-right"><div class="ex-title">Complete the Sentences</div><div class="ex-sub">Fill each gap with the correct word or phrase from the box. Choose ONE answer per gap.</div></div></div>
+    <div class="ex-body">
+      <div style="background:var(--dark3);border:1px solid var(--border);border-radius:4px;padding:.8rem 1.1rem;margin-bottom:1rem;font-size:12.5px;color:var(--pale);line-height:1.8;">
+        <strong style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.4rem;">Word Box</strong>
+        <em>priceless · hamper · arousal · reframing · visualisation · self-talk · pacemakers · rehearsing</em>
+      </div>
+      <div id="vocab-gap-body"></div>
+      <button class="check-all-btn" onclick="checkAllVocabGaps()">✓ Check All Answers</button>
+      <div class="q-fb" id="vgap-fb" style="margin-top:8px;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPREHENSION ═══ -->
+<section id="comprehension" class="section">
+  <div class="score-bar">
+    <span class="score-lbl">Score</span>
+    <div class="score-track"><div class="score-fill" id="comp-fill"></div></div>
+    <span class="score-num" id="comp-num">0 / 8</span>
+  </div>
+  <div class="sec-label"><div class="sec-label-bar"></div><span class="sec-label-text">8 questions — click to answer</span></div>
+  <div id="comp-questions"></div>
+</section>
+
+<!-- ═══ GRAMMAR ═══ -->
+<section id="grammar" class="section">
+  <div class="sec-label"><div class="sec-label-bar"></div><span class="sec-label-text">Gerunds &amp; Infinitives at C1</span></div>
+
+  <div class="gram-ref">
+    <h3>Gerunds &amp; Infinitives — C1 Patterns</h3>
+    <p>At C1, control of gerund/infinitive patterns signals grammatical sophistication. Many verbs and expressions change meaning depending on whether they take a gerund (<strong>-ing</strong>) or an infinitive (<strong>to + base form</strong>). The video contains several key examples.</p>
+    <table class="stbl">
+      <tr><th>Pattern</th><th>Structure</th><th>Example from the video</th></tr>
+      <tr><td>verb + gerund</td><td>admit / avoid / consider / deny / enjoy / keep / suggest + -ing</td><td>He admitted saying this phrase to himself.</td></tr>
+      <tr><td>verb + infinitive</td><td>afford / agree / decide / expect / hope / manage / refuse + to</td><td>Athletes learn to control their anxiety.</td></tr>
+      <tr><td>verb + obj + infinitive</td><td>ask / encourage / expect / help / want + sb + to</td><td>Kipchoge asked the public to be there.</td></tr>
+      <tr><td>meaning change</td><td>stop, remember, forget, try, regret</td><td>Try telling yourself you are excited. (attempt)<br>Try to calm down. (make an effort)</td></tr>
+      <tr><td>preposition + gerund</td><td>preposition + -ing (always)</td><td>There is no shame in getting help.</td></tr>
+      <tr><td>adj + infinitive</td><td>it is + adj + to-inf</td><td>It is important to let others support you.</td></tr>
+    </table>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-hdr"><div class="ex-hdr-num">01</div><div class="ex-hdr-right"><div class="ex-title">Choose: Gerund or Infinitive?</div><div class="ex-sub">Select the correct form for each sentence.</div></div></div>
+    <div class="ex-body" id="gram-ex1"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-hdr"><div class="ex-hdr-num">02</div><div class="ex-hdr-right"><div class="ex-title">Complete with the Correct Form</div><div class="ex-sub">Write the gerund or infinitive form of the verb in brackets.</div></div></div>
+    <div class="ex-body" id="gram-ex2"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-hdr"><div class="ex-hdr-num">03</div><div class="ex-hdr-right"><div class="ex-title">Error Correction</div><div class="ex-sub">Each sentence has one gerund/infinitive error. Rewrite the underlined section correctly.</div></div></div>
+    <div class="ex-body" id="gram-ex3"></div>
+  </div>
+</section>
+
+<!-- ═══ DISCUSSION ═══ -->
+<section id="discussion" class="section">
+  <div class="sec-label"><div class="sec-label-bar"></div><span class="sec-label-text">5 discussion questions — click to expand</span></div>
+  <div id="discuss-list"></div>
+</section>
+
+</div>
+<footer>C1 English Lesson · The Winning Mindset · Sports Psychology · BBC Ideas</footer>
+
+<script>
+// ═══ NAV ═══
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══ RESET ═══
+function resetAll() {
+  if (!confirm('Reset all exercises? Your answers will be cleared.')) return;
+  compScore = 0; compAnswered = 0;
+  document.getElementById('comp-fill').style.width = '0%';
+  document.getElementById('comp-num').textContent = '0 / 8';
+  buildComprehension();
+  resetMatch();
+  buildVocabGaps();
+  buildGramEx1(); buildGramEx2(); buildGramEx3();
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('reading').classList.add('active');
+  document.querySelector('.nav-btn').classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+// ═══ MATCHING ═══
+const matchData = [
+  { word: 'reframing',       def: 'Mentally recategorising an experience to change its emotional impact.' },
+  { word: 'arousal',         def: 'A state of heightened physiological and psychological activation.' },
+  { word: 'hamper',          def: 'To restrict, obstruct, or slow down progress or performance.' },
+  { word: 'pacemakers',      def: 'Athletes who run alongside a competitor to help them maintain a consistent speed.' },
+  { word: 'visualisation',   def: 'A mental technique of vividly imagining successful performance before an event.' },
+  { word: 'self-talk',       def: 'The practice of directing positive or instructional phrases at oneself.' },
+  { word: 'priceless',       def: 'So valuable it cannot be measured in monetary terms.' },
+  { word: 'rehearsing',      def: 'Practising or mentally preparing for a performance in advance.' },
+  { word: 'butterflies',     def: 'A sensation of nervousness or anxiety felt in the stomach.' },
+  { word: 'repeatedly',      def: 'Again and again; many times over.' },
+];
+
+let selChip = null;
+
+function buildMatch() {
+  const words = [...matchData].sort(() => Math.random() - 0.5);
+  const defs  = [...matchData].sort(() => Math.random() - 0.5);
+  selChip = null;
+  document.getElementById('word-bank').innerHTML = '';
+  document.getElementById('def-slots').innerHTML = '';
+  document.getElementById('match-score').style.display = 'none';
+
+  words.forEach(item => {
+    const chip = document.createElement('div');
+    chip.className = 'word-chip';
+    chip.dataset.word = item.word;
+    chip.id = 'chip-' + item.word.replace(/\s+/g,'_');
+    chip.innerHTML = `<span>${item.word}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--steel)">SELECT</span>`;
+    chip.addEventListener('click', () => {
+      if (chip.classList.contains('mok') || chip.classList.contains('mno')) return;
+      document.querySelectorAll('.word-chip.sel').forEach(c => c.classList.remove('sel'));
+      if (selChip === chip) { selChip = null; return; }
+      chip.classList.add('sel'); selChip = chip;
+    });
+    document.getElementById('word-bank').appendChild(chip);
+  });
+
+  defs.forEach(item => {
+    const slot = document.createElement('div');
+    slot.className = 'def-slot';
+    slot.dataset.correct = item.word;
+    slot.innerHTML = `<div class="def-slot-text">${item.def}</div><div class="placed-area"></div><div class="def-hint">✓ Answer: ${item.word}</div>`;
+    slot.addEventListener('click', () => {
+      if (!selChip || slot.classList.contains('locked')) return;
+      document.querySelectorAll('.def-slot').forEach(s => {
+        if (s.dataset.placed === selChip.dataset.word) {
+          s.dataset.placed = ''; s.querySelector('.placed-area').innerHTML = ''; s.classList.remove('placed');
+        }
+      });
+      if (slot.dataset.placed) {
+        const prev = document.getElementById('chip-' + slot.dataset.placed.replace(/\s+/g,'_'));
+        if (prev) prev.classList.remove('placed');
+      }
+      slot.dataset.placed = selChip.dataset.word;
+      slot.classList.add('placed');
+      const pa = slot.querySelector('.placed-area');
+      const pc = document.createElement('span'); pc.className = 'placed-chip';
+      pc.innerHTML = selChip.dataset.word + ' <span style="opacity:.5">✕</span>';
+      pc.addEventListener('click', e => {
+        e.stopPropagation();
+        const wc = document.getElementById('chip-' + slot.dataset.placed.replace(/\s+/g,'_'));
+        if (wc) wc.classList.remove('placed');
+        slot.dataset.placed = ''; slot.classList.remove('placed'); pa.innerHTML = '';
+      });
+      pa.innerHTML = ''; pa.appendChild(pc);
+      selChip.classList.add('placed'); selChip.classList.remove('sel'); selChip = null;
+    });
+    document.getElementById('def-slots').appendChild(slot);
+  });
+}
+
+function checkMatch() {
+  let score = 0;
+  document.querySelectorAll('.def-slot').forEach(slot => {
+    slot.classList.add('locked');
+    const placed = slot.dataset.placed, correct = slot.dataset.correct;
+    const hint = slot.querySelector('.def-hint'), pa = slot.querySelector('.placed-area');
+    if (placed === correct) {
+      score++;
+      const chip = document.getElementById('chip-' + placed.replace(/\s+/g,'_'));
+      if (chip) { chip.classList.add('mok'); chip.classList.remove('placed'); }
+      pa.innerHTML = `<span class="def-ans ok">✓ ${placed}</span>`;
+    } else {
+      if (placed) {
+        const chip = document.getElementById('chip-' + placed.replace(/\s+/g,'_'));
+        if (chip) chip.classList.add('mno');
+        pa.innerHTML = `<span class="def-ans no">✗ ${placed}</span>`;
+      }
+      hint.style.display = 'block';
+    }
+  });
+  const badge = document.getElementById('match-score');
+  badge.textContent = score + ' / ' + matchData.length + ' correct';
+  badge.style.display = 'inline-block';
+}
+
+function resetMatch() { buildMatch(); }
+
+// ═══ VOCAB GAP FILL ═══
+const vocabGaps = [
+  { n:1, before:'There is no shame in asking for help. On the contrary, seeking support is a sign of strength and the friendship of a mentor is absolutely', after:'.', answer:'priceless', hint:'So valuable it cannot be bought.' },
+  { n:2, before:'Constant self-doubt will', after:'your ability to perform at your best, no matter how talented you are.', answer:'hamper', hint:'To obstruct or slow down progress.' },
+  { n:3, before:'Before the Olympic final, she spent an hour doing', after:'— mentally picturing every step of her routine in perfect detail.', answer:'visualisation', hint:'Mentally imagining a successful performance.' },
+  { n:4, before:'Kipchoge was accompanied by 41', after:'whose role was to help him maintain the exact pace needed to break the record.', answer:'pacemakers', hint:'Athletes who run alongside to set a consistent pace.' },
+  { n:5, before:'The coach suggested using positive', after:'such as "I can do this" to counter the effects of competition anxiety.', answer:'self-talk', hint:'Directing encouraging phrases at oneself.' },
+  { n:6, before:'Both excitement and anxiety involve high levels of physiological', after:', which is why one can be converted into the other through a simple mental shift.', answer:'arousal', hint:'A state of heightened activation.' },
+  { n:7, before:'By', after:"anxiety as excitement, athletes can transform a potentially negative state into one that enhances their performance.", answer:'reframing', hint:'Mentally recategorising an experience.' },
+  { n:8, before:'She had been mentally', after:'the race for weeks — imagining the crowd, the track, the sound of the starter pistol.', answer:'rehearsing', hint:'Practising in the mind in advance.' },
+];
+
+function buildVocabGaps() {
+  const c = document.getElementById('vocab-gap-body'); c.innerHTML = '';
+  vocabGaps.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="gram-sentence">${q.before} <input class="gap-input" id="vg-${q.n}" placeholder="…" autocomplete="off" spellcheck="false"> ${q.after}</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkVocabGap(${q.n})">Check</button>
+        <span class="badge-ok" id="vgok-${q.n}">✓ Correct</span>
+        <span class="badge-no" id="vgno-${q.n}"></span>
+        <span class="badge-ans" id="vgans-${q.n}">→ ${q.answer}</span>
+      </div>
+      <div class="q-fb" id="vgfb-${q.n}" style="margin-top:5px;"></div>`;
+    c.appendChild(div);
+  });
+  const fb = document.getElementById('vgap-fb');
+  if (fb) { fb.className = 'q-fb'; fb.textContent = ''; }
+}
+
+function checkVocabGap(n) {
+  const q = vocabGaps.find(d => d.n === n);
+  const input = document.getElementById('vg-' + n);
+  if (input.disabled) return;
+  const val = input.value.trim().toLowerCase().replace(/\s+/g,' ');
+  const isRight = val === q.answer.toLowerCase();
+  input.classList.add(isRight ? 'correct' : 'wrong'); input.disabled = true;
+  if (isRight) {
+    document.getElementById('vgok-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('vgfb-' + n);
+    fb.className = 'q-fb show correct'; fb.textContent = '✓ Correct! ' + q.hint;
+  } else {
+    const wb = document.getElementById('vgno-' + n);
+    wb.style.display = 'inline-block'; wb.textContent = '✗ ' + (input.value.trim() || 'No answer');
+    document.getElementById('vgans-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('vgfb-' + n);
+    fb.className = 'q-fb show wrong'; fb.textContent = 'Hint: ' + q.hint;
+  }
+}
+
+function checkAllVocabGaps() {
+  let correct = 0;
+  vocabGaps.forEach(q => {
+    const input = document.getElementById('vg-' + q.n);
+    if (!input.disabled) checkVocabGap(q.n);
+    if (input.classList.contains('correct')) correct++;
+  });
+  const fb = document.getElementById('vgap-fb');
+  fb.className = 'q-fb show ' + (correct === vocabGaps.length ? 'correct' : 'wrong');
+  fb.textContent = correct === vocabGaps.length ? '✓ All 8 correct!' : correct + '/8 correct. Incorrect answers show the correct word in blue.';
+}
+
+// ═══ COMPREHENSION ═══
+const compData = [
+  { n:1, text:'Why does the speaker say that telling yourself to "calm down" when anxious is ineffective?',
+    opts:['Because calm is a negative emotional state','Because anxiety and calm are physiologically too different for the body to switch easily','Because elite athletes never feel calm','Because calmness reduces physical arousal entirely'],
+    correct:1, ok:"Correct. The speaker explains that anxiety and calm are 'so far removed' from each other that 'your body just won't buy it' — the physiological gap is too large to bridge suddenly.", no:"The key reason is physiological distance: anxiety (high arousal) and calm (low arousal) are too far apart on the spectrum for a simple mental instruction to work." },
+  { n:2, text:'According to the video, what do anxiety and excitement have in common?',
+    opts:['Both are negative emotions','Both reduce athletic performance','Both involve high physiological arousal','Both are caused by fear of failure'],
+    correct:2, ok:"Correct. The speaker explicitly states: 'both are states of high arousal' — which is why reframing one as the other is physiologically possible.", no:"The key shared quality is that both involve high physiological arousal. This is the scientific basis for the reframing technique." },
+  { n:3, text:'How many pacemakers helped Eliud Kipchoge break the two-hour marathon record?',
+    opts:['12','21','41','51'],
+    correct:2, ok:'Correct. The video states Kipchoge had help from 41 pacemakers on the day of the event.', no:'The video clearly states he had 41 pacemakers to help him maintain the required pace throughout the race.' },
+  { n:4, text:"What is the speaker's view on asking others for help?",
+    opts:["It is necessary only for athletes, not ordinary people","It is a sign of weakness that should be avoided","It is acceptable only when all other options are exhausted","It is a sign of strength and positive support is priceless"],
+    correct:3, ok:"Correct. The speaker explicitly says: 'Asking for support is a sign of strength, and positive support is priceless.'", no:"The speaker directly contradicts the idea that asking for help shows weakness, calling it 'a sign of strength'." },
+  { n:5, text:'According to the video, what makes visualisation more effective?',
+    opts:['Doing it only once immediately before an event','Making it as realistic and multi-sensory as possible','Focusing only on positive outcomes','Keeping visualisation sessions very short'],
+    correct:1, ok:"Correct. The video states: 'The more realistic this visualisation and preparation is, the more successful it will be' — and describes engaging all the senses.", no:"Effectiveness depends on realism and multi-sensory detail — sounds, smells, sights, and feelings — not just imagining a positive outcome." },
+  { n:6, text:'What does Dina Asher-Smith illustrate about visualisation?',
+    opts:["That it is only useful for sprinters","That she won races in her imagination before winning them in reality","That visualisation is less important than physical training","That mental rehearsal requires a sports psychologist"],
+    correct:1, ok:"Correct. The video says Asher-Smith 'had already raced — and won — multiple times in her mind' before her real victories.", no:"Asher-Smith is used as an example of how athletes mentally win races before physically running them." },
+  { n:7, text:'When did Muhammad Ali reportedly begin using his famous self-talk phrase "I am the greatest"?',
+    opts:['After winning his first world title','Only in front of journalists and cameras','Long before he actually became successful','When advised to do so by his coach'],
+    correct:2, ok:"Correct. The video notes Ali 'admitted repeatedly saying this phrase to himself long before he became successful' — demonstrating the proactive power of self-talk.", no:"The key detail is that Ali used this self-affirmation before achieving success, not as a result of it — showing how self-talk can build confidence in advance." },
+  { n:8, text:'Which statement best summarises the overall message of the video?',
+    opts:['Elite athletes have innate psychological advantages that ordinary people lack','Physical training is less important than mental conditioning for top athletes','Psychological techniques used by elite athletes are transferable to everyday challenges','Sports psychology is a recent field with limited scientific support'],
+    correct:2, ok:"Correct. The speaker explicitly introduces each technique by noting it is 'equally relevant in everyday life', and each section ends with a direct application beyond sport.", no:"The video's central argument is that these sports psychology techniques — reframing, seeking support, visualisation, and self-talk — apply equally to everyday life situations." },
+];
+
+let compScore = 0, compAnswered = 0;
+
+function buildComprehension() {
+  const container = document.getElementById('comp-questions'); container.innerHTML = '';
+  compData.forEach(q => {
+    const div = document.createElement('div'); div.className = 'ex-block';
+    const opts = q.opts.map((o,i) =>
+      `<button class="opt" data-qi="${q.n}" onclick="answerQ(${q.n},${i},${q.correct})"><span class="opt-ltr">${String.fromCharCode(65+i)}</span>${o}</button>`
+    ).join('');
+    div.innerHTML = `<div class="ex-hdr"><div class="ex-hdr-num">${q.n < 10 ? '0'+q.n : q.n}</div><div class="ex-hdr-right"><div class="ex-title">Question ${q.n} of ${compData.length}</div></div></div>
+      <div class="ex-body">
+        <div class="qi-text">${q.text}</div>
+        <div class="opts">${opts}</div>
+        <div class="q-fb" id="qfb-${q.n}"></div>
+      </div>`;
+    container.appendChild(div);
+  });
+}
+
+function answerQ(qn, oi, correct) {
+  const btns = document.querySelectorAll(`[data-qi="${qn}"]`);
+  if (btns[0].disabled) return;
+  btns.forEach(b => b.disabled = true);
+  const isRight = oi === correct;
+  btns[oi].classList.add(isRight ? 'correct' : 'wrong');
+  btns[correct].classList.add('correct');
+  const q = compData.find(d => d.n === qn);
+  const fb = document.getElementById('qfb-' + qn);
+  fb.className = 'q-fb show ' + (isRight ? 'correct' : 'wrong');
+  fb.textContent = isRight ? q.ok : q.no;
+  if (!btns[0].dataset.counted) {
+    btns[0].dataset.counted = '1'; compAnswered++;
+    if (isRight) compScore++;
+    document.getElementById('comp-fill').style.width = Math.round(compScore / compData.length * 100) + '%';
+    document.getElementById('comp-num').textContent = compScore + ' / ' + compData.length;
+  }
+}
+
+// ═══ GRAMMAR ═══
+const gramEx1Data = [
+  { n:1, text:"Muhammad Ali admitted ________ 'I am the greatest' to himself every day. [verb + gerund pattern]",
+    opts:['to say','saying','to saying','say'],
+    correct:1, exp:"admit + gerund: 'admit saying'. The verb 'admit' is always followed by -ing, never by a to-infinitive." },
+  { n:2, text:"There is no shame in ________ help when you need it. [preposition + gerund]",
+    opts:['to get','getting','get','having gotten'],
+    correct:1, exp:"After a preposition (in), we always use a gerund (-ing): 'no shame in getting'." },
+  { n:3, text:"Kipchoge asked the public ________ there to support him. [verb + obj + infinitive]",
+    opts:['to be','being','for being','be'],
+    correct:0, exp:"ask + object + to-infinitive: 'asked the public to be there'. The pattern is ask + sb + to do." },
+  { n:4, text:"Try ________ yourself you're excited rather than telling yourself to calm down. [attempt = try + -ing]",
+    opts:['to tell','telling','tell','for telling'],
+    correct:1, exp:"'Try + -ing' means attempt/experiment with something. 'Try + to-infinitive' means make an effort to do something (and possibly fail). Here we mean 'attempt this technique', so -ing is correct." },
+  { n:5, text:"Athletes stop ________ negative self-talk by replacing it with positive affirmations.",
+    opts:['to use','using','use','used'],
+    correct:1, exp:"'stop + -ing' means cease an activity. 'stop to do' would mean stop in order to do something else. The meaning here is to cease using negative self-talk." },
+  { n:6, text:"It is important ________ others to support you on your journey to success.",
+    opts:['letting','that let','to let','for letting'],
+    correct:2, exp:"'It is + adjective + to-infinitive' is the standard pattern: 'It is important to let'. The structure 'it is important -ing' is not standard." },
+];
+
+const gramEx2Data = [
+  { n:1, before:'Athletes consider', after:'(visualise) the race before any major event.', answer:'visualising', hint:'consider + gerund: consider visualising' },
+  { n:2, before:'Dina Asher-Smith managed', after:'(break) the British 200m record after years of mental and physical preparation.', answer:'to break', hint:'manage + to-infinitive: managed to break' },
+  { n:3, before:'The coach encouraged her', after:'(use) positive self-talk before every race.', answer:'to use', hint:'encourage + object + to-infinitive: encouraged her to use' },
+  { n:4, before:'He regrets not', after:'(ask) for support earlier in his career.', answer:'asking', hint:'preposition + gerund: not asking. (Regret + -ing = regret a past action)' },
+  { n:5, before:'They kept', after:'(remind) themselves: "You are ready. You can do this."', answer:'reminding', hint:'keep + gerund: kept reminding' },
+  { n:6, before:'She decided', after:'(try) reframing her pre-race nerves as excitement.', answer:'to try', hint:'decide + to-infinitive: decided to try' },
+];
+
+const gramEx3Data = [
+  { n:1, sentence:"He admitted <u>to feeling</u> extremely nervous before the race, despite years of experience.", error:'to feeling', correct:'feeling', exp:"'admit + gerund' — no preposition needed: admitted feeling. 'Admit to doing' is informal but admit + -ing is the standard written form at C1." },
+  { n:2, sentence:"The psychologist suggested the athletes <u>to use</u> positive self-talk every morning.", error:'to use', correct:'using', exp:"'suggest + gerund': suggested using. The verb 'suggest' cannot be followed by object + infinitive in standard English." },
+  { n:3, sentence:"After <u>to visualise</u> the race in vivid detail, she felt fully prepared for the challenge.", error:'to visualise', correct:'visualising', exp:"After a preposition (after), only a gerund is possible: 'after visualising'." },
+  { n:4, sentence:"Kipchoge stopped <u>to wonder</u> whether he would make it, and instead focused on each stride.", error:'to wonder', correct:'wondering', exp:"'stop + -ing' = cease doing. 'stop to do' = pause in order to do. Here he ceased having doubts, so 'stopped wondering' is correct." },
+  { n:5, sentence:"It was essential for the athletes <u>keeping</u> a consistent pace throughout the entire 26-mile course.", error:'keeping', correct:'to keep', exp:"'it is/was + adjective + (for sb) + to-infinitive': essential for the athletes to keep. An adjective + infinitive pattern requires to-infinitive, not -ing." },
+];
+
+let g1score = 0, g1ans = new Set();
+
+function buildGramEx1() {
+  g1score = 0; g1ans = new Set();
+  const c = document.getElementById('gram-ex1'); c.innerHTML = '';
+  const sb = document.createElement('div');
+  sb.className = 'score-bar'; sb.style.marginBottom = '1rem';
+  sb.innerHTML = '<span class="score-lbl">Score</span><div class="score-track"><div class="score-fill" id="g1-fill"></div></div><span class="score-num" id="g1-num">0 / 6</span>';
+  c.appendChild(sb);
+  gramEx1Data.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    const tag = `<span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--accent);background:rgba(232,200,64,.1);padding:1px 7px;border-radius:3px;">___</span>`;
+    const opts = q.opts.map((o, i) =>
+      `<button class="opt" onclick="answerG1(${q.n},${i},${q.correct},this)" data-g1g="${q.n}"><span class="opt-ltr">${String.fromCharCode(65+i)}</span>${o}</button>`
+    ).join('');
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="qi-text-small">${q.text.replace('________', tag)}</div>
+      <div class="opts" data-g1g="${q.n}">${opts}</div>
+      <div class="q-fb" id="g1fb-${q.n}"></div>`;
+    c.appendChild(div);
+  });
+}
+
+function answerG1(qn, oi, correct, btn) {
+  const grp = document.querySelector(`[data-g1g="${qn}"]`);
+  if (grp.querySelector('.correct,.wrong')) return;
+  grp.querySelectorAll('.opt').forEach(b => b.disabled = true);
+  const isRight = oi === correct;
+  btn.classList.add(isRight ? 'correct' : 'wrong');
+  grp.querySelectorAll('.opt')[correct].classList.add('correct');
+  const q = gramEx1Data.find(d => d.n === qn);
+  const fb = document.getElementById('g1fb-' + qn);
+  fb.className = 'q-fb show ' + (isRight ? 'correct' : 'wrong');
+  fb.textContent = (isRight ? '✓ Correct. ' : '✗ Incorrect. ') + q.exp;
+  if (!g1ans.has(qn)) { g1ans.add(qn); if (isRight) g1score++; }
+  document.getElementById('g1-fill').style.width = Math.round(g1score / 6 * 100) + '%';
+  document.getElementById('g1-num').textContent = g1score + ' / 6';
+}
+
+function buildGramEx2() {
+  const c = document.getElementById('gram-ex2'); c.innerHTML = '';
+  gramEx2Data.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="gram-sentence">${q.before} <input class="gap-input" id="g2-${q.n}" placeholder="gerund or infinitive…" autocomplete="off" spellcheck="false"> ${q.after}</div>
+      <div class="ans-row">
+        <button class="check-btn" onclick="checkG2(${q.n})">Check</button>
+        <span class="badge-ok" id="g2ok-${q.n}">✓ Correct</span>
+        <span class="badge-no" id="g2no-${q.n}"></span>
+        <span class="badge-ans" id="g2ans-${q.n}">→ ${q.answer}</span>
+      </div>
+      <div class="q-fb" id="g2fb-${q.n}" style="margin-top:5px;"></div>`;
+    c.appendChild(div);
+  });
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn'; btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => gramEx2Data.forEach(q => checkG2(q.n));
+  c.appendChild(btn);
+}
+
+function checkG2(n) {
+  const q = gramEx2Data.find(d => d.n === n);
+  const input = document.getElementById('g2-' + n);
+  if (input.disabled) return;
+  const val = input.value.trim().toLowerCase().replace(/\s+/g,' ');
+  const isRight = val === q.answer.toLowerCase();
+  input.classList.add(isRight ? 'correct' : 'wrong'); input.disabled = true;
+  if (isRight) {
+    document.getElementById('g2ok-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g2fb-' + n);
+    fb.className = 'q-fb show correct'; fb.textContent = '✓ ' + q.hint;
+  } else {
+    document.getElementById('g2no-' + n).style.display = 'inline-block';
+    document.getElementById('g2no-' + n).textContent = '✗ ' + (input.value.trim() || 'No answer');
+    document.getElementById('g2ans-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g2fb-' + n);
+    fb.className = 'q-fb show wrong'; fb.textContent = q.hint;
+  }
+}
+
+function buildGramEx3() {
+  const c = document.getElementById('gram-ex3'); c.innerHTML = '';
+  gramEx3Data.forEach(q => {
+    const div = document.createElement('div'); div.className = 'qi';
+    div.innerHTML = `<div class="qi-num">Question ${q.n}</div>
+      <div class="qi-text-small" style="margin-bottom:.5rem;">${q.sentence}</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:.6rem;font-family:'IBM Plex Mono',monospace;">Rewrite: <span style="color:var(--red);background:rgba(224,64,64,.1);padding:1px 7px;border-radius:3px;">${q.error}</span> &#8594;</div>
+      <div class="ans-row">
+        <input class="gap-input" id="g3-${q.n}" placeholder="correct form…" autocomplete="off" spellcheck="false" style="min-width:190px;">
+        <button class="check-btn" onclick="checkG3(${q.n})">Check</button>
+        <span class="badge-ok" id="g3ok-${q.n}">✓ Correct</span>
+        <span class="badge-no" id="g3no-${q.n}"></span>
+        <span class="badge-ans" id="g3ans-${q.n}">→ ${q.correct}</span>
+      </div>
+      <div class="q-fb" id="g3fb-${q.n}" style="margin-top:5px;"></div>`;
+    c.appendChild(div);
+  });
+  const btn = document.createElement('button');
+  btn.className = 'check-all-btn'; btn.textContent = '✓ Check All Answers';
+  btn.onclick = () => gramEx3Data.forEach(q => checkG3(q.n));
+  c.appendChild(btn);
+}
+
+function checkG3(n) {
+  const q = gramEx3Data.find(d => d.n === n);
+  const input = document.getElementById('g3-' + n);
+  if (input.disabled) return;
+  const val = input.value.trim().toLowerCase().replace(/\s+/g,' ');
+  const isRight = val === q.correct.toLowerCase();
+  input.classList.add(isRight ? 'correct' : 'wrong'); input.disabled = true;
+  if (isRight) {
+    document.getElementById('g3ok-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g3fb-' + n);
+    fb.className = 'q-fb show correct'; fb.textContent = '✓ ' + q.exp;
+  } else {
+    document.getElementById('g3no-' + n).style.display = 'inline-block';
+    document.getElementById('g3no-' + n).textContent = '✗ ' + (input.value.trim() || 'No answer');
+    document.getElementById('g3ans-' + n).style.display = 'inline-block';
+    const fb = document.getElementById('g3fb-' + n);
+    fb.className = 'q-fb show wrong'; fb.textContent = q.exp;
+  }
+}
+
+// ═══ DISCUSSION ═══
+const discussData = [
+  { type:'Personal',
+    q:'The video suggests that "asking for support is a sign of strength." Do you agree? Have you ever found it difficult to ask for help, and what held you back?',
+    hint:'Useful language: <em>I would tend to agree that… / In my experience… / What makes it particularly difficult is… / I think the cultural expectation to…</em>',
+    sample:'"I would tend to agree with this, though I think the reality is more nuanced. In many cultures, there is a deeply ingrained expectation — especially for men — that self-sufficiency equals strength. I have certainly found it difficult to ask for help at times, partly out of a fear of appearing incompetent, and partly because I was not entirely sure what kind of support I needed."'
+  },
+  { type:'Analysis',
+    q:'The technique of reframing anxiety as excitement is based on the idea that both involve "high arousal." What other examples of reframing — in sport, work, or daily life — can you think of? How effective do you believe this technique is?',
+    hint:'Useful language: <em>One could argue that… / A parallel example would be… / What makes this particularly interesting is… / The effectiveness of this technique seems to depend on…</em>',
+    sample:'"One could argue that reframing is one of the most widely applicable tools in cognitive psychology, extending well beyond sports. A parallel example would be the advice given to public speakers: rather than trying to eliminate nervousness, experienced coaches suggest treating it as energy that can be channelled into enthusiasm and presence."'
+  },
+  { type:'Critical Thinking',
+    q:'The video presents visualisation as highly effective for athletes like Dina Asher-Smith. To what extent do you think mental preparation can compensate for gaps in physical training or natural talent?',
+    hint:'Useful language: <em>While the evidence for… is compelling… / It would be naïve to suggest that… / A more balanced view might be… / The research suggests a distinction between…</em>',
+    sample:'"While the evidence for the effectiveness of visualisation is compelling, I think it would be naïve to suggest that mental rehearsal can compensate for significant gaps in physical preparation. A more balanced view might be that visualisation enhances the performance ceiling of an athlete who is already well-prepared, rather than substituting for the work itself."'
+  },
+  { type:'Application',
+    q:'Muhammad Ali used self-talk long before he became successful. How might you apply this principle to your own professional or academic life? What phrases might you use, and in what situations?',
+    hint:'Useful language: <em>In practical terms… / One context where this might be particularly useful is… / I could imagine using a phrase such as… / The challenge would be…</em>',
+    sample:'"In practical terms, I could imagine applying this principle most directly before situations that trigger performance anxiety — a presentation, a difficult conversation, or an important exam. The challenge, I think, would be genuine internalisation: simply repeating a phrase without real conviction might feel hollow initially."'
+  },
+  { type:'Extension',
+    q:'The video focuses on individual psychological techniques. How important is the role of external factors — team environment, coaching culture, societal expectations — in shaping an athlete\'s mental performance?',
+    hint:'Useful language: <em>It seems to me that… / One cannot overlook the fact that… / The evidence from team sports suggests… / An interesting tension exists between…</em>',
+    sample:'"It seems to me that while individual techniques are valuable, they do not operate in a vacuum. One cannot overlook the fact that a toxic team environment or an overly critical coaching culture can undermine even the most mentally resilient athlete. An interesting tension exists between the message of individual agency that the video promotes and the broader structural and environmental factors that profoundly shape mental performance."'
+  },
+];
+
+function buildDiscussion() {
+  const list = document.getElementById('discuss-list'); list.innerHTML = '';
+  discussData.forEach(d => {
+    const div = document.createElement('div'); div.className = 'di';
+    div.innerHTML = `<button class="di-trigger" onclick="this.closest('.di').classList.toggle('open')">
+      <span class="di-type">${d.type}</span>
+      <span class="di-q">${d.q}</span>
+      <svg class="di-arr" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="5 8 10 13 15 8"/></svg>
+    </button>
+    <div class="di-body"><div class="di-inner">
+      <div class="di-hint">${d.hint}</div>
+      <div class="di-sample"><strong>Model opening</strong>${d.sample}</div>
+    </div></div>`;
+    list.appendChild(div);
+  });
+}
+
+// ═══ INIT ═══
+buildMatch();
+buildVocabGaps();
+buildComprehension();
+buildGramEx1();
+buildGramEx2();
+buildGramEx3();
+buildDiscussion();
+</script>
+</body>
+</html>
